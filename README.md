@@ -6,17 +6,15 @@
 
 <br/>
 
-## 멤버
-
-### 프런트엔드 Refactoring & 백엔드 
+## 리팩터링 담당
 
 | <img src="https://avatars.githubusercontent.com/u/114549939?v=4" width="130" height="130"> |
 | :---------------------------------------------------------------------------------------: |
-|                         [박하민](https://github.com/mintmin0320)                         |   
+|                         [박하민 (FE & BE)](https://github.com/mintmin0320)                         |   
 
 <br/>
 
-### 프런트엔드
+## 기술 스택 ( Next Full-stack )
 
 <table>
   <tr>
@@ -57,33 +55,11 @@
   </tr>
   <tr>
     <td align="center" width="180" height="100">
-      <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1608448196/noticon/a0fgk99dgqtyrwwmqsbt.png" alt="Figma"/>
-      <br/><b>Figma</b>
+      <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1720579881/noticon/lxhyu7xo7ujsxvuxmiuc.png" alt="Supabase"/>
+      <br/><b>Supabase</b>
+    </td>
   </tr>
 </table>
 
 <br/>
-
-### 백엔드
-
-<table>
-  <tr>
-    <td align="center" width="180" height="100">
-      <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566912854/noticon/cip7txxbjtlhbtmlytb7.jpg" alt="Yarn Berry"/>
-      <br/><b>Yarn Berry</b>
-    </td>
-    <td align="center" width="180" height="100">
-      <img width="50" src="https://user-images.githubusercontent.com/25181517/183890598-19a0ac2d-e88a-4005-a8df-1ee36782fde1.png" alt="TypeScript"/>
-      <br/><b>TypeScript</b>
-    </td>
-    <td align="center" width="180" height="100">
-      <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1600658982/noticon/hk60kbfbqnedpguy0gbb.png" alt="NestJS"/>
-      <br/><b>NestJS</b>
-    </td>
-  </tr>
-</table>
-
-<br>
-
-
-
+<br/>
