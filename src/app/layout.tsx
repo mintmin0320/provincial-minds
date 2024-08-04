@@ -8,6 +8,9 @@ import { Toaster } from "react-hot-toast"
 export const metadata: Metadata = {
   title: "지방적 사고",
   description: "서울 친구들은 모르는 지방 친구들의 고충",
+  icons: {
+    icon: "/icons/capsule-modal.svg"
+  }
 }
 
 export default function RootLayout({
