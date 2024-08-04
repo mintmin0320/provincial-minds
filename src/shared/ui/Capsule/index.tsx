@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 
-import CreateGachaButton from "@/shared/@common/ui/CreateGachaButton"
+import CreateGachaButton from "@/shared/ui/CreateGachaButton"
 
 import { truncateText } from "@/shared/utils/truncateText"
 

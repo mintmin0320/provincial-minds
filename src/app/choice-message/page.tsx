@@ -1,5 +1,5 @@
 import MessageList from "@/features/provincial-choice-message/ui/MessageList"
-import FlowTitle from "@/shared/@common/ui/FlowTitle"
+import FlowTitle from "@/shared/ui/FlowTitle"
 
 const ChoiceMessagePage = () => {
   return (

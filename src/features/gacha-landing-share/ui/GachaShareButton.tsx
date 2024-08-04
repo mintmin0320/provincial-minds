@@ -1,6 +1,6 @@
 "use client"
 
-import Button from "@/shared/@common/ui/Button"
+import Button from "@/shared/ui/Button"
 
 import useCopyLink from "../../../shared/hooks/useCopyLink"
 

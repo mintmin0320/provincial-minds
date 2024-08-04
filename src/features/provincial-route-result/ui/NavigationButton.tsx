@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation"
 
-import Button from "@/shared/@common/ui/Button"
+import Button from "@/shared/ui/Button"
 
 import ROUTE_PATH from "@/shared/constants/path"
 

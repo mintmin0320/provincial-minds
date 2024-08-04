@@ -3,9 +3,9 @@
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
-import Button from "@/shared/@common/ui/Button"
-import SearchAreaFieldGroup from "@/shared/@common/ui/SearchAreaFieldGroup"
 import ROUTE_PATH from "@/shared/constants/path"
+import Button from "@/shared/ui/Button"
+import SearchAreaFieldGroup from "@/shared/ui/SearchAreaFieldGroup"
 
 interface IAreaProps {
   urbanArea: string | null

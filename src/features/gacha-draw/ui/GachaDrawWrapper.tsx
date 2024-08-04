@@ -5,7 +5,7 @@ import { ReactNode, useEffect, useRef } from "react"
 import { useModals } from "@/shared/hooks/useModals"
 
 import useGetSearchParam from "@/shared/hooks/useGetSearchParams"
-import GachaModal from "../../../shared/@common/ui/GachaModal"
+import GachaModal from "../../../shared/ui/GachaModal"
 
 interface IGachaDrawWrapperProps {
   children: ReactNode

@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
-import Button from "@/shared/@common/ui/Button"
+import Button from "@/shared/ui/Button"
 import TransitRouteCard from "./TransitRouteCard"
 
 import ROUTE_PATH from "@/shared/constants/path"

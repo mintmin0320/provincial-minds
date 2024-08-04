@@ -5,8 +5,8 @@ import { Toaster } from "react-hot-toast"
 import { LocalMindsBodyFont } from "@/shared/assets/fonts"
 import "@/shared/styles/globals.css"
 
-import ModalContainer from "@/shared/@common/ui/ModalContainer"
-import RQProvider from "@/shared/@common/ui/RQProvider"
+import ModalContainer from "@/shared/ui/ModalContainer"
+import RQProvider from "@/shared/ui/RQProvider"
 
 export const metadata: Metadata = {
   title: "지방적 사고",

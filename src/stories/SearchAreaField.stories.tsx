@@ -1,4 +1,4 @@
-import SearchAreaField from "@/shared/@common/ui/SearchAreaField"
+import SearchAreaField from "@/shared/ui/SearchAreaField"
 import type { Meta, StoryObj } from "@storybook/react"
 import { fn } from "@storybook/test"
 

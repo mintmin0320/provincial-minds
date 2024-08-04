@@ -1,7 +1,7 @@
 "use client"
 
-import Button from "@/shared/@common/ui/Button"
-import Modal from "@/shared/@common/ui/Modal"
+import Button from "@/shared/ui/Button"
+import Modal from "@/shared/ui/Modal"
 
 import { LocalMindsTitleFont } from "@/shared/assets/fonts"
 import { useModals } from "@/shared/hooks/useModals"

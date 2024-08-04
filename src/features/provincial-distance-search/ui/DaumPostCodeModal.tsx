@@ -2,8 +2,8 @@
 
 import Image from "next/image"
 
-import DaumPostcodeWrapper from "@/shared/@common/ui/DaumPostcode"
-import Modal from "@/shared/@common/ui/Modal"
+import DaumPostcodeWrapper from "@/shared/ui/DaumPostcode"
+import Modal from "@/shared/ui/Modal"
 
 interface IDaumPostCodeProps {
   onAreaChange: (area: { address: string }) => void
