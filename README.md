@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![](https://velog.velcdn.com/images/mintmin0320/post/2cf64691-aede-4f7a-b030-f5750231853b/image.png)
+![](https://velog.velcdn.com/images/mintmin0320/post/1b4b0325-700a-4448-ba28-9c8483089de5/image.png)
+![](https://velog.velcdn.com/images/mintmin0320/post/f443a04d-8e44-48ed-9515-dd76224f9b27/image.png)
+![](https://velog.velcdn.com/images/mintmin0320/post/5d0c2e39-d443-42b1-8247-fe526f8d531b/image.png)
+![image](https://github.com/user-attachments/assets/6db8a36b-7266-4a9d-a223-7870e840282b)
 
-## Getting Started
+<br/>
 
-First, run the development server:
+## 멤버
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 프런트엔드 Refactoring & 백엔드 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| <img src="https://avatars.githubusercontent.com/u/114549939?v=4" width="130" height="130"> |
+| :---------------------------------------------------------------------------------------: |
+|                         [박하민](https://github.com/mintmin0320)                         |   
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<br/>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 프런트엔드
 
-## Learn More
+<table>
+  <tr>
+    <td align="center" width="180" height="100">
+      <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566912854/noticon/cip7txxbjtlhbtmlytb7.jpg" alt="Yarn Berry"/>
+      <br/><b>Yarn Berry</b>
+    </td>
+    <td align="center" width="180" height="100">
+      <img width="50" src="https://user-images.githubusercontent.com/25181517/183890598-19a0ac2d-e88a-4005-a8df-1ee36782fde1.png" alt="TypeScript"/>
+      <br/><b>TypeScript</b>
+    </td>
+    <td align="center" width="180" height="100">
+      <img width="50" src="https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png" alt="React"/>
+      <br/><b>React</b>
+    </td>
+    <td align="center" width="180" height="100">
+      <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566879300/noticon/fvty9lnsbjol5lq9u3by.svg" alt="Next.js"/>
+      <br/><b>NextJS(v14)</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="180" height="100">
+      <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1657314490/noticon/ur8spzfcq4acw7ijp68v.png" alt="Tailwind CSS"/>
+      <br/><b>Tailwind CSS</b>
+    </td>
+    <td align="center" width="180" height="100">
+      <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631622784/noticon/zwush4y3u0mgamlck9bq.png" alt="React Query"/>
+      <br/><b>React Query(v5)</b>
+    </td>
+    <td align="center" width="180" height="100">
+      <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1675253316/noticon/gg2mfsvpu2aje4f8rpuc.png" alt="Zustand"/>
+      <br/><b>Zustand</b>
+    </td>
+    <td align="center" width="180" height="100">
+      <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566952480/noticon/fyec5eye4l6hyxlpfxze.png" alt="Storybook"/>
+      <br/><b>Storybook</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="180" height="100">
+      <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1608448196/noticon/a0fgk99dgqtyrwwmqsbt.png" alt="Figma"/>
+      <br/><b>Figma</b>
+  </tr>
+</table>
 
-To learn more about Next.js, take a look at the following resources:
+<br/>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 백엔드
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<table>
+  <tr>
+    <td align="center" width="180" height="100">
+      <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566912854/noticon/cip7txxbjtlhbtmlytb7.jpg" alt="Yarn Berry"/>
+      <br/><b>Yarn Berry</b>
+    </td>
+    <td align="center" width="180" height="100">
+      <img width="50" src="https://user-images.githubusercontent.com/25181517/183890598-19a0ac2d-e88a-4005-a8df-1ee36782fde1.png" alt="TypeScript"/>
+      <br/><b>TypeScript</b>
+    </td>
+    <td align="center" width="180" height="100">
+      <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1600658982/noticon/hk60kbfbqnedpguy0gbb.png" alt="NestJS"/>
+      <br/><b>NestJS</b>
+    </td>
+  </tr>
+</table>
 
-## Deploy on Vercel
+<br>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
