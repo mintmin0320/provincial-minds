@@ -4,9 +4,9 @@ import Image from "next/image"
 
 import { useModals } from "@/shared/hooks/useModals"
 import { truncateText } from "@/shared/utils/truncateText"
-import { useGachaStore } from "../../../../features/gacha-create/hooks/useGachaStore"
 
-import CreateGachaModal from "../../../../features/gacha-create/ui/CreateGachaModal"
+import CreateGachaModal from "@/features/gacha-create/ui/CreateGachaModal"
+import { useGachaStore } from '@/shared/hooks/useGachaStore'
 
 const CreateGachaButton = () => {
   const { open } = useModals()
