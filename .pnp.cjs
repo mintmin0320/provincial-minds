@@ -36,6 +36,8 @@ const RAW_RUNTIME_STATE =
           ["@storybook/nextjs", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:8.2.7"],\
           ["@storybook/react", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:8.2.7"],\
           ["@storybook/test", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:8.2.7"],\
+          ["@supabase/ssr", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:0.4.0"],\
+          ["@tanstack/react-query", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:5.51.21"],\
           ["@types/node", "npm:20.14.13"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
@@ -3632,6 +3634,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@rollup/rollup-linux-x64-gnu", [\
+      ["npm:4.20.0", {\
+        "packageLocation": "./.yarn/unplugged/@rollup-rollup-linux-x64-gnu-npm-4.20.0-3a2f9a8c64/node_modules/@rollup/rollup-linux-x64-gnu/",\
+        "packageDependencies": [\
+          ["@rollup/rollup-linux-x64-gnu", "npm:4.20.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@rushstack/eslint-patch", [\
       ["npm:1.10.4", {\
         "packageLocation": "../../.yarn/berry/cache/@rushstack-eslint-patch-npm-1.10.4-a760e177e3-10c0.zip/node_modules/@rushstack/eslint-patch/",\
@@ -4700,6 +4711,30 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@supabase/ssr", [\
+      ["npm:0.4.0", {\
+        "packageLocation": "../../.yarn/berry/cache/@supabase-ssr-npm-0.4.0-2fa08c7cc8-10c0.zip/node_modules/@supabase/ssr/",\
+        "packageDependencies": [\
+          ["@supabase/ssr", "npm:0.4.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:0.4.0", {\
+        "packageLocation": "./.yarn/__virtual__/@supabase-ssr-virtual-ba35b5ab85/3/.yarn/berry/cache/@supabase-ssr-npm-0.4.0-2fa08c7cc8-10c0.zip/node_modules/@supabase/ssr/",\
+        "packageDependencies": [\
+          ["@supabase/ssr", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:0.4.0"],\
+          ["@rollup/rollup-linux-x64-gnu", "npm:4.20.0"],\
+          ["@supabase/supabase-js", null],\
+          ["@types/supabase__supabase-js", null],\
+          ["cookie", "npm:0.6.0"]\
+        ],\
+        "packagePeers": [\
+          "@supabase/supabase-js",\
+          "@types/supabase__supabase-js"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@swc/counter", [\
       ["npm:0.1.3", {\
         "packageLocation": "../../.yarn/berry/cache/@swc-counter-npm-0.1.3-ce42b0e3f5-10c0.zip/node_modules/@swc/counter/",\
@@ -4716,6 +4751,38 @@ const RAW_RUNTIME_STATE =
           ["@swc/helpers", "npm:0.5.5"],\
           ["@swc/counter", "npm:0.1.3"],\
           ["tslib", "npm:2.6.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@tanstack/query-core", [\
+      ["npm:5.51.21", {\
+        "packageLocation": "../../.yarn/berry/cache/@tanstack-query-core-npm-5.51.21-04adc2d019-10c0.zip/node_modules/@tanstack/query-core/",\
+        "packageDependencies": [\
+          ["@tanstack/query-core", "npm:5.51.21"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@tanstack/react-query", [\
+      ["npm:5.51.21", {\
+        "packageLocation": "../../.yarn/berry/cache/@tanstack-react-query-npm-5.51.21-f2a91d0ca1-10c0.zip/node_modules/@tanstack/react-query/",\
+        "packageDependencies": [\
+          ["@tanstack/react-query", "npm:5.51.21"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:5.51.21", {\
+        "packageLocation": "./.yarn/__virtual__/@tanstack-react-query-virtual-cc29436f30/3/.yarn/berry/cache/@tanstack-react-query-npm-5.51.21-f2a91d0ca1-10c0.zip/node_modules/@tanstack/react-query/",\
+        "packageDependencies": [\
+          ["@tanstack/react-query", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:5.51.21"],\
+          ["@tanstack/query-core", "npm:5.51.21"],\
+          ["@types/react", "npm:18.3.3"],\
+          ["react", "npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -13200,6 +13267,8 @@ const RAW_RUNTIME_STATE =
           ["@storybook/nextjs", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:8.2.7"],\
           ["@storybook/react", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:8.2.7"],\
           ["@storybook/test", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:8.2.7"],\
+          ["@supabase/ssr", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:0.4.0"],\
+          ["@tanstack/react-query", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:5.51.21"],\
           ["@types/node", "npm:20.14.13"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
