@@ -1,0 +1,54 @@
+import Image from "next/image"
+
+interface IGachaWaitProps {
+  text: string
+}
+
+const GachaWait = ({ text }: IGachaWaitProps) => {
+  return (
+    <>
+      <h1 className="mx-[60px] mt-[80px] text-xl font-bold tracking-[-0.4px] text-[#202020]">
+        {text}
+      </h1>
+      <div className="relative pt-[48px]">
+        <Image
+          src="/icons/mini-gacha.svg"
+          width={290}
+          height={487}
+          alt="mini-gacha"
+          className="z-10"
+          priority
+        />
+        <Image
+          src="/gifts/red.gif"
+          width={120}
+          height={120}
+          alt="red-gif-1"
+          className="absolute left-[10%] top-[37%]"
+          priority
+          unoptimized
+        />
+        <Image
+          src="/gifts/green.gif"
+          width={120}
+          height={120}
+          alt="red-gif-2"
+          className="absolute left-[50%] top-[37%]"
+          priority
+          unoptimized
+        />
+        <Image
+          src="/gifts/yellow.gif"
+          width={120}
+          height={120}
+          alt="red-gif-3"
+          className="absolute left-[28%] top-[21%]"
+          priority
+          unoptimized
+        />
+      </div>
+    </>
+  )
+}
+
+export default GachaWait
