@@ -39,3 +39,45 @@ export async function createUser(user: UserRowInsert): Promise<number | null> {
 
   return data?.id ?? null;
 }
+
+export async function updateGachaMessage(user: USerRowUpdate): Promise<boolean> {
+  const supabase = await createServerSupabaseClient();
+
+  if (user.id === undefined) {
+    throw new Error('User ID is required for update.');
+  }
+
+  const { data, error } = await supabase
+    .from('user')
+    .update({
+      gachaMessage: user.gachaMessage,
+    })
+    .eq('id', user.id);
+
+  if (error) {
+    handleError(error);
+  }
+
+  return true;
+}
+
+export async function updateUserMessage(user: USerRowUpdate): Promise<boolean> {
+  const supabase = await createServerSupabaseClient();
+
+  if (user.id === undefined) {
+    throw new Error('User ID is required for update.');
+  }
+
+  const { data, error } = await supabase
+    .from('user')
+    .update({
+      userMessage: user.userMessage,
+    })
+    .eq('id', user.id);
+
+  if (error) {
+    handleError(error);
+  }
+
+  return true;
+}
