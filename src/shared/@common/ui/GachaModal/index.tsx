@@ -3,7 +3,7 @@
 import Button from "@/shared/@common/ui/Button"
 import Modal from "@/shared/@common/ui/Modal"
 
-import { LocalMindsTitleFont } from "@/shared/@common/fonts"
+import { LocalMindsTitleFont } from "@/shared/@common/assets/fonts"
 import { useModals } from "@/shared/@common/hooks/useModals"
 import { getThemeStyles } from "@/shared/@common/utils/getThemeStyles"
 import { cn } from "@/shared/@common/utils/twMerge"

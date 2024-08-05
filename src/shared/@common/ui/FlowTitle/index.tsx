@@ -1,6 +1,6 @@
 import { cn } from "@/shared/@common/utils/twMerge"
 
-import { LocalMindsTitleFont } from "@/shared/@common/fonts"
+import { LocalMindsTitleFont } from "@/shared/@common/assets/fonts"
 import { ReactNode } from "react"
 
 interface ITitleTextProps {
