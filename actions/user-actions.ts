@@ -13,7 +13,6 @@ function handleError(error: any) {
   throw new Error(error.message)
 }
 
-/** supabase는 data와 error를 반환 */
 export async function getUsers(): Promise<UserRow[]> {
   const supabase = await createServerSupabaseClient()
   const {data, error} = await supabase.from('user').select('*')
