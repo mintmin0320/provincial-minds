@@ -8,7 +8,7 @@ import AreaSearchFieldGroup from "@/shared/@common/ui/AreaSearchFieldGroup"
 import Button from "@/shared/@common/ui/Button"
 
 import { IAreaProps } from "@/shared/@common/types/Area.type"
-import useAreaSearch from "@/shared/transit/api/mutations/useAreaSearch"
+import useAreaSearch from "@/shared/provincial/api/mutations/useAreaSearch"
 
 const AreaSearchFieldForm = () => {
   const router = useRouter()

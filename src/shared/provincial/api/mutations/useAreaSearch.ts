@@ -19,8 +19,8 @@ export default function useAreaSearch() {
   return useMutation<number, Error, IAreaProps>({
     mutationFn: postAreaSearch,
     onSuccess: (data) => {
-      toast.success("저장에 성공했어요!")
-      
+      toast.success("출발, 목적지 저장에 성공했어요!")
+
       localStorage.setItem("id", String(data))
     },
     onError: (error) => {
