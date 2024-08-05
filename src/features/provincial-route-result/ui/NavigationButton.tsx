@@ -13,6 +13,7 @@ const NavigationButton = () => {
     <Button
       type="button"
       theme="blue"
+      className="fixed bottom-0 left-1/2 mb-[10px] max-w-[calc(100%-32px)] -translate-x-1/2 transform"
       onClick={() => router.push(`${ROUTE_PATH.GACHA_CREATE}?step=3`)}
     >
       감사 가챠 만들기

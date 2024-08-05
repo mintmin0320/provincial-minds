@@ -1,19 +1,19 @@
 import { cn } from "@/shared/@common/utils/twMerge"
 
-import { IAreaProps } from "@/shared/types/area.type"
+import { IAreaProps } from "../../types/Area.type"
 import SearchAreaField from "../SearchAreaField"
 
-interface ISearchAreaFieldGroupProps {
+interface IAreaSearchFieldGroupProps {
   areaState: IAreaProps
   setAreaState?: React.Dispatch<React.SetStateAction<IAreaProps>>
   type: "view" | "change"
 }
 
-const SearchAreaFieldGroup = ({
+const AreaSearchFieldGroup = ({
   areaState,
   setAreaState,
   type,
-}: ISearchAreaFieldGroupProps) => {
+}: IAreaSearchFieldGroupProps) => {
   const handleAreaChange = (key: keyof IAreaProps) => (newValue: string) => {
     if (type === "change" && setAreaState) {
       setAreaState((prevState) => ({ ...prevState, [key]: newValue }))
@@ -45,4 +45,4 @@ const SearchAreaFieldGroup = ({
   )
 }
 
-export default SearchAreaFieldGroup
+export default AreaSearchFieldGroup

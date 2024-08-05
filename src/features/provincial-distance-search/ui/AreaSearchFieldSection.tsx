@@ -4,13 +4,13 @@ import { useRouter } from "next/navigation"
 import { useState } from "react"
 
 import ROUTE_PATH from "@/shared/@common/constants/path"
+import AreaSearchFieldGroup from "@/shared/@common/ui/AreaSearchFieldGroup"
 import Button from "@/shared/@common/ui/Button"
-import SearchAreaFieldGroup from "@/shared/@common/ui/SearchAreaFieldGroup"
 
 import { IAreaProps } from "@/shared/@common/types/Area.type"
 import useAreaSearch from "@/shared/transit/api/mutations/useAreaSearch"
 
-const SearchAreaFieldForm = () => {
+const AreaSearchFieldForm = () => {
   const router = useRouter()
 
   const { mutateAsync: saveArea } = useAreaSearch()
@@ -31,8 +31,8 @@ const SearchAreaFieldForm = () => {
   const checkFormValidity = !areaState.urbanArea || !areaState.provincialArea
 
   return (
-    <>
-      <SearchAreaFieldGroup
+    <section>
+      <AreaSearchFieldGroup
         areaState={areaState}
         setAreaState={setAreaState}
         type="change"
@@ -46,8 +46,8 @@ const SearchAreaFieldForm = () => {
       >
         최적 경로 알아보기
       </Button>
-    </>
+    </section>
   )
 }
 
-export default SearchAreaFieldForm
+export default AreaSearchFieldForm
