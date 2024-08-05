@@ -11,19 +11,28 @@ export type Database = {
     Tables: {
       user: {
         Row: {
-          gachaMessage: string
+          created_at: string | null
+          gachaMessage: string | null
           id: number
-          userMessage: string
+          provincialArea: string | null
+          urbanArea: string | null
+          userMessage: string | null
         }
         Insert: {
-          gachaMessage: string
+          created_at?: string | null
+          gachaMessage?: string | null
           id?: number
-          userMessage: string
+          provincialArea?: string | null
+          urbanArea?: string | null
+          userMessage?: string | null
         }
         Update: {
-          gachaMessage?: string
+          created_at?: string | null
+          gachaMessage?: string | null
           id?: number
-          userMessage?: string
+          provincialArea?: string | null
+          urbanArea?: string | null
+          userMessage?: string | null
         }
         Relationships: []
       }
