@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import { Toaster } from "react-hot-toast"
 
 import { LocalMindsBodyFont } from "@/shared/@common/assets/fonts"
-import "@/shared/styles/globals.css"
+import "@/shared/@common/styles/globals.css"
 
 import ModalContainer from "@/shared/@common/ui/ModalContainer"
 import RQProvider from "@/shared/@common/ui/RQProvider"
