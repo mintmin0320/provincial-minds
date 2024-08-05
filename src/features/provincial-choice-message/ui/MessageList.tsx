@@ -8,6 +8,7 @@ import { customStyle } from "../styles/custom.style"
 
 import ROUTE_PATH from "@/shared/@common/constants/path"
 import Button from "@/shared/@common/ui/Button"
+import useSetUserMessage from "@/shared/provincial/api/mutations/useSetUserMessage"
 import { useRouter } from "next/navigation"
 import CustomMessageInput from "./CustomMessageInput"
 import MessageItem from "./MessageItem"
@@ -30,11 +31,15 @@ const MessageList = () => {
     handleKeyDown,
   } = useMessageStore()
 
-  const handleSubmit = () => {
-    if (finalMessage) {
-      console.log("Sending message to server:", finalMessage)
+  const { mutateAsync: saveUserMessage } = useSetUserMessage(finalMessage ?? "")
 
-      router.push(ROUTE_PATH.GACHA_SHARE)
+  const handleClick = async () => {
+    if (finalMessage) {
+      const result = await saveUserMessage()
+
+      if (result) {
+        router.push(ROUTE_PATH.GACHA_SHARE)
+      }
     }
   }
 
@@ -97,7 +102,7 @@ const MessageList = () => {
         className="fixed bottom-0 left-1/2 mb-[10px] max-w-[calc(100%-32px)] -translate-x-1/2 transform"
         theme="blue"
         disabled={!finalMessage}
-        onClick={handleSubmit}
+        onClick={handleClick}
       >
         메시지 선택
       </Button>
