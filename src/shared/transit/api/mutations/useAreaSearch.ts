@@ -5,7 +5,7 @@ import { createUser } from '../../../../../actions/user-actions'
 
 import { IAreaProps } from '@/shared/@common/types/Area.type'
 
-async function postAreaSearch(areaState: IAreaProps): Promise<boolean> {
+async function postAreaSearch(areaState: IAreaProps): Promise<number> {
   const result = await createUser(areaState)
 
   if(!result) {
@@ -16,10 +16,12 @@ async function postAreaSearch(areaState: IAreaProps): Promise<boolean> {
 }
 
 export default function useAreaSearch() {
-  return useMutation<boolean, Error, IAreaProps>({
+  return useMutation<number, Error, IAreaProps>({
     mutationFn: postAreaSearch,
-    onSuccess: () => {
+    onSuccess: (data) => {
       toast.success("저장에 성공했어요!")
+      
+      localStorage.setItem("id", String(data))
     },
     onError: (error) => {
       toast.error(error.message)

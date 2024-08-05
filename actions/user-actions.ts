@@ -25,17 +25,17 @@ export async function getUsers(): Promise<UserRow[]> {
   return data ?? [] 
 }
 
-export async function createUser(user: UserRowInsert) {
+export async function createUser(user: UserRowInsert): Promise<number | null> {
   const supabase = await createServerSupabaseClient();
 
   const { data, error } = await supabase.from("user").insert({
     ...user,
     created_at: new Date().toISOString(),
-  });
+  }).select("id").single()
 
   if (error) {
     handleError(error);
   }
 
-  return true;
+  return data?.id ?? null;
 }
