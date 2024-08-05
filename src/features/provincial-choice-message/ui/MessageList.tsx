@@ -2,12 +2,12 @@
 
 import Image from "next/image"
 
-import { cn } from "@/shared/utils/twMerge"
+import { cn } from "@/shared/@common/utils/twMerge"
 import { useMessageStore } from "../hooks/useMessageStore"
 import { customStyle } from "../styles/custom.style"
 
-import ROUTE_PATH from "@/shared/constants/path"
-import Button from "@/shared/ui/Button"
+import ROUTE_PATH from "@/shared/@common/constants/path"
+import Button from "@/shared/@common/ui/Button"
 import { useRouter } from "next/navigation"
 import CustomMessageInput from "./CustomMessageInput"
 import MessageItem from "./MessageItem"

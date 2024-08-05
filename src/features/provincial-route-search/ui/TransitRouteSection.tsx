@@ -1,6 +1,6 @@
 "use client"
 
-import SearchAreaFieldGroup from "@/shared/ui/SearchAreaFieldGroup"
+import SearchAreaFieldGroup from "@/shared/@common/ui/SearchAreaFieldGroup"
 import TransitRouteList from "./TransitRouteList"
 
 const areaState = {

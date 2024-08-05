@@ -1,12 +1,12 @@
 "use client"
 
-import Button from "@/shared/ui/Button"
-import Modal from "@/shared/ui/Modal"
+import Button from "@/shared/@common/ui/Button"
+import Modal from "@/shared/@common/ui/Modal"
 
-import { LocalMindsTitleFont } from "@/shared/assets/fonts"
-import { useModals } from "@/shared/hooks/useModals"
-import { getThemeStyles } from "@/shared/utils/getThemeStyles"
-import { cn } from "@/shared/utils/twMerge"
+import { LocalMindsTitleFont } from "@/shared/@common/fonts"
+import { useModals } from "@/shared/@common/hooks/useModals"
+import { getThemeStyles } from "@/shared/@common/utils/getThemeStyles"
+import { cn } from "@/shared/@common/utils/twMerge"
 
 interface IGachaModalProps {
   theme?: string | undefined

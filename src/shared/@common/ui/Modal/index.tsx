@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 
-import { useModals } from "@/shared/hooks/useModals"
-import { cn } from "@/shared/utils/twMerge"
+import { useModals } from "@/shared/@common/hooks/useModals"
+import { cn } from "@/shared/@common/utils/twMerge"
 
 interface ModalProps {
   children: ReactNode

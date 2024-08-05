@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react"
 
-import GachaModal from "@/shared/ui/GachaModal"
+import GachaModal from "@/shared/@common/ui/GachaModal"
 
 const meta = {
   title: "common/GachaModal",

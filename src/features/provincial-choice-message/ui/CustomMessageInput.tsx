@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import { cn } from "@/shared/utils/twMerge"
+import { cn } from "@/shared/@common/utils/twMerge"
 import { customStyle } from "../styles/custom.style"
 
 interface ICustomMessageInputProps {

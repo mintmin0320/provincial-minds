@@ -2,11 +2,11 @@ import type { Metadata } from "next"
 
 import { Toaster } from "react-hot-toast"
 
-import { LocalMindsBodyFont } from "@/shared/assets/fonts"
+import { LocalMindsBodyFont } from "@/shared/@common/fonts"
 import "@/shared/styles/globals.css"
 
-import ModalContainer from "@/shared/ui/ModalContainer"
-import RQProvider from "@/shared/ui/RQProvider"
+import ModalContainer from "@/shared/@common/ui/ModalContainer"
+import RQProvider from "@/shared/@common/ui/RQProvider"
 
 export const metadata: Metadata = {
   title: "지방적 사고",

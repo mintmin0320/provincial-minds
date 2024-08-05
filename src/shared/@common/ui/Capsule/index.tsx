@@ -2,9 +2,9 @@
 
 import Image from "next/image"
 
-import CreateGachaButton from "@/shared/ui/CreateGachaButton"
+import CreateGachaButton from "@/shared/@common/ui/CreateGachaButton"
 
-import { truncateText } from "@/shared/utils/truncateText"
+import { truncateText } from "@/shared/@common/utils/truncateText"
 
 interface ICapsuleProps {
   color: "yellow" | "orange" | "mint"

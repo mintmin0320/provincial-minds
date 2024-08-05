@@ -4,10 +4,10 @@ import { useState } from "react"
 
 import Image from "next/image"
 
-import Button from "@/shared/ui/Button"
-import Modal from "@/shared/ui/Modal"
+import Button from "@/shared/@common/ui/Button"
+import Modal from "@/shared/@common/ui/Modal"
 
-import { useGachaStore } from "@/shared/hooks/useGachaStore"
+import { useGachaStore } from "@/shared/@common/hooks/useGachaStore"
 
 const CreateGachaModal = () => {
   const [inputValue, setInputValue] = useState<string | null>(null)

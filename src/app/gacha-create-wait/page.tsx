@@ -1,7 +1,7 @@
-import GachaWait from "@/shared/ui/GachaWait"
-import GachaWaitRouteWrapper from "@/shared/ui/GachaWaitRouteWrapper"
+import GachaWait from "@/shared/@common/ui/GachaWait"
+import GachaWaitRouteWrapper from "@/shared/@common/ui/GachaWaitRouteWrapper"
 
-import ROUTE_PATH from "@/shared/constants/path"
+import ROUTE_PATH from "@/shared/@common/constants/path"
 
 const GachaCreateLadingPage = () => {
   return (

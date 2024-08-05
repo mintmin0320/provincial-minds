@@ -1,5 +1,5 @@
 import SearchAreaFieldForm from "@/features/provincial-distance-search/ui/SearchAreaFieldForm"
-import FlowTitle from "@/shared/ui/FlowTitle"
+import FlowTitle from "@/shared/@common/ui/FlowTitle"
 
 const DistanceSearchPage = () => {
   return (

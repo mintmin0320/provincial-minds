@@ -1,8 +1,8 @@
 "use client"
 
-import Button from "@/shared/ui/Button"
+import Button from "@/shared/@common/ui/Button"
 
-import useCopyLink from "../../../shared/hooks/useCopyLink"
+import useCopyLink from "../../../shared/@common/hooks/useCopyLink"
 
 const GachaShareButton = () => {
   const { handleCopyButtonClick } = useCopyLink()

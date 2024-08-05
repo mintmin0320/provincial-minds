@@ -4,8 +4,8 @@ import Image from "next/image"
 import { ReactNode } from "react"
 
 import DaumPostCodeModal from "@/features/provincial-distance-search/ui/DaumPostCodeModal"
-import { useModals } from "@/shared/hooks/useModals"
-import { cn } from "@/shared/utils/twMerge"
+import { useModals } from "@/shared/@common/hooks/useModals"
+import { cn } from "@/shared/@common/utils/twMerge"
 
 interface ISearchFieldProps {
   area: string | null

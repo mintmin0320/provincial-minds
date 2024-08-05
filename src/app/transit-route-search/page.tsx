@@ -1,5 +1,5 @@
 import TransitRouteSection from "@/features/provincial-route-search/ui/TransitRouteSection"
-import FlowTitle from "@/shared/ui/FlowTitle"
+import FlowTitle from "@/shared/@common/ui/FlowTitle"
 
 const TransitRouteSearchPage = () => {
   return (

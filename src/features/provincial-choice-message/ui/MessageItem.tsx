@@ -1,4 +1,4 @@
-import { cn } from "@/shared/utils/twMerge"
+import { cn } from "@/shared/@common/utils/twMerge"
 
 interface IMessageItemProps {
   message: string

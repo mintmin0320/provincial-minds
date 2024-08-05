@@ -2,9 +2,9 @@
 
 import { useRouter } from "next/navigation"
 
-import Button from "@/shared/ui/Button"
+import Button from "@/shared/@common/ui/Button"
 
-import ROUTE_PATH from "@/shared/constants/path"
+import ROUTE_PATH from "@/shared/@common/constants/path"
 import { useGachaStore } from "../../hooks/useGachaStore"
 
 interface IGachaRouterButtonProps {

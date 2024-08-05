@@ -1,8 +1,8 @@
 "use client"
 
-import { ExtendedTransitRouteCardProps } from "@/shared/types/transitRoute.type"
-import { themes, themeStyle } from "@/shared/utils/transportationThemes"
-import { cn } from "@/shared/utils/twMerge"
+import { ExtendedTransitRouteCardProps } from "@/shared/@common/types/transitRoute.type"
+import { themes, themeStyle } from "@/shared/@common/utils/transportationThemes"
+import { cn } from "@/shared/@common/utils/twMerge"
 
 const TransitRouteCard = ({
   isSelected,

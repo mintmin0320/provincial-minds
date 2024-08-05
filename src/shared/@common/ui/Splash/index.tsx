@@ -1,6 +1,6 @@
 "use client"
 
-import ROUTE_PATH from "@/shared/constants/path"
+import ROUTE_PATH from "@/shared/@common/constants/path"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"

@@ -1,7 +1,7 @@
 import toast from "react-hot-toast"
 
-import ROUTE_PATH from "@/shared/constants/path"
-import { copyURL } from "@/shared/utils/copyURL"
+import ROUTE_PATH from "@/shared/@common/constants/path"
+import { copyURL } from "@/shared/@common/utils/copyURL"
 
 const useCopyLink = () => {
   const handleCopyButtonClick = () => {

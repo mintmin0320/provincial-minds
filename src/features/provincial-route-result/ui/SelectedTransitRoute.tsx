@@ -1,8 +1,8 @@
 import Image from "next/image"
 
-import { ExtendedTransitRouteProps } from "@/shared/types/transitRoute.type"
-import { getTransportationStyle } from "@/shared/utils/transportationThemes"
-import { cn } from "@/shared/utils/twMerge"
+import { ExtendedTransitRouteProps } from "@/shared/@common/types/transitRoute.type"
+import { getTransportationStyle } from "@/shared/@common/utils/transportationThemes"
+import { cn } from "@/shared/@common/utils/twMerge"
 import { getTransportIcon } from "../utils/getTransportIcon"
 
 const SelectedTransitRoute = ({

@@ -3,11 +3,11 @@
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
-import Button from "@/shared/ui/Button"
+import Button from "@/shared/@common/ui/Button"
 import TransitRouteCard from "./TransitRouteCard"
 
-import ROUTE_PATH from "@/shared/constants/path"
-import { ITransitRouteCardProps } from "@/shared/types/transitRoute.type"
+import ROUTE_PATH from "@/shared/@common/constants/path"
+import { ITransitRouteCardProps } from "@/shared/@common/types/transitRoute.type"
 
 /** 더미 데이터 */
 const transitRoute: ITransitRouteCardProps["transitRoute"] = {

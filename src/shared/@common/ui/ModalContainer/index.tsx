@@ -1,6 +1,6 @@
 "use client"
 
-import { useModalStore } from "@/shared/store/useModalStore"
+import { useModalStore } from "@/shared/@common/store/useModalStore"
 
 function ModalContainer() {
   const modals = useModalStore((state) => state.modals)

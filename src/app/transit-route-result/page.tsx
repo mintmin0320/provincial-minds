@@ -1,8 +1,8 @@
 import NavigationButton from "@/features/provincial-route-result/ui/NavigationButton"
 import SelectedTransitRoute from "@/features/provincial-route-result/ui/SelectedTransitRoute"
-import FlowTitle from "@/shared/ui/FlowTitle"
+import FlowTitle from "@/shared/@common/ui/FlowTitle"
 
-import { TransportationType } from "@/shared/types/transitRoute.type"
+import { TransportationType } from "@/shared/@common/types/transitRoute.type"
 
 const data = {
   transitRoute: {
