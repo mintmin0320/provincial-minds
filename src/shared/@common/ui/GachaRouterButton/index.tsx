@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import Button from "@/shared/@common/ui/Button"
 
 import ROUTE_PATH from "@/shared/@common/constants/path"
+import useSetGacahMessage from "@/shared/provincial/api/mutations/useSetGacahMessage"
 import { useGachaStore } from "../../hooks/useGachaStore"
 
 interface IGachaRouterButtonProps {
@@ -23,9 +24,17 @@ const GachaRouterButton = ({
   const gachaMessage = useGachaStore((state) => state.gachaMessage)
   const setGachaMessage = useGachaStore((state) => state.setGachaMessage)
 
-  const handleCreateGacha = () => {
+  const { mutateAsync: saveGachaMessage } = useSetGacahMessage(
+    gachaMessage ?? "",
+  )
+
+  const handleCreateGacha = async () => {
     if (isCreateGacha) {
-      router.push(ROUTE_PATH.GACHA_CREATE_WAIT)
+      const result = await saveGachaMessage()
+
+      if (result) {
+        router.push(ROUTE_PATH.GACHA_CREATE_WAIT)
+      }
     } else {
       /** yellow, mint, orange 랜덤 */
       const randomTheme = themes[Math.floor(Math.random() * themes.length)]
