@@ -16,6 +16,37 @@ function handleError(error: any) {
   throw new Error(error.message);
 }
 
+/** 교통 수단 조회 */
+export async function getTransitData(userId: number): Promise<{ userId: number; startArea: string | null; endArea: string | null; transits: TransitRow[] }> {
+  const supabase = await createServerSupabaseClient();
+
+  const { data, error } = await supabase
+    .from("user")
+    .select(`
+      id,
+      startArea,
+      endArea,
+      transits:transit(*)
+    `)
+    .eq('id', userId);
+
+  if (error) {
+    handleError(error);
+  }
+
+  if (!data) {
+    throw new Error ("No data found")
+  }
+
+  const result = {
+    userId: data[0].id,
+    startArea: data[0].startArea,
+    endArea: data[0].endArea,
+    transits: data[0].transits
+  }
+
+  return result;
+}
 
 /** 출발, 도착 지역 검색 (교통 수단 검색) */
 export async function createUserWithTransitData(transitRoute: any, user: UserRowInsert): Promise<number | null> {
