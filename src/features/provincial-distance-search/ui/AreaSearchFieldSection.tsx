@@ -8,10 +8,12 @@ import Button from "@/shared/@common/ui/Button"
 
 import { createUserWithTransitData } from "@/actions/user-actions"
 import ROUTE_PATH from "@/shared/@common/constants/path"
+import useGetSearchParam from "@/shared/@common/hooks/useGetSearchParams"
 import { IAreaProps } from "@/shared/@common/types/Area.type"
 import { getTransitRoute } from "@/shared/provincial/api/transitRouteService"
 
 const AreaSearchFieldForm = () => {
+  const useId = useGetSearchParam("id") || null
   const router = useRouter()
 
   const [areaState, setAreaState] = useState<IAreaProps>({
@@ -34,9 +36,7 @@ const AreaSearchFieldForm = () => {
       const userId = await createUserWithTransitData(transitRoute, user)
 
       if (userId) {
-        localStorage.setItem("userId", String(userId))
-
-        router.push(`${ROUTE_PATH.TRANSIT_ROTE}?userId=${userId}`)
+        router.push(`${ROUTE_PATH.TRANSIT_ROTE}?id=${userId}`)
       }
     } catch (error) {
       console.error(error)
