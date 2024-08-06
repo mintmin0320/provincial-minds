@@ -59,8 +59,12 @@
       <br/><b>Supabase</b>
     </td>
     <td align="center" width="180" height="100">
-      <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566913379/noticon/uiite75rxvkvcki3mr4u.png" alt="PostgresSQL"/>
-      <br/><b>PostgresSQL</b>
+      <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1608448196/noticon/a0fgk99dgqtyrwwmqsbt.png" alt="Figma"/>
+      <br/><b>Figma</b>
+    </td>
+    <td align="center" width="180" height="100">
+      <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1679312641/noticon/rx8rni4npifrbo9ckxmt.png" alt="Vercel"/>
+      <br/><b>Vercel</b>
     </td>
   </tr>
 </table>
