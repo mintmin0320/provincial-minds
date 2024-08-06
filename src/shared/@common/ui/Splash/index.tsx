@@ -1,14 +1,15 @@
 "use client"
 
-import ROUTE_PATH from "@/shared/@common/constants/path"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import { useEffect } from "react"
+import { useLayoutEffect } from "react"
+
+import ROUTE_PATH from "@/shared/@common/constants/path"
 
 const Splash = () => {
   const router = useRouter()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const timer = setTimeout(() => {
       router.push(`${ROUTE_PATH.DISTANCE_SEARCH}`)
     }, 3000)
