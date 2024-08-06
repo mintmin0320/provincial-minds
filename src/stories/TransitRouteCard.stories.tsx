@@ -2,7 +2,7 @@ import TransitRouteCard from "@/features/provincial-route-search/ui/TransitRoute
 import type { Meta, StoryObj } from "@storybook/react"
 
 const meta = {
-  title: "card/TransitRouteCard",
+  title: "provincial/TransitRouteCard",
   component: TransitRouteCard,
   parameters: {
     layout: "centered",
@@ -20,33 +20,31 @@ const meta = {
       control: "boolean",
       description: "교통 수단 선택 여부",
     },
-    transitRoute: {
-      isBest: {
-        control: "boolean",
-        description: "최적 경로 여부",
-      },
-      transportationList: {
-        control: "select",
-        options: ["지하철", "시내버스", "시외버스"],
-        description: "교통 수단 목록",
-      },
 
-      transferCount: {
-        action: "number",
-        description: "교통 수단 환승 횟수",
-      },
-      travelCost: {
-        action: "number",
-        description: "교통 수단 이용 비용",
-      },
-      travelHours: {
-        action: "text",
-        description: "교통 수단 이용 시간 (시)",
-      },
-      travelMinutes: {
-        action: "text",
-        description: "교통 수단 이용 시간 (분)",
-      },
+    bestRoute: {
+      control: "boolean",
+      description: "최적 경로 여부",
+    },
+    pathType: {
+      control: "select",
+      options: [1, 2, 3, 11, 12, 13, 20, 21],
+      description: "교통 수단 목록",
+    },
+    totalTime: {
+      control: "number",
+      description: "이동 시간",
+    },
+    subwayBusTransitCount: {
+      action: "number",
+      description: "도시내 지하철/버스 환승 횟수",
+    },
+    payment: {
+      action: "number",
+      description: "교통 수단 이용 비용",
+    },
+    transitCount: {
+      action: "number",
+      description: "도시간 환승 횟수",
     },
   },
 } satisfies Meta<typeof TransitRouteCard>
@@ -57,56 +55,65 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    transitRoute: {
-      isBest: false,
-      transportationList: ["지하철"],
-      transferCount: 2,
-      travelCost: 53200,
-      travelHours: "3",
-      travelMinutes: "40",
-    },
+    id: 1,
+    bestRoute: false,
+    pathType: 1,
+    subwayBusTransitCount: 2,
+    transitCount: null,
+    payment: 53200,
+    totalTime: 60,
     isSelected: false,
   },
 }
 
 export const BestRoute: Story = {
   args: {
-    transitRoute: {
-      isBest: true,
-      transportationList: ["지하철"],
-      transferCount: 2,
-      travelCost: 53200,
-      travelHours: "3",
-      travelMinutes: "40",
-    },
+    id: 1,
+    bestRoute: true,
+    pathType: 2,
+    subwayBusTransitCount: 3,
+    transitCount: null,
+    payment: 13200,
+    totalTime: 90,
     isSelected: false,
   },
 }
 
 export const SelectRoute: Story = {
   args: {
-    transitRoute: {
-      isBest: false,
-      transportationList: ["지하철"],
-      transferCount: 2,
-      travelCost: 53200,
-      travelHours: "3",
-      travelMinutes: "40",
-    },
+    id: 1,
+    bestRoute: true,
+    pathType: 2,
+    subwayBusTransitCount: 3,
+    transitCount: null,
+    payment: 13200,
+    totalTime: 90,
     isSelected: true,
   },
 }
 
 export const AllRoute: Story = {
   args: {
-    transitRoute: {
-      isBest: false,
-      transportationList: ["지하철", "시내버스", "시외버스"],
-      transferCount: 2,
-      travelCost: 53200,
-      travelHours: "3",
-      travelMinutes: "40",
-    },
+    id: 1,
+    bestRoute: true,
+    pathType: 3,
+    subwayBusTransitCount: 3,
+    transitCount: null,
+    payment: 13200,
+    totalTime: 90,
+    isSelected: false,
+  },
+}
+
+export const BetweenCitiesRoute: Story = {
+  args: {
+    id: 1,
+    bestRoute: false,
+    pathType: 13,
+    subwayBusTransitCount: null,
+    transitCount: 1,
+    payment: 132000,
+    totalTime: 40,
     isSelected: false,
   },
 }
