@@ -16,6 +16,8 @@ function handleError(error: any) {
   throw new Error(error.message);
 }
 
+
+/** 출발, 도착 지역 검색 (교통 수단 검색) */
 export async function createUserWithTransitData(transitRoute: any, user: UserRowInsert): Promise<number | null> {
   const supabase = await createServerSupabaseClient();
 
@@ -69,6 +71,7 @@ export async function createUserWithTransitData(transitRoute: any, user: UserRow
   return userId;
 }
 
+/** 가챠(뽑기) 메시지 업데이트 */
 export async function updateGachaMessage(user: UserRowUpdate): Promise<boolean> {
   const supabase = await createServerSupabaseClient();
 
@@ -90,6 +93,7 @@ export async function updateGachaMessage(user: UserRowUpdate): Promise<boolean> 
   return true;
 }
 
+/** 지방러 한마디 메시지 업데이트 */
 export async function updateUserMessage(user: UserRowUpdate): Promise<boolean> {
   const supabase = await createServerSupabaseClient();
 
