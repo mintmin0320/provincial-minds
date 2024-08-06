@@ -28,15 +28,15 @@ const AreaSearchFieldGroup = ({
       })}
     >
       <SearchAreaField
-        area={areaState.urbanArea}
-        onAreaChange={handleAreaChange("urbanArea")}
+        area={areaState.provincialArea}
+        onAreaChange={handleAreaChange("provincialArea")}
         type={type}
       >
         <span className="text-blue01">지방러</span>는 여기서 출발해요
       </SearchAreaField>
       <SearchAreaField
-        area={areaState.provincialArea}
-        onAreaChange={handleAreaChange("provincialArea")}
+        area={areaState.urbanArea}
+        onAreaChange={handleAreaChange("urbanArea")}
         type={type}
       >
         <span className="text-blue01">서울러</span>를 만나는 곳은 여기예요
