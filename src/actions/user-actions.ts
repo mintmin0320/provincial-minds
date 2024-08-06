@@ -1,7 +1,7 @@
 'use server'
 
 import { createServerSupabaseClient } from '@/shared/@common/utils/supabase/server';
-import { Database } from '../types_db';
+import { Database } from '../../types_db';
 
 /** 각 순서대로 조회/삽입/업데이트 */
 export type UserRow = Database["public"]["Tables"]["user"]["Row"];

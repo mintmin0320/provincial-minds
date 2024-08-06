@@ -6,10 +6,10 @@ import { useState } from "react"
 import AreaSearchFieldGroup from "@/shared/@common/ui/AreaSearchFieldGroup"
 import Button from "@/shared/@common/ui/Button"
 
+import { createUserWithTransitData } from "@/actions/user-actions"
 import ROUTE_PATH from "@/shared/@common/constants/path"
 import { IAreaProps } from "@/shared/@common/types/Area.type"
 import { getTransitRoute } from "@/shared/provincial/api/transitRouteService"
-import { createUserWithTransitData } from "../../../../actions/user-actions"
 
 const AreaSearchFieldForm = () => {
   const router = useRouter()

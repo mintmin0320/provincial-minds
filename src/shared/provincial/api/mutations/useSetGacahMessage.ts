@@ -1,7 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 
-import { updateGachaMessage } from '../../../../../actions/user-actions';
+import { updateGachaMessage } from '@/actions/user-actions';
 
 
 async function postGachaMessage( gachaMessage : string ): Promise<boolean> {
