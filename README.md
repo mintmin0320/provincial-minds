@@ -58,8 +58,11 @@
       <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1720579881/noticon/lxhyu7xo7ujsxvuxmiuc.png" alt="Supabase"/>
       <br/><b>Supabase</b>
     </td>
+    <td align="center" width="180" height="100">
+      <img width="50" src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566913379/noticon/uiite75rxvkvcki3mr4u.png" alt="PostgresSQL"/>
+      <br/><b>PostgresSQL</b>
+    </td>
   </tr>
 </table>
-
 <br/>
 <br/>
