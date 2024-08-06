@@ -5,7 +5,6 @@
 
 const ROUTE_PATH = {
   ROOT: "/",
-  DEV_URL: "http://localhost:3000",
   DISTANCE_SEARCH: "/distance-search",
   TRANSIT_ROTE: "/transit-route-search",
   TRANSIT_ROTE_RESULT: "/transit-route-result",
