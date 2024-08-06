@@ -3,7 +3,7 @@
 import { ExtendedTransitRouteCardProps } from "@/shared/@common/types/transitRoute.type"
 import { themes, themeStyle } from "@/shared/@common/utils/transportationThemes"
 import { cn } from "@/shared/@common/utils/twMerge"
-import { getTransportationList } from "../\butils/getTransportationList"
+import { getTransportationList } from "../../../shared/@common/utils/getTransportationList"
 
 const TransitRouteCard = ({
   isSelected,
