@@ -16,6 +16,29 @@ function handleError(error: any) {
   throw new Error(error.message);
 }
 
+/** user 테이블 데이터 조회 */
+export async function getUserData(userId: number): Promise<UserRow | null> {
+  const supabase = await createServerSupabaseClient();
+
+  const { data, error } = await supabase
+    .from("user")
+    .select("*")
+    .eq('id', userId)
+    .single();  // 단일 행을 반환
+
+  if (error) {
+    handleError(error);
+    return null;
+  }
+
+  if (!data) {
+    console.error("No user found with the provided userId");
+    return null;
+  }
+
+  return data;
+}
+
 /** 교통 수단 조회 */
 export async function getTransitData(userId: number): Promise<{ userId: number; startArea: string | null; endArea: string | null; transits: TransitRow[] }> {
   const supabase = await createServerSupabaseClient();
