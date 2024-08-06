@@ -2,10 +2,13 @@
 
 import Button from "@/shared/@common/ui/Button"
 
+import useGetSearchParam from "@/shared/@common/hooks/useGetSearchParams"
 import useCopyLink from "../../../shared/@common/hooks/useCopyLink"
 
 const GachaShareButton = () => {
-  const { handleCopyButtonClick } = useCopyLink()
+  const userId = useGetSearchParam("id") || ""
+
+  const { handleCopyButtonClick } = useCopyLink(userId)
 
   return (
     <Button

@@ -43,7 +43,7 @@ const MessageList = () => {
       })
 
       if (result) {
-        router.push(ROUTE_PATH.GACHA_SHARE)
+        router.push(`${ROUTE_PATH.GACHA_SHARE}?id=${userId}`)
       }
     }
   }

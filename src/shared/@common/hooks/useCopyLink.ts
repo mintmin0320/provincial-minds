@@ -3,11 +3,11 @@ import toast from "react-hot-toast"
 import ROUTE_PATH from "@/shared/@common/constants/path"
 import { copyURL } from "@/shared/@common/utils/copyURL"
 
-const useCopyLink = () => {
+const useCopyLink = (userId: string) => {
   const handleCopyButtonClick = () => {
     copyURL({
       title: "가챠 공유하기",
-      url: `${ROUTE_PATH.DEV_URL}${ROUTE_PATH.GACHA_DRAW}`,
+      url: `${ROUTE_PATH.DEV_URL}${ROUTE_PATH.GACHA_DRAW}$id=${userId}`,
       onCompleted: () => {
         toast.success("친구에게 링크를 공해 보세요!", {
           duration: 8000,
