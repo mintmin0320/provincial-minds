@@ -36,7 +36,7 @@ const AreaSearchFieldForm = () => {
       if (userId) {
         localStorage.setItem("userId", String(userId))
 
-        router.push(`${ROUTE_PATH.TRANSIT_ROTE}?step=1`)
+        router.push(`${ROUTE_PATH.TRANSIT_ROTE}?userId=${userId}`)
       }
     } catch (error) {
       console.error(error)
