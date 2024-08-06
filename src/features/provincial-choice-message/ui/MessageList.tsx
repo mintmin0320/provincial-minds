@@ -7,6 +7,7 @@ import { useMessageStore } from "../hooks/useMessageStore"
 import { customStyle } from "../styles/custom.style"
 
 import ROUTE_PATH from "@/shared/@common/constants/path"
+import useGetSearchParam from "@/shared/@common/hooks/useGetSearchParams"
 import Button from "@/shared/@common/ui/Button"
 import useSetUserMessage from "@/shared/provincial/api/mutations/useSetUserMessage"
 import { useRouter } from "next/navigation"
@@ -14,6 +15,7 @@ import CustomMessageInput from "./CustomMessageInput"
 import MessageItem from "./MessageItem"
 
 const MessageList = () => {
+  const userId = useGetSearchParam("id") || null
   const router = useRouter()
 
   const {
@@ -31,11 +33,14 @@ const MessageList = () => {
     handleKeyDown,
   } = useMessageStore()
 
-  const { mutateAsync: saveUserMessage } = useSetUserMessage(finalMessage ?? "")
+  const { mutateAsync: saveUserMessage } = useSetUserMessage()
 
   const handleClick = async () => {
-    if (finalMessage) {
-      const result = await saveUserMessage()
+    if (finalMessage && userId) {
+      const result = await saveUserMessage({
+        userId: Number(userId),
+        userMessage: finalMessage ?? "",
+      })
 
       if (result) {
         router.push(ROUTE_PATH.GACHA_SHARE)
