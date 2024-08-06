@@ -10,7 +10,7 @@ const Splash = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.push(`${ROUTE_PATH.DISTANCE_SEARCH}?step=0`)
+      router.push(`${ROUTE_PATH.DISTANCE_SEARCH}`)
     }, 3000)
 
     return () => clearTimeout(timer)
