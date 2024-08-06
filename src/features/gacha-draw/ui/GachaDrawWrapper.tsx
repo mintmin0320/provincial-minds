@@ -5,6 +5,7 @@ import { ReactNode, useEffect, useRef } from "react"
 import { useModals } from "@/shared/@common/hooks/useModals"
 
 import useGetSearchParam from "@/shared/@common/hooks/useGetSearchParams"
+import { useGetUserData } from "@/shared/urban/api/queries/useGetUserData"
 import GachaModal from "../../../shared/@common/ui/GachaModal"
 
 interface IGachaDrawWrapperProps {
@@ -17,20 +18,22 @@ const GachaDrawWrapper = ({ children }: IGachaDrawWrapperProps) => {
   const { open } = useModals()
 
   const themeParams = useGetSearchParam("theme") ?? undefined
+  const userId = useGetSearchParam("id") || null
+
+  const { userData, isLoading } = useGetUserData(Number(userId))
 
   /** useRef를 사용하여 첫 번째 렌더링을 건너뛰기 */
   useEffect(() => {
-    if (!hasOpened.current) {
+    if (!hasOpened.current && !isLoading) {
       open(GachaModal, {
         theme: themeParams,
         isSendMessage: themeParams ? false : true,
-        customMessage:
-          "교통비 n빵교통비 n빵교통비 n빵교통비 n빵교통비 n빵교통비 n빵",
-        gachaMessage: "이건 가챠메시지",
+        customMessage: userData?.userMessage ?? "",
+        gachaMessage: userData?.gachaMessage ?? "",
       })
       hasOpened.current = true
     }
-  }, [])
+  }, [isLoading, userData, themeParams, open])
 
   return <>{children}</>
 }

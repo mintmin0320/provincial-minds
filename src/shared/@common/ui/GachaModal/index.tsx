@@ -7,6 +7,7 @@ import { LocalMindsTitleFont } from "@/shared/@common/assets/fonts"
 import { useModals } from "@/shared/@common/hooks/useModals"
 import { getThemeStyles } from "@/shared/@common/utils/getThemeStyles"
 import { cn } from "@/shared/@common/utils/twMerge"
+import { useEffect, useState } from "react"
 
 interface IGachaModalProps {
   theme?: string | undefined
@@ -24,11 +25,23 @@ const GachaModal = ({
   const { close } = useModals()
   const { textColorClass, backgroundColorClass, text } = getThemeStyles(theme)
 
-  const displayText = isSendMessage
-    ? customMessage
-    : theme === "mint"
-      ? gachaMessage
-      : text
+  const [displayText, setDisplayText] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (!displayText) {
+      const message = isSendMessage
+        ? customMessage
+        : theme === "mint"
+          ? gachaMessage
+          : text
+
+      setDisplayText(message ?? "Loading...")
+    }
+  }, [isSendMessage, customMessage, gachaMessage, theme, text, displayText])
+
+  if (!displayText) return null
+  console.log("1. " + customMessage, gachaMessage)
+  console.log("2. " + displayText)
 
   return (
     <Modal

@@ -6,25 +6,24 @@ import Button from "@/shared/@common/ui/Button"
 
 import ROUTE_PATH from "@/shared/@common/constants/path"
 import useSetGachaMessage from "@/shared/provincial/api/mutations/useSetGachaMessage"
+import { useGetUserData } from "@/shared/urban/api/queries/useGetUserData"
 import { useGachaStore } from "../../hooks/useGachaStore"
 import useGetSearchParam from "../../hooks/useGetSearchParams"
 
 interface IGachaRouterButtonProps {
   isCreateGacha: boolean
-  text?: string
 }
 
 const themes = ["orange", "mint", "yellow"] as const
 
-const GachaRouterButton = ({
-  isCreateGacha,
-  text,
-}: IGachaRouterButtonProps) => {
+const GachaRouterButton = ({ isCreateGacha }: IGachaRouterButtonProps) => {
   const userId = useGetSearchParam("id") || null
   const router = useRouter()
 
   const gachaMessage = useGachaStore((state) => state.gachaMessage)
   const setGachaMessage = useGachaStore((state) => state.setGachaMessage)
+
+  const { userData } = useGetUserData(Number(userId))
 
   const { mutateAsync: saveGachaMessage } = useSetGachaMessage()
 
@@ -42,11 +41,13 @@ const GachaRouterButton = ({
       // yellow, mint, orange 중 랜덤으로 테마 선택
       const randomTheme = themes[Math.floor(Math.random() * themes.length)]
 
-      if (text) {
-        setGachaMessage(text)
+      if (userData?.userMessage) {
+        setGachaMessage(userData?.userMessage)
       }
 
-      router.push(`${ROUTE_PATH.GACHA_DRAW_LANDING}?theme=${randomTheme}`)
+      router.push(
+        `${ROUTE_PATH.GACHA_DRAW_LANDING}?id=${userId}&theme=${randomTheme}`,
+      )
     }
   }
 

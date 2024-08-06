@@ -1,13 +1,19 @@
+"use client"
+
 import Image from "next/image"
 
+import { useGetUserData } from "@/shared/urban/api/queries/useGetUserData"
+import useGetSearchParam from "../../hooks/useGetSearchParams"
 import Capsule from "../Capsule"
 
 interface IGachaVisualProps {
   isCreateGacha: boolean
-  capsuleText?: string
 }
 
-const GachaVisual = ({ isCreateGacha, capsuleText }: IGachaVisualProps) => {
+const GachaVisual = ({ isCreateGacha }: IGachaVisualProps) => {
+  const userId = useGetSearchParam("id") || null
+  const { userData } = useGetUserData(Number(userId))
+
   return (
     <section className="relative mt-[12px] h-[650px] w-full">
       <Image
@@ -32,7 +38,7 @@ const GachaVisual = ({ isCreateGacha, capsuleText }: IGachaVisualProps) => {
         color="mint"
         positionStyle="absolute left-[28%] top-[33.5%] mo:left-[4%] mo:top-[33.3%]"
         isCreateGacha={isCreateGacha}
-        capsuleText={capsuleText}
+        capsuleText={userData?.gachaMessage ?? ""}
       />
     </section>
   )
