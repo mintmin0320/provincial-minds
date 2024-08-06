@@ -34,8 +34,8 @@ const SelectedTransitRoute = () => {
   const destination = endArea.match(/\((.*?)\)/)?.[1] ?? ""
 
   // 시간 표시 형식
-  const travelHours = hour !== 0 ? `${hour}시간` : ""
-  const travelMinutes = `${minute}분`
+  const travelHours = hour !== 0 ? `${hour}` : ""
+  const travelMinutes = `${minute}`
 
   return (
     <>
@@ -66,13 +66,11 @@ const SelectedTransitRoute = () => {
       />
       <p>
         <span className="text-blue01">{destination}</span>에 도착하기까지 <br />
-        편도{" "}
-        <span className="text-blue01">
-          {travelHours} {travelMinutes}
-        </span>
+        편도 <span className="text-blue01">{travelHours}</span>시간{" "}
+        <span className="text-blue01">{travelMinutes}</span>분
         <br />
-        교통비 <span className="text-blue01">{payment.toLocaleString()}</span>이
-        소비돼요!
+        교통비 <span className="text-blue01">{payment.toLocaleString()}</span>
+        원이 소비돼요!
       </p>
     </>
   )
