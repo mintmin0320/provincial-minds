@@ -1,3 +1,5 @@
+"use client"
+
 import { cn } from "@/shared/@common/utils/twMerge"
 
 import { IAreaProps } from "../../types/Area.type"

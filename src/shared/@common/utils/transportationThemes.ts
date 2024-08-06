@@ -5,8 +5,12 @@ import {
 
 export const themes: Record<TransportationType, TransportationTheme> = {
   지하철: "blue",
-  시내버스: "yellow",
+  열차: "blue",
   시외버스: "mint",
+  고속버스: "mint",
+  기타: "mint",
+  시내버스: "yellow",
+  항공: "yellow"
 }
 
 // text only

@@ -3,19 +3,27 @@
 import { ExtendedTransitRouteCardProps } from "@/shared/@common/types/transitRoute.type"
 import { themes, themeStyle } from "@/shared/@common/utils/transportationThemes"
 import { cn } from "@/shared/@common/utils/twMerge"
+import { getTransportationList } from "../\butils/getTransportationList"
 
 const TransitRouteCard = ({
   isSelected,
-  transitRoute,
+  bestRoute: isBest,
+  pathType,
+  totalTime,
+  subwayBusTransitCount,
+  transitCount,
+  payment,
 }: ExtendedTransitRouteCardProps) => {
-  const {
-    isBest = false,
-    transportationList,
-    transferCount,
-    travelCost,
-    travelHours,
-    travelMinutes,
-  } = transitRoute
+  const safePathType = pathType ?? 0
+  const safeTotalTime = totalTime ?? 0
+  const safeSubwayBusTransitCount = subwayBusTransitCount ?? 0
+  const safeTransitCount = transitCount ?? 0
+  const safePayment = payment ?? 0
+
+  const transportationList = getTransportationList(safePathType)
+
+  const hour = Math.floor(safeTotalTime / 60)
+  const minute = safeTotalTime % 60
 
   return (
     <li
@@ -29,18 +37,23 @@ const TransitRouteCard = ({
       )}
       <div className="mt-[12px] flex justify-between text-lg font-bold leading-l tracking-[-0.13px] text-black">
         <div className="flex gap-[3px]">
-          <span className="text-[26px]">{travelHours}</span>시간
-          <span className="text-[26px]">{travelMinutes}</span>분
+          {hour !== 0 && (
+            <>
+              <span className="text-[26px]">{Math.floor(hour)}</span>
+              <span>시간</span>
+            </>
+          )}
+          <span className="text-[26px]">{minute}</span>분
         </div>
         <div>
-          <span className="text-2xl">{travelCost.toLocaleString()}</span>원
+          <span className="text-2xl">{safePayment.toLocaleString()}</span>원
         </div>
       </div>
       <div className="mt-[16px] flex justify-between leading-l tracking-[-0.07px]">
         <div className="flex gap-[8px]">
-          {transportationList.map((transportation, index) => (
+          {transportationList.map((transportation) => (
             <span
-              key={index}
+              key={transportation}
               className={cn(
                 themeStyle[themes[transportation]],
                 "rounded-lg px-[8px] py-[4px] text-sm font-bold",
@@ -52,7 +65,7 @@ const TransitRouteCard = ({
         </div>
         <div className="text-sm font-medium text-[#A8A8A8]">
           <span className="text-base">환승</span>
-          {transferCount}회
+          {safeSubwayBusTransitCount + safeTransitCount}회
         </div>
       </div>
     </li>
