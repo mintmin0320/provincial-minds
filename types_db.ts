@@ -9,29 +9,73 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      transit: {
+        Row: {
+          bestRoute: boolean | null
+          created_at: string
+          id: number
+          pathType: number | null
+          payment: number | null
+          subwayBusTransitCount: number | null
+          totalTime: number | null
+          transitCount: number | null
+          userId: number | null
+        }
+        Insert: {
+          bestRoute?: boolean | null
+          created_at?: string
+          id?: number
+          pathType?: number | null
+          payment?: number | null
+          subwayBusTransitCount?: number | null
+          totalTime?: number | null
+          transitCount?: number | null
+          userId?: number | null
+        }
+        Update: {
+          bestRoute?: boolean | null
+          created_at?: string
+          id?: number
+          pathType?: number | null
+          payment?: number | null
+          subwayBusTransitCount?: number | null
+          totalTime?: number | null
+          transitCount?: number | null
+          userId?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "transit_userId_fkey"
+            columns: ["userId"]
+            isOneToOne: false
+            referencedRelation: "user"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       user: {
         Row: {
           created_at: string | null
+          endArea: string | null
           gachaMessage: string | null
           id: number
-          provincialArea: string | null
-          urbanArea: string | null
+          startArea: string | null
           userMessage: string | null
         }
         Insert: {
           created_at?: string | null
+          endArea?: string | null
           gachaMessage?: string | null
           id?: number
-          provincialArea?: string | null
-          urbanArea?: string | null
+          startArea?: string | null
           userMessage?: string | null
         }
         Update: {
           created_at?: string | null
+          endArea?: string | null
           gachaMessage?: string | null
           id?: number
-          provincialArea?: string | null
-          urbanArea?: string | null
+          startArea?: string | null
           userMessage?: string | null
         }
         Relationships: []
