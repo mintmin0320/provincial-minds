@@ -3,28 +3,43 @@
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
-import ROUTE_PATH from "@/shared/@common/constants/path"
 import AreaSearchFieldGroup from "@/shared/@common/ui/AreaSearchFieldGroup"
 import Button from "@/shared/@common/ui/Button"
 
+import ROUTE_PATH from "@/shared/@common/constants/path"
 import { IAreaProps } from "@/shared/@common/types/Area.type"
-import useAreaSearch from "@/shared/provincial/api/mutations/useAreaSearch"
+import { getTransitRoute } from "@/shared/provincial/api/transitRouteService"
+import { createUserWithTransitData } from "../../../../actions/user-actions"
 
 const AreaSearchFieldForm = () => {
   const router = useRouter()
 
-  const { mutateAsync: saveArea } = useAreaSearch()
-
   const [areaState, setAreaState] = useState<IAreaProps>({
-    urbanArea: null,
     provincialArea: null,
+    urbanArea: null,
   })
 
   const handleSaveArea = async () => {
-    const result = await saveArea(areaState)
+    try {
+      const transitRoute = await getTransitRoute(
+        areaState.provincialArea,
+        areaState.urbanArea,
+      )
 
-    if (result) {
-      router.push(`${ROUTE_PATH.TRANSIT_ROTE}?step=1`)
+      const user = {
+        startArea: areaState.provincialArea,
+        endArea: areaState.urbanArea,
+      }
+
+      const userId = await createUserWithTransitData(transitRoute, user)
+
+      if (userId) {
+        localStorage.setItem("userId", String(userId))
+
+        router.push(`${ROUTE_PATH.TRANSIT_ROTE}?step=1`)
+      }
+    } catch (error) {
+      console.error(error)
     }
   }
 
