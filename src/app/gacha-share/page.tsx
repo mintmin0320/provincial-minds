@@ -1,6 +1,7 @@
 import Image from "next/image"
 
 import GachaShareButton from "@/features/gacha-landing-share/ui/GachaShareButton"
+import { Suspense } from "react"
 
 const GachaSharePage = () => {
   return (
@@ -15,7 +16,9 @@ const GachaSharePage = () => {
         가챠를 공유할 준비가
         <br /> 모두 끝났어요!
       </p>
-      <GachaShareButton />
+      <Suspense>
+        <GachaShareButton />
+      </Suspense>
     </main>
   )
 }
