@@ -10,9 +10,7 @@ const GachaDrawPage = async () => {
       <GachaDrawWrapper>
         <main className="h-full bg-white pt-[28px]">
           <TimeCostAnalogy />
-
           <GachaVisual isCreateGacha={false} />
-
           <div className="px-[16px]">
             <GachaRouterButton isCreateGacha={false} />
           </div>

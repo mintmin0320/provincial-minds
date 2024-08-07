@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 import { cn } from "@/shared/@common/utils/twMerge"
 import { useMessageStore } from "../hooks/useMessageStore"
@@ -10,7 +11,6 @@ import ROUTE_PATH from "@/shared/@common/constants/path"
 import useGetSearchParam from "@/shared/@common/hooks/useGetSearchParams"
 import Button from "@/shared/@common/ui/Button"
 import useSetUserMessage from "@/shared/provincial/api/mutations/useSetUserMessage"
-import { useRouter } from "next/navigation"
 import CustomMessageInput from "./CustomMessageInput"
 import MessageItem from "./MessageItem"
 
@@ -88,6 +88,7 @@ const MessageList = () => {
                 width={20}
                 height={20}
                 alt="plus icon"
+                priority
               />
               메시지 직접 작성하기
             </button>

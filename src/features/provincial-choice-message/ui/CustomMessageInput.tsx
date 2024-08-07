@@ -37,6 +37,7 @@ const CustomMessageInput = ({
             width={20}
             height={20}
             alt="edit message"
+            priority
           />
         </button>
       </div>
