@@ -1,6 +1,7 @@
+import { Suspense } from "react"
+
 import MessageList from "@/features/provincial-choice-message/ui/MessageList"
 import FlowTitle from "@/shared/@common/ui/FlowTitle"
-import { Suspense } from "react"
 
 const ChoiceMessagePage = () => {
   return (
