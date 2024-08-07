@@ -17,10 +17,6 @@ const config: Config = {
         orange02: "#FC6C3E",
         pink01: "#FB8484",
       },
-      backgroundImage: {
-        "custom-gradient":
-          "linear-gradient(to #F8D169, #FC9A7B, #95ACFF, #77DBCE)",
-      },
       letterSpacing: {
         tighter048: "-0.48px",
       },
