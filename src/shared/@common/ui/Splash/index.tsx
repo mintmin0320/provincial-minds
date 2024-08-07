@@ -25,6 +25,7 @@ const Splash = () => {
           width={200}
           height={200}
           alt="splash"
+          priority
           unoptimized
         />
       </div>

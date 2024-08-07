@@ -40,6 +40,7 @@ const TransitRouteItem = ({
         width={214}
         height={214}
         alt={transportationList[0]}
+        priority
       />
       <Image
         src="/icons/slider-button.svg"
@@ -47,6 +48,7 @@ const TransitRouteItem = ({
         height={0}
         alt="디자인 언더바"
         className="mb-[20px] mt-[48px]"
+        priority
       />
       <p>
         <span className="text-blue01">{destination}</span>에 도착하기까지 <br />
