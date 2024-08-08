@@ -47,6 +47,7 @@ const RAW_RUNTIME_STATE =
           ["@typescript-eslint/parser", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:7.18.0"],\
           ["autoprefixer", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:10.4.20"],\
           ["clsx", "npm:2.1.1"],\
+          ["cookies-next", "npm:4.2.1"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-airbnb", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:19.0.4"],\
           ["eslint-config-airbnb-typescript", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:18.0.0"],\
@@ -5057,6 +5058,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/cookie", [\
+      ["npm:0.6.0", {\
+        "packageLocation": "../../.yarn/berry/cache/@types-cookie-npm-0.6.0-1f4c3f48f0-10c0.zip/node_modules/@types/cookie/",\
+        "packageDependencies": [\
+          ["@types/cookie", "npm:0.6.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/cross-spawn", [\
       ["npm:6.0.6", {\
         "packageLocation": "../../.yarn/berry/cache/@types-cross-spawn-npm-6.0.6-fbe5fe9243-10c0.zip/node_modules/@types/cross-spawn/",\
@@ -7647,6 +7657,17 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/cookie-signature-npm-1.0.6-93f325f7f0-10c0.zip/node_modules/cookie-signature/",\
         "packageDependencies": [\
           ["cookie-signature", "npm:1.0.6"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["cookies-next", [\
+      ["npm:4.2.1", {\
+        "packageLocation": "../../.yarn/berry/cache/cookies-next-npm-4.2.1-3099a195e5-10c0.zip/node_modules/cookies-next/",\
+        "packageDependencies": [\
+          ["cookies-next", "npm:4.2.1"],\
+          ["@types/cookie", "npm:0.6.0"],\
+          ["cookie", "npm:0.6.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -13413,6 +13434,7 @@ const RAW_RUNTIME_STATE =
           ["@typescript-eslint/parser", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:7.18.0"],\
           ["autoprefixer", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:10.4.20"],\
           ["clsx", "npm:2.1.1"],\
+          ["cookies-next", "npm:4.2.1"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-airbnb", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:19.0.4"],\
           ["eslint-config-airbnb-typescript", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:18.0.0"],\
