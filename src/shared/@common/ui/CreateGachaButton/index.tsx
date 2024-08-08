@@ -2,11 +2,11 @@
 
 import Image from "next/image"
 
+import { useGachaStore } from "@/shared/@common/hooks/useGachaStore"
 import { useModals } from "@/shared/@common/hooks/useModals"
 import { truncateText } from "@/shared/@common/utils/truncateText"
 
 import CreateGachaModal from "@/features/gacha-create/ui/CreateGachaModal"
-import { useGachaStore } from "@/shared/@common/hooks/useGachaStore"
 
 const CreateGachaButton = () => {
   const { open } = useModals()
@@ -32,6 +32,7 @@ const CreateGachaButton = () => {
           width={130}
           height={46}
           alt="capsule-mint-label"
+          priority
         />
       )}
     </button>
