@@ -3,7 +3,7 @@
 import Image from "next/image"
 
 import { useGetUserData } from "@/shared/urban/api/queries/useGetUserData"
-import useGetSearchParam from "../../hooks/useGetSearchParams"
+
 import Capsule from "../Capsule"
 
 interface IGachaVisualProps {
@@ -11,8 +11,7 @@ interface IGachaVisualProps {
 }
 
 const GachaVisual = ({ isCreateGacha }: IGachaVisualProps) => {
-  const userId = useGetSearchParam("id") || null
-  const { userData } = useGetUserData(Number(userId))
+  const { userData } = useGetUserData()
 
   return (
     <section className="relative mt-[12px] h-[650px] w-full">
