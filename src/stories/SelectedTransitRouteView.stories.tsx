@@ -42,13 +42,9 @@ const meta = {
       ],
       description: "교통 수단 목록",
     },
-    travelHours: {
-      action: "text",
-      description: "이동 시간 (시)",
-    },
-    travelMinutes: {
-      action: "text",
-      description: "이동 시간 (시)",
+    totalTime: {
+      action: "number",
+      description: "이동 시간",
     },
     payment: {
       action: "number",
@@ -65,8 +61,7 @@ export const Subway: Story = {
   args: {
     transportationList: ["지하철"],
     payment: 53200,
-    travelHours: "3",
-    travelMinutes: "40",
+    totalTime: 90,
     destination: "신도림역",
   },
 }
@@ -75,8 +70,7 @@ export const CityBus: Story = {
   args: {
     transportationList: ["시내버스"],
     payment: 13200,
-    travelHours: "4",
-    travelMinutes: "50",
+    totalTime: 190,
     destination: "구로역",
   },
 }
@@ -85,8 +79,7 @@ export const IntercityBus: Story = {
   args: {
     transportationList: ["시외버스"],
     payment: 3200,
-    travelHours: "1",
-    travelMinutes: "10",
+    totalTime: 30,
     destination: "영등포역",
   },
 }
@@ -95,8 +88,7 @@ export const AllRoute: Story = {
   args: {
     transportationList: ["지하철", "시내버스", "시외버스"],
     payment: 3200,
-    travelHours: "2",
-    travelMinutes: "15",
+    totalTime: 190,
     destination: "여의도역",
   },
 }
