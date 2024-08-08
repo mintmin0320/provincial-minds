@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react"
 
-import MessageItem from "@/features/provincial-choice-message/ui/MessageItem"
+import MessageItem from "@/features/provincial-message-choice/ui/MessageItem"
 import { fn } from "@storybook/test"
 
 const meta = {
