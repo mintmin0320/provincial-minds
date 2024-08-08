@@ -38,6 +38,7 @@ const TransitRouteItem = ({
         width={214}
         height={214}
         alt={transportationList[0]}
+        className="animate-pulse-grow"
         priority
       />
       <Image
