@@ -1,47 +1,44 @@
 'use server'
 
-import { createServerSupabaseClient } from '@/shared/@common/utils/supabase/server';
-import { Database } from '../../types_db';
+import { ITransitProps } from '@/shared/@common/types/transitRoute.types'
+import { createServerSupabaseClient } from '@/shared/@common/utils/supabase/server'
+import { Database } from '../../types_db'
 
-/** 각 순서대로 조회/삽입/업데이트 */
-export type UserRow = Database["public"]["Tables"]["user"]["Row"];
-export type UserRowInsert = Database["public"]["Tables"]["user"]["Insert"];
-export type UserRowUpdate = Database["public"]["Tables"]["user"]["Update"];
-export type TransitRow = Database["public"]["Tables"]["transit"]["Row"];
-export type TransitRowInsert = Database["public"]["Tables"]["transit"]["Insert"];
-export type TransitRowUpdate = Database["public"]["Tables"]["transit"]["Update"];
+export type UserRow = Database["public"]["Tables"]["user"]["Row"]
+export type UserRowInsert = Database["public"]["Tables"]["user"]["Insert"]
+export type UserRowUpdate = Database["public"]["Tables"]["user"]["Update"]
+export type TransitRow = Database["public"]["Tables"]["transit"]["Row"]
+export type TransitRowInsert = Database["public"]["Tables"]["transit"]["Insert"]
+export type TransitRowUpdate = Database["public"]["Tables"]["transit"]["Update"]
 
 function handleError(error: any) {
-  console.log(error);
-  throw new Error(error.message);
+  throw new Error(error.message)
 }
 
 /** user 테이블 데이터 조회 */
-export async function getUserData(userId: number): Promise<UserRow | null> {
-  const supabase = await createServerSupabaseClient();
+export async function getUserData(userId: number): Promise<UserRow> {
+  const supabase = await createServerSupabaseClient()
 
   const { data, error } = await supabase
     .from("user")
     .select("*")
     .eq('id', userId)
-    .single();  // 단일 행을 반환
+    .single()  // 단일 행 반환
 
   if (error) {
-    handleError(error);
-    return null;
+    handleError(error)
   }
 
   if (!data) {
-    console.error("No user found with the provided userId");
-    return null;
+    throw new Error("제공된 userId를 가진 사용자를 찾을 수 없습니다.")
   }
 
-  return data;
+  return data
 }
 
 /** 교통 수단 조회 */
-export async function getTransitData(userId: number): Promise<{ userId: number; startArea: string | null; endArea: string | null; transits: TransitRow[] }> {
-  const supabase = await createServerSupabaseClient();
+export async function getTransitData(userId: number): Promise<{ userId: number, startArea: string, endArea: string, transits: ITransitProps[] }> {
+  const supabase = await createServerSupabaseClient()
 
   const { data, error } = await supabase
     .from("user")
@@ -51,14 +48,14 @@ export async function getTransitData(userId: number): Promise<{ userId: number; 
       endArea,
       transits:transit(*)
     `)
-    .eq('id', userId);
+    .eq('id', userId)
 
   if (error) {
-    handleError(error);
+    handleError(error)
   }
 
   if (!data) {
-    throw new Error ("No data found")
+    throw new Error ("B-1. 교통 수단 목록을 가져오지 못했습니다.")
   }
 
   const result = {
@@ -68,7 +65,7 @@ export async function getTransitData(userId: number): Promise<{ userId: number; 
     transits: data[0].transits
   }
 
-  return result;
+  return result
 }
 
 /** 출발, 도착 지역 검색 (교통 수단 검색) */
@@ -113,24 +110,24 @@ export async function createUserWithTransitData(transitRoute: any, user: UserRow
   });
 
   const { data: transitInsertData, error: transitInsertError } = await supabase
-    .from("transit")
-    .insert(transitData as TransitRowInsert[])
-    .select("id");
+  .from("transit")
+  .insert(transitData as TransitRowInsert[])
+  .select("id");
 
-  if (transitInsertError || !transitInsertData) {
-    handleError(transitInsertError || new Error("Failed to insert transit data"));
-    return null;
-  }
+if (transitInsertError || !transitInsertData) {
+  handleError(transitInsertError || new Error("Failed to insert transit data"));
+  return null;
+}
 
-  return userId;
+return userId;
 }
 
 /** 가챠(뽑기) 메시지 업데이트 */
 export async function updateGachaMessage(user: UserRowUpdate): Promise<boolean> {
-  const supabase = await createServerSupabaseClient();
+  const supabase = await createServerSupabaseClient()
 
   if (user.id === undefined) {
-    throw new Error('User ID is required for update.');
+    throw new Error('User ID is required for update.')
   }
 
   const { data, error } = await supabase
@@ -138,21 +135,21 @@ export async function updateGachaMessage(user: UserRowUpdate): Promise<boolean> 
     .update({
       gachaMessage: user.gachaMessage,
     })
-    .eq('id', user.id);
+    .eq('id', user.id)
 
   if (error) {
-    handleError(error);
+    handleError(error)
   }
 
-  return true;
+  return true
 }
 
 /** 지방러 한마디 메시지 업데이트 */
 export async function updateUserMessage(user: UserRowUpdate): Promise<boolean> {
-  const supabase = await createServerSupabaseClient();
+  const supabase = await createServerSupabaseClient()
 
   if (user.id === undefined) {
-    throw new Error('User ID is required for update.');
+    throw new Error('User ID is required for update.')
   }
 
   const { data, error } = await supabase
@@ -160,11 +157,11 @@ export async function updateUserMessage(user: UserRowUpdate): Promise<boolean> {
     .update({
       userMessage: user.userMessage,
     })
-    .eq('id', user.id);
+    .eq('id', user.id)
 
   if (error) {
-    handleError(error);
+    handleError(error)
   }
 
-  return true;
+  return true
 }
