@@ -1,4 +1,4 @@
-import { TransportationType } from '@/shared/@common/types/transitRoute.type';
+import { TransportationType } from '@/shared/@common/types/transitRoute.types';
 
 export const getTransportationList = (pathType: number): TransportationType[] => {
   switch (pathType) {
