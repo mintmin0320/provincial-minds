@@ -5,10 +5,9 @@ import Image from "next/image"
 import CreateGachaButton from "@/shared/@common/ui/CreateGachaButton"
 
 import { truncateText } from "@/shared/@common/utils/truncateText"
-import { TransportationThemeType } from "../../types/transitRoute.types"
 
 interface ICapsuleProps {
-  color: TransportationThemeType
+  color: "yellow" | "mint" | "orange"
   positionStyle: string
   iconsSize: number
   isCreateGacha?: boolean
