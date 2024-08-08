@@ -103,8 +103,7 @@ export async function createUserWithTransitData(transitRoute: any, user: UserRow
       pathType: path.pathType,
       totalTime: path.info.totalTime,
       payment: path.info.payment,
-      subwayBusTransitCount: path.info.busTransitCount + path.info.subwayTransitCount || null,
-      transitCount: path.info.transitCount || null,
+      transitCount: path.info.transitCount,
       userId,
     };
   });
