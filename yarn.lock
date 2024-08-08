@@ -4843,7 +4843,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^11.4.0":
+"chromatic@npm:^11.4.0, chromatic@npm:^11.7.0":
   version: 11.7.0
   resolution: "chromatic@npm:11.7.0"
   peerDependencies:
@@ -9983,6 +9983,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^7.18.0"
     "@typescript-eslint/parser": "npm:^7.18.0"
     autoprefixer: "npm:^10.4.19"
+    chromatic: "npm:^11.7.0"
     clsx: "npm:^2.1.1"
     cookies-next: "npm:^4.2.1"
     eslint: "npm:^8"
