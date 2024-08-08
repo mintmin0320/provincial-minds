@@ -25,7 +25,7 @@ const TimeCostAnalogy = () => {
         className="tracking-l text-sm font-medium text-[#A8A8A8] underline"
         onClick={() => setTimeAnalogy((prevState) => !prevState)}
       >
-        {timeAnalogyText ? "시간" : "비용"} 기준으로도 궁금해요!
+        {timeAnalogyText ? "비용" : "시간"} 기준으로도 궁금해요!
       </button>
     </div>
   )
