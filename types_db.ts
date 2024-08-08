@@ -11,37 +11,34 @@ export type Database = {
     Tables: {
       transit: {
         Row: {
-          bestRoute: boolean | null
+          bestRoute: boolean
           created_at: string
           id: number
-          pathType: number | null
+          pathType: number
           payment: number | null
-          subwayBusTransitCount: number | null
-          totalTime: number | null
-          transitCount: number | null
-          userId: number | null
+          totalTime: number
+          transitCount: number
+          userId: number
         }
         Insert: {
-          bestRoute?: boolean | null
+          bestRoute: boolean
           created_at?: string
           id?: number
-          pathType?: number | null
+          pathType: number
           payment?: number | null
-          subwayBusTransitCount?: number | null
-          totalTime?: number | null
-          transitCount?: number | null
-          userId?: number | null
+          totalTime: number
+          transitCount: number
+          userId: number
         }
         Update: {
-          bestRoute?: boolean | null
+          bestRoute?: boolean
           created_at?: string
           id?: number
-          pathType?: number | null
+          pathType?: number
           payment?: number | null
-          subwayBusTransitCount?: number | null
-          totalTime?: number | null
-          transitCount?: number | null
-          userId?: number | null
+          totalTime?: number
+          transitCount?: number
+          userId?: number
         }
         Relationships: [
           {
@@ -56,26 +53,26 @@ export type Database = {
       user: {
         Row: {
           created_at: string | null
-          endArea: string | null
+          endArea: string
           gachaMessage: string | null
           id: number
-          startArea: string | null
+          startArea: string
           userMessage: string | null
         }
         Insert: {
           created_at?: string | null
-          endArea?: string | null
+          endArea: string
           gachaMessage?: string | null
           id?: number
-          startArea?: string | null
+          startArea: string
           userMessage?: string | null
         }
         Update: {
           created_at?: string | null
-          endArea?: string | null
+          endArea?: string
           gachaMessage?: string | null
           id?: number
-          startArea?: string | null
+          startArea?: string
           userMessage?: string | null
         }
         Relationships: []
