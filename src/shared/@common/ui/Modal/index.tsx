@@ -24,7 +24,10 @@ const Modal = ({
       )}
       onClick={close}
     >
-      <div className={cn("w-full bg-white p-[16px]", innerClassNames)}>
+      <div
+        className={cn("w-full bg-white p-[16px]", innerClassNames)}
+        onClick={(e) => e.stopPropagation()}
+      >
         {children}
       </div>
     </div>
