@@ -10,7 +10,7 @@ const ROUTE_PATH = {
   TRANSIT_ROTE_RESULT: "/transit-route-result",
   GACHA_CREATE: "/gacha-create",
   GACHA_CREATE_WAIT: "/gacha-create-wait",
-  CHOICE_MESSAGE: "/choice-message",
+  MESSAGE_CHOICE: "/message-choice",
   GACHA_SHARE: "/gacha-share",
   GACHA_DRAW: "/gacha-draw",
   GACHA_DRAW_LANDING: "/gacha-draw-shupple",
