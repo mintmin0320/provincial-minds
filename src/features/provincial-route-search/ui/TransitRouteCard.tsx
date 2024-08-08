@@ -1,6 +1,6 @@
 "use client"
 
-import { ExtendedTransitRouteCardProps } from "@/shared/@common/types/transitRoute.type"
+import { ExtendedTransitRouteCardProps } from "@/shared/@common/types/transitRoute.types"
 import { themes, themeStyle } from "@/shared/@common/utils/transportationThemes"
 import { cn } from "@/shared/@common/utils/twMerge"
 import { getTransportationList } from "../../../shared/@common/utils/getTransportationList"
@@ -10,20 +10,13 @@ const TransitRouteCard = ({
   bestRoute: isBest,
   pathType,
   totalTime,
-  subwayBusTransitCount,
   transitCount,
   payment,
 }: ExtendedTransitRouteCardProps) => {
-  const safePathType = pathType ?? 0
-  const safeTotalTime = totalTime ?? 0
-  const safeSubwayBusTransitCount = subwayBusTransitCount ?? 0
-  const safeTransitCount = transitCount ?? 0
-  const safePayment = payment ?? 0
-
-  const transportationList = getTransportationList(safePathType)
-
-  const hour = Math.floor(safeTotalTime / 60)
-  const minute = safeTotalTime % 60
+  const transportationList = getTransportationList(pathType)
+  const hour = Math.floor(totalTime / 60)
+  const minute = totalTime % 60
+  const safePayment = payment || 0
 
   return (
     <li
@@ -55,7 +48,7 @@ const TransitRouteCard = ({
             <span
               key={transportation}
               className={cn(
-                themeStyle[themes[transportation]],
+                themeStyle[themes[transportation] as TransportationThemeType], // 여기서 타입 단언 추가
                 "rounded-lg px-[8px] py-[4px] text-sm font-bold",
               )}
             >
@@ -65,7 +58,7 @@ const TransitRouteCard = ({
         </div>
         <div className="text-sm font-medium text-[#A8A8A8]">
           <span className="text-base">환승</span>
-          {safeSubwayBusTransitCount + safeTransitCount}회
+          {transitCount}회
         </div>
       </div>
     </li>

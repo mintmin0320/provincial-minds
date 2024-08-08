@@ -1,26 +1,24 @@
 "use client"
 
-import { TransportationType } from "@/shared/@common/types/transitRoute.type"
+import Image from "next/image"
+
+import { ExtendedTransitRouteProps } from "@/shared/@common/types/transitRoute.types"
 import { getTransportationStyle } from "@/shared/@common/utils/transportationThemes"
 import { cn } from "@/shared/@common/utils/twMerge"
-import Image from "next/image"
 import { getTransportIcon } from "../utils/getTransportIcon"
-
-interface ITransitRouteItemProps {
-  transportationList: TransportationType[]
-  destination: string
-  travelHours: string
-  travelMinutes: string
-  payment: number
-}
 
 const TransitRouteItem = ({
   transportationList,
   destination,
-  travelHours,
-  travelMinutes,
+  totalTime,
   payment,
-}: ITransitRouteItemProps) => {
+}: ExtendedTransitRouteProps) => {
+  const hour = Math.floor(totalTime / 60)
+  const minute = totalTime % 60
+  const travelHours = hour !== 0 ? `${hour}` : ""
+  const travelMinutes = `${minute}`
+  const safePayment = payment || 0
+
   return (
     <>
       <p>
@@ -55,7 +53,8 @@ const TransitRouteItem = ({
         편도 <span className="text-blue01">{travelHours}</span>시간{" "}
         <span className="text-blue01">{travelMinutes}</span>분
         <br />
-        교통비 <span className="text-blue01">{payment.toLocaleString()}</span>
+        교통비{" "}
+        <span className="text-blue01">{safePayment.toLocaleString()}</span>
         원이 소비돼요!
       </p>
     </>
