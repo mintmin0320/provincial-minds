@@ -48,7 +48,7 @@ const TransitRouteCard = ({
             <span
               key={transportation}
               className={cn(
-                themeStyle[themes[transportation] as TransportationThemeType], // 여기서 타입 단언 추가
+                themeStyle[themes[transportation]],
                 "rounded-lg px-[8px] py-[4px] text-sm font-bold",
               )}
             >

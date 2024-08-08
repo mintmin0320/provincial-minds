@@ -1,23 +1,5 @@
-export type TransportationType = 
-  | "지하철"
-  | "시내버스"
-  | "시외버스"
-  | "열차"
-  | "고속버스"
-  | "항공"
-  | "기타";
-
-export type TransportationThemeType = "blue" | "mint" | "yellow";
-
-export const themes: Record<TransportationType, TransportationThemeType> = {
-  지하철: "blue",
-  열차: "blue",
-  시외버스: "mint",
-  고속버스: "mint",
-  기타: "mint",
-  시내버스: "yellow",
-  항공: "yellow",
-};
+export type TransportationType = "지하철" | "시내버스" | "시외버스" | "열차" | "고속버스" | "항공" | "기타"
+export type TransportationTheme = "blue" | "mint" | "yellow"
 
 
 export interface ITransitProps {
