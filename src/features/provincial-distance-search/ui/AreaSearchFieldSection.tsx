@@ -5,14 +5,17 @@ import { useState } from "react"
 
 import AreaSearchFieldGroup from "@/shared/@common/ui/AreaSearchFieldGroup"
 import Button from "@/shared/@common/ui/Button"
+import Loading from "@/shared/@common/ui/Loading"
 
-import { createUserWithTransitData } from "@/actions/user-actions"
 import ROUTE_PATH from "@/shared/@common/constants/path"
-import { IAreaProps } from "@/shared/@common/types/Area.type"
-import { getTransitRoute } from "@/shared/provincial/api/transitRouteService"
+import { fixButtonStyle } from "@/shared/@common/styles/fixButton"
+import { IAreaProps } from "@/shared/@common/types/area.types"
+import useSaveRoute from "@/shared/provincial/api/mutations/useSaveRoute"
 
 const AreaSearchFieldForm = () => {
   const router = useRouter()
+
+  const { mutateAsync: saveRoute, isPending } = useSaveRoute()
 
   const [areaState, setAreaState] = useState<IAreaProps>({
     provincialArea: null,
@@ -20,28 +23,25 @@ const AreaSearchFieldForm = () => {
   })
 
   const handleSaveArea = async () => {
-    try {
-      const transitRoute = await getTransitRoute(
-        areaState.provincialArea,
-        areaState.urbanArea,
-      )
+    if (!areaState.provincialArea || !areaState.urbanArea) {
+      return
+    }
 
-      const user = {
-        startArea: areaState.provincialArea,
-        endArea: areaState.urbanArea,
-      }
+    const userId = await saveRoute({
+      provincialArea: areaState.provincialArea,
+      urbanArea: areaState.urbanArea,
+    })
 
-      const userId = await createUserWithTransitData(transitRoute, user)
-
-      if (userId) {
-        router.push(`${ROUTE_PATH.TRANSIT_ROTE}?id=${userId}`)
-      }
-    } catch (error) {
-      console.error(error)
+    if (userId) {
+      router.push(ROUTE_PATH.TRANSIT_ROTE)
     }
   }
 
   const checkFormValidity = !areaState.urbanArea || !areaState.provincialArea
+
+  if (isPending) {
+    return <Loading />
+  }
 
   return (
     <section>
@@ -51,8 +51,7 @@ const AreaSearchFieldForm = () => {
         type="change"
       />
       <Button
-        type="submit"
-        className="fixed bottom-0 left-1/2 mb-[10px] max-w-[calc(100%-32px)] -translate-x-1/2 transform"
+        className={fixButtonStyle}
         theme="blue"
         disabled={checkFormValidity}
         onClick={handleSaveArea}
