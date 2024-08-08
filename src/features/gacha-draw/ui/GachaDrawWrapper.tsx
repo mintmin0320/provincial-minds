@@ -5,6 +5,7 @@ import { ReactNode, useEffect, useRef } from "react"
 import { useModals } from "@/shared/@common/hooks/useModals"
 
 import useGetSearchParam from "@/shared/@common/hooks/useGetSearchParams"
+import Loading from "@/shared/@common/ui/Loading"
 import { useGetUserData } from "@/shared/urban/api/queries/useGetUserData"
 import GachaModal from "../../../shared/@common/ui/GachaModal"
 
@@ -18,9 +19,10 @@ const GachaDrawWrapper = ({ children }: IGachaDrawWrapperProps) => {
   const { open } = useModals()
 
   const themeParams = useGetSearchParam("theme") ?? undefined
-  const userId = useGetSearchParam("id") || null
 
-  const { userData, isLoading } = useGetUserData(Number(userId))
+  const { userData, isLoading } = useGetUserData()
+
+  if (isLoading) return <Loading />
 
   /** useRef를 사용하여 첫 번째 렌더링을 건너뛰기 */
   useEffect(() => {

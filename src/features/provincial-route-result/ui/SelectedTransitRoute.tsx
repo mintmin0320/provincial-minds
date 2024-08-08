@@ -1,45 +1,38 @@
 "use client"
 
+import Loading from "@/shared/@common/ui/Loading"
+import TransitRouteItem from "./TransitRouteItem"
+
 import useGetSearchParam from "@/shared/@common/hooks/useGetSearchParams"
 import { getTransportationList } from "@/shared/@common/utils/getTransportationList"
 import { useGetTransitList } from "@/shared/provincial/api/queries/useGetTransitList"
-import TransitRouteItem from "./TransitRouteItem"
 
 const SelectedTransitRoute = () => {
-  const userId = useGetSearchParam("id") || null
   const transitId = useGetSearchParam("transitId") || null
 
-  const { transitList } = useGetTransitList(Number(userId))
+  const { transitList, isLoading, isError } = useGetTransitList()
 
   // 선택된 transit 데이터
-  const selectedTransit = transitList?.transits?.[Number(transitId)]
+  const selectedRouteData = transitList?.transits[Number(transitId)]
 
-  // 기본값 설정
-  const pathType = selectedTransit?.pathType ?? 0
-  const totalTime = selectedTransit?.totalTime ?? 0
-  const payment = selectedTransit?.payment ?? 0
-
-  // 교통수단 목록
-  const transportationList = getTransportationList(pathType)
-
-  // 시간 계산
-  const hour = Math.floor(totalTime / 60)
-  const minute = totalTime % 60
-
-  // 목적지 추출
+  // 기본값 할당
+  const pathType = selectedRouteData?.pathType ?? 0
+  const totalTime = selectedRouteData?.totalTime ?? 0
+  const payment = selectedRouteData?.payment ?? 0
   const endArea = transitList?.endArea ?? ""
-  const destination = endArea.match(/\((.*?)\)/)?.[1] ?? ""
 
-  // 시, 분
-  const travelHours = hour !== 0 ? `${hour}` : ""
-  const travelMinutes = `${minute}`
+  // 목적지, 교통 타입(종류) 추출
+  const transportationList = getTransportationList(pathType)
+  const destination = endArea.match(/\((.*?)\)/)?.[1] ?? endArea
+
+  if (isLoading) return <Loading />
+  if (isError) return <div>에러가 발생했어요. 다시 시도해 주세요.</div>
 
   return (
     <TransitRouteItem
       transportationList={transportationList}
       destination={destination}
-      travelHours={travelHours}
-      travelMinutes={travelMinutes}
+      totalTime={totalTime}
       payment={payment}
     />
   )
