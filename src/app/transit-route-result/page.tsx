@@ -1,7 +1,8 @@
+import { Suspense } from "react"
+
 import NavigationButton from "@/features/provincial-route-result/ui/NavigationButton"
 import SelectedTransitRoute from "@/features/provincial-route-result/ui/SelectedTransitRoute"
 import FlowTitle from "@/shared/@common/ui/FlowTitle"
-import { Suspense } from "react"
 
 const TransitRouteResult = () => {
   return (
@@ -12,9 +13,7 @@ const TransitRouteResult = () => {
           <SelectedTransitRoute />
         </Suspense>
       </section>
-      <Suspense>
-        <NavigationButton />
-      </Suspense>
+      <NavigationButton />
     </main>
   )
 }

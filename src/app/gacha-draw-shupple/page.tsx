@@ -10,7 +10,7 @@ interface GachaDrawLandingPageProps {
 const GachaDrawLandingPage = ({ searchParams }: GachaDrawLandingPageProps) => {
   return (
     <GachaWaitRouteWrapper
-      path={`${ROUTE_PATH.GACHA_DRAW}?id=${searchParams.id}&theme=${searchParams.theme}`}
+      path={`${ROUTE_PATH.GACHA_DRAW}?theme=${searchParams.theme}`}
     >
       <main className="relative flex h-dvh w-full flex-col items-center bg-white">
         <GachaWait text="감사 가챠를 뽑는 중이에요!" />

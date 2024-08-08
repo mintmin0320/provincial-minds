@@ -2,7 +2,7 @@
 
 import { cn } from "@/shared/@common/utils/twMerge"
 
-import { IAreaProps } from "../../types/Area.type"
+import { IAreaProps } from "../../types/area.types"
 import SearchAreaField from "../SearchAreaField"
 
 interface IAreaSearchFieldGroupProps {

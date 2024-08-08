@@ -1,8 +1,9 @@
+import { Suspense } from "react"
+
 import TimeCostAnalogy from "@/features/gacha-create/ui/TimeCostAnalogy"
 import GachaDrawWrapper from "@/features/gacha-draw/ui/GachaDrawWrapper"
 import GachaRouterButton from "@/shared/@common/ui/GachaRouterButton"
 import GachaVisual from "@/shared/@common/ui/GachaVisual"
-import { Suspense } from "react"
 
 const GachaDrawPage = async () => {
   return (
