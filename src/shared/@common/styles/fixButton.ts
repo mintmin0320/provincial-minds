@@ -1,0 +1,1 @@
+export const fixButtonStyle = "fixed bottom-0 left-1/2 mb-[10px] max-w-[calc(100%-32px)] -translate-x-1/2 transform"
