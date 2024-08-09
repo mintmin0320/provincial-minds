@@ -37,8 +37,6 @@ const AreaSearchFieldForm = () => {
     }
   }
 
-  const checkFormValidity = !areaState.urbanArea || !areaState.provincialArea
-
   if (isPending) {
     return <Loading />
   }
@@ -53,7 +51,7 @@ const AreaSearchFieldForm = () => {
       <Button
         className={fixButtonStyle}
         theme="blue"
-        disabled={checkFormValidity}
+        disabled={!areaState.urbanArea || !areaState.provincialArea}
         onClick={handleSaveArea}
       >
         최적 경로 알아보기
