@@ -1,7 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import AreaSearchFieldGroup from "@/shared/@common/ui/AreaSearchFieldGroup"
 import Button from "@/shared/@common/ui/Button"
@@ -22,11 +22,14 @@ const AreaSearchFieldForm = () => {
     urbanArea: null,
   })
 
+  const [isSaving, setIsSaving] = useState<boolean>(false)
+
   const handleSaveArea = async () => {
     if (!areaState.provincialArea || !areaState.urbanArea) {
       return
     }
 
+    setIsSaving(true)
     const userId = await saveRoute({
       provincialArea: areaState.provincialArea,
       urbanArea: areaState.urbanArea,
@@ -37,7 +40,13 @@ const AreaSearchFieldForm = () => {
     }
   }
 
-  if (isPending) {
+  useEffect(() => {
+    if (!isPending && isSaving) {
+      setIsSaving(false)
+    }
+  }, [isPending])
+
+  if (isPending || isSaving) {
     return <Loading />
   }
 
