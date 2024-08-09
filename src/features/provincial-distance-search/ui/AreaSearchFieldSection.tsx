@@ -1,7 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 import AreaSearchFieldGroup from "@/shared/@common/ui/AreaSearchFieldGroup"
 import Button from "@/shared/@common/ui/Button"
@@ -40,33 +40,28 @@ const AreaSearchFieldForm = () => {
     }
   }
 
-  useEffect(() => {
-    if (!isPending && isSaving) {
-      setIsSaving(false)
-    }
-  }, [isPending])
-
   if (isPending || isSaving) {
     return <Loading />
   }
 
-  return (
-    <section>
-      <AreaSearchFieldGroup
-        areaState={areaState}
-        setAreaState={setAreaState}
-        type="change"
-      />
-      <Button
-        className={fixButtonStyle}
-        theme="blue"
-        disabled={!areaState.urbanArea || !areaState.provincialArea}
-        onClick={handleSaveArea}
-      >
-        최적 경로 알아보기
-      </Button>
-    </section>
-  )
+  if (!isSaving || !isPending) {
+    return (
+      <section>
+        <AreaSearchFieldGroup
+          areaState={areaState}
+          setAreaState={setAreaState}
+          type="change"
+        />
+        <Button
+          className={fixButtonStyle}
+          theme="blue"
+          disabled={!areaState.urbanArea || !areaState.provincialArea}
+          onClick={handleSaveArea}
+        >
+          최적 경로 알아보기
+        </Button>
+      </section>
+    )
+  }
 }
-
 export default AreaSearchFieldForm
