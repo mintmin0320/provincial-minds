@@ -15,7 +15,7 @@ import useSaveRoute from "@/shared/provincial/api/mutations/useSaveRoute"
 const AreaSearchFieldForm = () => {
   const router = useRouter()
 
-  const { mutateAsync: saveRoute, isPending } = useSaveRoute()
+  const { mutateAsync: saveRoute, isPending, isError } = useSaveRoute()
 
   const [areaState, setAreaState] = useState<IAreaProps>({
     provincialArea: null,
@@ -40,11 +40,9 @@ const AreaSearchFieldForm = () => {
     }
   }
 
-  if (isPending || isSaving) {
+  if (!isError && (isPending || isSaving)) {
     return <Loading />
-  }
-
-  if (!isSaving || !isPending) {
+  } else {
     return (
       <section>
         <AreaSearchFieldGroup
