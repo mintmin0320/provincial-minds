@@ -9,14 +9,18 @@ import Modal from "@/shared/@common/ui/Modal"
 import PortalWrapper from "@/shared/@common/ui/Potal"
 
 import { useGachaStore } from "@/shared/@common/hooks/useGachaStore"
+import { useModals } from "@/shared/@common/hooks/useModals"
 
 const CreateGachaModal = () => {
+  const { close } = useModals()
+
   const [inputValue, setInputValue] = useState<string | null>(null)
   const setGachaMessage = useGachaStore((state) => state.setGachaMessage)
 
   const handleRegister = () => {
     if (inputValue) {
       setGachaMessage(inputValue)
+      close()
     }
   }
 
