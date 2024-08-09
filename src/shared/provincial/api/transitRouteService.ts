@@ -6,7 +6,7 @@ export async function getTransitRoute(provincialArea: string , urbanArea: string
   const endCoordinates = await fetchCoordinates(urbanArea)
 
   if (!startCoordinates || !endCoordinates) {
-    throw new Error("A-4. 좌표를 가져오지 못했습니다.")
+    throw new Error("좌표 변경을 지원하지 않습니다. 다른 주소를 선택해 주세요.")
   }
 
   const { latitude: startLatitude, longitude: startLongitude } = startCoordinates
