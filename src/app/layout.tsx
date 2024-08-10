@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: "서울 친구들은 모르는 지방 친구들의 고충",
     images: [
       {
-        url: "/icons/mini-gacha-landing.svg",
+        url: new URL("/icons/mini-gacha-landing.svg", baseUrl).toString(),
         alt: "뽑기 이미지",
       },
     ],
@@ -29,12 +29,11 @@ export const metadata: Metadata = {
     description: "서울 친구들은 모르는 지방 친구들의 고충",
     images: [
       {
-        url: "/icons/mini-gacha-landing.svg",
+        url: new URL("/icons/mini-gacha-landing.svg", baseUrl).toString(),
         alt: "뽑기 이미지",
       },
     ],
   },
-  metadataBase: new URL(baseUrl),
 }
 
 export default function RootLayout({
