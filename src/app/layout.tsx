@@ -14,6 +14,26 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icons/capsule-modal.svg",
   },
+  openGraph: {
+    title: "지방적 사고 - 서울 친구들은 모르는 지방 친구들의 고충",
+    description: "지방 친구들의 이야기를 들어보세요!",
+    images: [
+      {
+        url: "mini-gacha-landing.svg",
+        alt: "뽑기 이미지",
+      },
+    ],
+  },
+  twitter: {
+    title: "지방적 사고 - 서울 친구들은 모르는 지방 친구들의 고충",
+    description: "지방 친구들의 이야기를 들어보세요!",
+    images: [
+      {
+        url: "mini-gacha-landing.svg",
+        alt: "뽑기 이미지",
+      },
+    ],
+  },
 }
 
 export default function RootLayout({
