@@ -8,32 +8,33 @@ import "@/shared/@common/styles/globals.css"
 import ModalContainer from "@/shared/@common/ui/ModalContainer"
 import RQProvider from "@/shared/@common/ui/RQProvider"
 
+const baseUrl =
+  process.env.NEXT_PUBLIC_BASE_URL || `${process.env.NEXT_PUBLIC_BASE_URL}/404`
+
 export const metadata: Metadata = {
   title: "지방적 사고 🍀",
   description: "서울 친구들은 모르는 지방 친구들의 고충",
-  icons: {
-    icon: "/icons/capsule-modal.svg",
-  },
   openGraph: {
-    title: "지방적 사고 🍀 - 서울 친구들은 모르는 지방 친구들의 고충",
-    description: "지방 친구들의 이야기를 들어보세요!",
+    title: "지방적 사고 🍀",
+    description: "서울 친구들은 모르는 지방 친구들의 고충",
     images: [
       {
-        url: "/icons/mini-gacha-landing.svg",
-        alt: "뽑기 이미지",
+        url: "/icons/default-image.svg",
+        alt: "기본 이미지",
       },
     ],
   },
   twitter: {
-    title: "지방적 사고 🍀 - 서울 친구들은 모르는 지방 친구들의 고충",
-    description: "지방 친구들의 이야기를 들어보세요!",
+    title: "지방적 사고 🍀",
+    description: "서울 친구들은 모르는 지방 친구들의 고충",
     images: [
       {
-        url: "/icons/mini-gacha-landing.svg",
-        alt: "뽑기 이미지",
+        url: "/icons/default-image.svg",
+        alt: "기본 이미지",
       },
     ],
   },
+  metadataBase: new URL(baseUrl),
 }
 
 export default function RootLayout({
