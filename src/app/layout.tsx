@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     description: "서울 친구들은 모르는 지방 친구들의 고충",
     images: [
       {
-        url: "/icons/default-image.svg",
-        alt: "기본 이미지",
+        url: "/icons/mini-gacha-landing.svg",
+        alt: "뽑기 이미지",
       },
     ],
   },
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     description: "서울 친구들은 모르는 지방 친구들의 고충",
     images: [
       {
-        url: "/icons/default-image.svg",
-        alt: "기본 이미지",
+        url: "/icons/mini-gacha-landing.svg",
+        alt: "뽑기 이미지",
       },
     ],
   },
