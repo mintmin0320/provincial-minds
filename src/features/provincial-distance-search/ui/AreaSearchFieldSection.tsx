@@ -12,7 +12,7 @@ import { fixButtonStyle } from "@/shared/@common/styles/fixButton"
 import { IAreaProps } from "@/shared/@common/types/area.types"
 import useSaveRoute from "@/shared/provincial/api/mutations/useSaveRoute"
 
-const AreaSearchFieldForm = () => {
+const AreaSearchFieldSection = () => {
   const router = useRouter()
 
   const { mutateAsync: saveRoute, isPending, isError } = useSaveRoute()
@@ -62,4 +62,4 @@ const AreaSearchFieldForm = () => {
     )
   }
 }
-export default AreaSearchFieldForm
+export default AreaSearchFieldSection
