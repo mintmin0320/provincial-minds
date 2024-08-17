@@ -20,8 +20,8 @@ const DaumPostCodeModal = ({ onAreaChange }: IDaumPostCodeProps) => {
         >
           <Image
             src="/icons/slider-button.svg"
-            width={40}
-            height={0}
+            width={46}
+            height={6}
             alt="slider-button"
           />
         </button>
