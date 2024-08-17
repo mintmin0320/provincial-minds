@@ -3,7 +3,7 @@
 import { cn } from "@/shared/@common/utils/twMerge"
 
 import { ILocationProps } from "../../types/location"
-import SearchAreaField from "../LocationSearchField"
+import LocationSearchField from "../LocationSearchField"
 
 interface IAreaSearchFieldGroupProps {
   locationState: ILocationProps
@@ -30,20 +30,20 @@ const LocationInputGroup = ({
         "mt-[24px]": type === "view",
       })}
     >
-      <SearchAreaField
+      <LocationSearchField
         location={locationState.origin}
         onLocationSearch={handleLocationSearch("origin")}
         type={type}
       >
         <span className="text-blue01">지방러</span>는 여기서 출발해요
-      </SearchAreaField>
-      <SearchAreaField
+      </LocationSearchField>
+      <LocationSearchField
         location={locationState.destination}
         onLocationSearch={handleLocationSearch("destination")}
         type={type}
       >
         <span className="text-blue01">서울러</span>를 만나는 곳은 여기예요
-      </SearchAreaField>
+      </LocationSearchField>
     </div>
   )
 }
