@@ -1,7 +1,7 @@
 import { fetchCoordinates } from './fetchCoordinates'
 import { fetchPublicTransitRoute } from './fetchTransitRouteApi'
 
-import { ILocationValidatedProps } from '@/shared/@common/types/area.types'
+import { ILocationValidatedProps } from '@/shared/@common/types/location'
 
 export async function getTransitRoute({origin, destination}: ILocationValidatedProps) {
   const originCoordinates = await fetchCoordinates(origin)

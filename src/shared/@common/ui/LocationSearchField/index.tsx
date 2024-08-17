@@ -8,23 +8,23 @@ import { useModals } from "@/shared/@common/hooks/useModals"
 import { cn } from "@/shared/@common/utils/twMerge"
 
 interface ISearchFieldProps {
-  area: string | null
-  onAreaChange?: (area: string) => void
+  location: string | null
+  onLocationSearch?: (location: string) => void
   type: "view" | "change"
   children: ReactNode
 }
 
-const SearchAreaField = ({
-  area,
-  onAreaChange,
+const LocationSearchField = ({
+  location,
+  onLocationSearch,
   children,
   type,
 }: ISearchFieldProps) => {
   const { open, close } = useModals()
 
   const handleAreaChange = ({ address }: { address: string }) => {
-    if (onAreaChange) {
-      onAreaChange(address)
+    if (onLocationSearch) {
+      onLocationSearch(address)
       close()
     }
   }
@@ -33,7 +33,7 @@ const SearchAreaField = ({
     open(DaumPostCodeModal, { onAreaChange: handleAreaChange })
   }
 
-  const isInputArea = !area
+  const isInputArea = !location
     ? "bg-[#F4F4F4] disabled:bg-[#F4F4F4]"
     : "bg-[#F5F7FF] disabled:bg-[#F5F7FF]"
 
@@ -58,7 +58,7 @@ const SearchAreaField = ({
         <input
           id="departure"
           placeholder="출발지 입력하기"
-          value={area ?? ""}
+          value={location ?? ""}
           className={cn(
             isInputArea,
             isChange,
@@ -80,4 +80,4 @@ const SearchAreaField = ({
   )
 }
 
-export default SearchAreaField
+export default LocationSearchField

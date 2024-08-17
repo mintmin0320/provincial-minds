@@ -1,10 +1,10 @@
-import SearchAreaField from "@/shared/@common/ui/SearchAreaField"
+import LocationSearchField from "@/shared/@common/ui/LocationSearchField"
 import type { Meta, StoryObj } from "@storybook/react"
 import { fn } from "@storybook/test"
 
 const meta = {
-  title: "field/SearchAreaField",
-  component: SearchAreaField,
+  title: "field/LocationSearchField",
+  component: LocationSearchField,
   parameters: {
     layout: "centered",
   },
@@ -22,12 +22,12 @@ const meta = {
       options: ["view", "change"],
       description: "지역 선택 타입 (view or change)",
     },
-    area: {
+    location: {
       control: "text",
       description: "지역 선택 필드",
       defaultValue: null,
     },
-    onAreaChange: {
+    onLocationSearch: {
       action: "changed",
       description: "지역 필드의 값 변경 이벤트",
     },
@@ -37,9 +37,9 @@ const meta = {
     },
   },
   args: {
-    onAreaChange: fn(),
+    onLocationSearch: fn(),
   },
-} satisfies Meta<typeof SearchAreaField>
+} satisfies Meta<typeof LocationSearchField>
 
 export default meta
 
@@ -48,7 +48,7 @@ type Story = StoryObj<typeof meta>
 export const ChangeAreaField: Story = {
   args: {
     type: "change",
-    area: null,
+    location: null,
     children: "지방러는 여기서 출발해요",
   },
 }
@@ -56,7 +56,7 @@ export const ChangeAreaField: Story = {
 export const InputChangeAreaField: Story = {
   args: {
     type: "change",
-    area: "부산광역시 금정구 부산대학로 63번길 2",
+    location: "부산광역시 금정구 부산대학로 63번길 2",
     children: "지방러는 여기서 출발해요",
   },
 }
@@ -64,7 +64,7 @@ export const InputChangeAreaField: Story = {
 export const InputViewAreaField: Story = {
   args: {
     type: "view",
-    area: "부산광역시 금정구 부산대학로 63번길 2",
+    location: "부산광역시 금정구 부산대학로 63번길 2",
     children: "지방러는 여기서 출발해요",
   },
 }

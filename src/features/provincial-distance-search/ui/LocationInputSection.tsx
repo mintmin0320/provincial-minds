@@ -12,7 +12,7 @@ import { fixButtonStyle } from "@/shared/@common/styles/fixButton"
 import {
   ILocationProps,
   ILocationValidatedProps,
-} from "@/shared/@common/types/area.types"
+} from "@/shared/@common/types/location"
 import useSaveRecommendedRoute from "@/shared/provincial/api/mutations/useSaveRecommendedRoute"
 
 const LocationInputSection = () => {
@@ -50,8 +50,8 @@ const LocationInputSection = () => {
     return (
       <section>
         <LocationInputGroup
-          areaState={locationState}
-          setAreaState={setLocationState}
+          locationState={locationState}
+          setLocationState={setLocationState}
           type="change"
         />
         <Button

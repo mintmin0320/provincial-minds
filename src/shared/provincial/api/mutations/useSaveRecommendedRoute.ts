@@ -3,7 +3,7 @@ import { setCookie } from 'cookies-next'
 import toast from 'react-hot-toast'
 
 import { createUserWithTransitData } from '@/actions/user-actions'
-import { ILocationValidatedProps } from '@/shared/@common/types/area.types'
+import { ILocationValidatedProps } from '@/shared/@common/types/location'
 import { getTransitRoute } from '../transitRouteService'
 
 async function saveUserAndTransitData(locationState: ILocationValidatedProps): Promise<number> {

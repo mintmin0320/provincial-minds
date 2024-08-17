@@ -2,25 +2,26 @@
 
 import { cn } from "@/shared/@common/utils/twMerge"
 
-import { IAreaProps } from "../../types/area.types"
-import SearchAreaField from "../SearchAreaField"
+import { ILocationProps } from "../../types/location"
+import SearchAreaField from "../LocationSearchField"
 
 interface IAreaSearchFieldGroupProps {
-  areaState: IAreaProps
-  setAreaState?: React.Dispatch<React.SetStateAction<IAreaProps>>
+  locationState: ILocationProps
+  setLocationState?: React.Dispatch<React.SetStateAction<ILocationProps>>
   type: "view" | "change"
 }
 
 const LocationInputGroup = ({
-  areaState,
-  setAreaState,
+  locationState,
+  setLocationState,
   type,
 }: IAreaSearchFieldGroupProps) => {
-  const handleAreaChange = (key: keyof IAreaProps) => (newValue: string) => {
-    if (type === "change" && setAreaState) {
-      setAreaState((prevState) => ({ ...prevState, [key]: newValue }))
+  const handleLocationSearch =
+    (key: keyof ILocationProps) => (newValue: string) => {
+      if (type === "change" && setLocationState) {
+        setLocationState((prevState) => ({ ...prevState, [key]: newValue }))
+      }
     }
-  }
 
   return (
     <div
@@ -30,15 +31,15 @@ const LocationInputGroup = ({
       })}
     >
       <SearchAreaField
-        area={areaState.provincialArea}
-        onAreaChange={handleAreaChange("provincialArea")}
+        location={locationState.origin}
+        onLocationSearch={handleLocationSearch("origin")}
         type={type}
       >
         <span className="text-blue01">지방러</span>는 여기서 출발해요
       </SearchAreaField>
       <SearchAreaField
-        area={areaState.urbanArea}
-        onAreaChange={handleAreaChange("urbanArea")}
+        location={locationState.destination}
+        onLocationSearch={handleLocationSearch("destination")}
         type={type}
       >
         <span className="text-blue01">서울러</span>를 만나는 곳은 여기예요
