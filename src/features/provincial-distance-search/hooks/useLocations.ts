@@ -23,7 +23,7 @@ const useLocations = () => {
   const canSave = locationState.origin && locationState.destination
 
   const handleSaveLocation = async () => {
-    if (canSave) {
+    if (!canSave) {
       return
     }
 
