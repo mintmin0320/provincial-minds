@@ -6,7 +6,7 @@ import { useModals } from "@/shared/@common/hooks/useModals"
 
 import useGetSearchParam from "@/shared/@common/hooks/useGetSearchParams"
 import { useGetUserData } from "@/shared/urban/api/queries/useGetUserData"
-import { setCookie } from "cookies-next"
+import { useCookies } from "next-client-cookies"
 import GachaModal from "../../../shared/@common/ui/GachaModal"
 
 interface IGachaDrawWrapperProps {
@@ -15,13 +15,14 @@ interface IGachaDrawWrapperProps {
 
 const GachaDrawWrapper = ({ children }: IGachaDrawWrapperProps) => {
   const hasOpened = useRef(false)
+  const cookies = useCookies()
 
   const { open } = useModals()
 
   const themeParams = useGetSearchParam("theme") ?? ""
   const userId = useGetSearchParam("userId") ?? ""
 
-  if (userId) setCookie("userId", userId)
+  if (userId) cookies.set("userId", userId)
 
   const { userData, isLoading } = useGetUserData()
 

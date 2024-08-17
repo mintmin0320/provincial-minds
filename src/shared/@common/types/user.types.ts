@@ -1,7 +1,7 @@
 export interface IUserProps {
   id: number
-  startArea: string
-  endArea: string
+  origin: string
+  destination: string
   created_at: string | null
   gachaMessage?: string | null
   userMessage?: string| null

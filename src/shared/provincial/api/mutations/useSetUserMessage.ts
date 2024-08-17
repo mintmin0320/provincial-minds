@@ -1,8 +1,8 @@
 import { useMutation } from '@tanstack/react-query';
-import { getCookie } from 'cookies-next';
 import toast from 'react-hot-toast';
 
 import { updateUserMessage } from '@/actions/user-actions';
+import { useCookies } from 'next-client-cookies';
 
 
 async function postUserMessage( userId: number,userMessage : string ): Promise<boolean> {
@@ -16,7 +16,8 @@ async function postUserMessage( userId: number,userMessage : string ): Promise<b
 }
 
 export default function useSetUserMessage() {
-  const userId = getCookie("userId")
+  const cookies = useCookies()
+  const userId = cookies.get("userId")
 
   return useMutation<boolean, Error, { userMessage: string}>({
     mutationFn: ({userMessage}) => postUserMessage(Number(userId),userMessage),

@@ -1,11 +1,12 @@
 import { useQuery } from '@tanstack/react-query'
-import { getCookie } from 'cookies-next'
 
 import { getTransitData } from '@/actions/user-actions'
 import { ITransitRouteResponseProps } from '@/shared/@common/types/transitRoute.types'
+import { useCookies } from 'next-client-cookies'
 
 export const useGetTransitList = () => {
-  const userId = getCookie("userId")
+  const cookies = useCookies()
+  const userId = cookies.get("userId")
 
   const { data: transitList, isLoading, isError } = useQuery<ITransitRouteResponseProps, Error>({
     queryKey: ["transitList", userId],

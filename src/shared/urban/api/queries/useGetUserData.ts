@@ -1,11 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
-import { getCookie } from 'cookies-next';
 
 import { getUserData } from '@/actions/user-actions';
 import { IUserProps } from '@/shared/@common/types/user.types';
+import { useCookies } from 'next-client-cookies';
 
 export const useGetUserData = () => {
-  const userId = getCookie("userId")
+  const cookies = useCookies()
+  const userId = cookies.get("userId")
   
   const { data: userData, isLoading, isError } = useQuery<IUserProps, Error>({
     queryKey: ["user", userId],
