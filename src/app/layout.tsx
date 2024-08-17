@@ -7,37 +7,35 @@ import "@/shared/@common/styles/globals.css"
 
 import ModalContainer from "@/shared/@common/ui/ModalContainer"
 import RQProvider from "@/shared/@common/ui/RQProvider"
-
-const baseUrl =
-  process.env.NEXT_PUBLIC_BASE_URL || `${process.env.NEXT_PUBLIC_BASE_URL}/404`
+import siteMetadata from "@/shared/siteMetadata"
 
 export const metadata: Metadata = {
-  title: "지방적 사고 🍀",
-  description: "서울 친구들은 모르는 지방 친구들의 고충",
+  metadataBase: new URL(siteMetadata.siteUrl),
+  title: siteMetadata.title,
+  description: siteMetadata.description,
   icons: {
-    icon: "/icons/capsule-modal.svg",
+    icon: siteMetadata.siteLogo,
   },
   openGraph: {
-    title: "지방적 사고 🍀",
-    description: "서울 친구들은 모르는 지방 친구들의 고충",
+    title: siteMetadata.title,
+    description: siteMetadata.description,
     images: [
       {
-        url: "/icons/mini-gacha-landing.svg",
+        url: siteMetadata.socialBanner,
         alt: "뽑기 이미지",
       },
     ],
   },
   twitter: {
-    title: "지방적 사고 🍀",
-    description: "서울 친구들은 모르는 지방 친구들의 고충",
+    title: siteMetadata.title,
+    description: siteMetadata.description,
     images: [
       {
-        url: "/icons/mini-gacha-landing.svg",
+        url: siteMetadata.socialBanner,
         alt: "뽑기 이미지",
       },
     ],
   },
-  metadataBase: new URL(baseUrl),
 }
 
 export default function RootLayout({
@@ -46,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ko" className={LocalMindsBodyFont.className}>
+    <html lang={siteMetadata.language} className={LocalMindsBodyFont.className}>
       <body className="mx-auto h-full max-w-[767px] bg-white">
         <RQProvider>{children}</RQProvider>
         <ModalContainer />
