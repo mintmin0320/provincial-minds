@@ -1,38 +1,10 @@
 /** 주소 -> 좌표 변환 */
 
-import { ICoordinates } from '@/shared/@common/types/saveRoute.types'
-
-interface IAddressElementsProps {
-  code: string
-  longName: string
-  shortName: string
-  types: string[]
-}
-
-interface IAddressesProps {
-  addressElements: IAddressElementsProps[]
-  distance: number
-  englishAddress: string
-  jibunAddress: string
-  roadAddress: string
-  x: string
-  y: string
-}
-
-interface ICoordinatesResponseProps {
-  addresses: IAddressesProps[]
-  errorMessage: string
-  meta: {
-    totalCount: number
-    page: number
-    count: number
-  }
-  status: string
-}
+import { ICoordinatesProps, ICoordinatesResponseProps } from '@/shared/@common/types/coordinates.types';
 
 export const fetchCoordinates = async (
   address: string
-): Promise<ICoordinates | null> => {
+): Promise<ICoordinatesProps | null> => {
   try {
     const response = await fetch("/api/geocode", {
       method: "POST",

@@ -3,21 +3,13 @@ import { setCookie } from 'cookies-next'
 import toast from 'react-hot-toast'
 
 import { createUserWithTransitData } from '@/actions/user-actions'
+import { ILocationValidatedProps } from '@/shared/@common/types/area.types'
 import { getTransitRoute } from '../transitRouteService'
 
-async function saveUserAndTransitData({
-  provincialArea,
-  urbanArea,
-}: {
-  provincialArea: string
-  urbanArea: string
-}): Promise<number> {
-  const transitRoute = await getTransitRoute(provincialArea, urbanArea)
+async function saveUserAndTransitData(locationState: ILocationValidatedProps): Promise<number> {
+  const transitRoute = await getTransitRoute(locationState)
 
-  const user = {
-    startArea: provincialArea,
-    endArea: urbanArea,
-  }
+  const user = locationState
 
   const userId = await createUserWithTransitData(transitRoute, user)
 
@@ -28,8 +20,8 @@ async function saveUserAndTransitData({
   return userId
 }
 
-export default function useSaveRoute() {
-  return useMutation<number, Error, { provincialArea: string, urbanArea: string }>({
+export default function useSaveRecommendedRoute() {
+  return useMutation<number, Error, ILocationValidatedProps>({
     mutationFn: saveUserAndTransitData,
     onSuccess: (userId) => {
       setCookie("userId", String(userId))

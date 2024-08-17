@@ -53,26 +53,26 @@ export type Database = {
       user: {
         Row: {
           created_at: string | null
-          endArea: string
+          destination: string
           gachaMessage: string | null
           id: number
-          startArea: string
+          origin: string
           userMessage: string | null
         }
         Insert: {
           created_at?: string | null
-          endArea: string
+          destination: string
           gachaMessage?: string | null
           id?: number
-          startArea: string
+          origin: string
           userMessage?: string | null
         }
         Update: {
           created_at?: string | null
-          endArea?: string
+          destination?: string
           gachaMessage?: string | null
           id?: number
-          startArea?: string
+          origin?: string
           userMessage?: string | null
         }
         Relationships: []

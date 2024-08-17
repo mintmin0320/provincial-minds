@@ -9,31 +9,35 @@ import Loading from "@/shared/@common/ui/Loading"
 
 import ROUTE_PATH from "@/shared/@common/constants/path"
 import { fixButtonStyle } from "@/shared/@common/styles/fixButton"
-import { IAreaProps } from "@/shared/@common/types/area.types"
-import useSaveRoute from "@/shared/provincial/api/mutations/useSaveRoute"
+import {
+  ILocationProps,
+  ILocationValidatedProps,
+} from "@/shared/@common/types/area.types"
+import useSaveRecommendedRoute from "@/shared/provincial/api/mutations/useSaveRecommendedRoute"
 
 const AreaSearchFieldSection = () => {
   const router = useRouter()
 
-  const { mutateAsync: saveRoute, isPending, isError } = useSaveRoute()
+  const {
+    mutateAsync: saveRoute,
+    isPending,
+    isError,
+  } = useSaveRecommendedRoute()
 
-  const [areaState, setAreaState] = useState<IAreaProps>({
-    provincialArea: null,
-    urbanArea: null,
+  const [locationState, setLocationState] = useState<ILocationProps>({
+    origin: null,
+    destination: null,
   })
 
   const [isSaving, setIsSaving] = useState<boolean>(false)
 
-  const handleSaveArea = async () => {
-    if (!areaState.provincialArea || !areaState.urbanArea) {
+  const handleSaveLocation = async () => {
+    if (!locationState.origin || !locationState.destination) {
       return
     }
 
     setIsSaving(true)
-    const userId = await saveRoute({
-      provincialArea: areaState.provincialArea,
-      urbanArea: areaState.urbanArea,
-    })
+    const userId = await saveRoute(locationState as ILocationValidatedProps)
 
     if (userId) {
       router.push(ROUTE_PATH.TRANSIT_ROTE)
@@ -46,15 +50,15 @@ const AreaSearchFieldSection = () => {
     return (
       <section>
         <AreaSearchFieldGroup
-          areaState={areaState}
-          setAreaState={setAreaState}
+          areaState={locationState}
+          setAreaState={setLocationState}
           type="change"
         />
         <Button
-          className={fixButtonStyle}
           theme="blue"
-          disabled={!areaState.urbanArea || !areaState.provincialArea}
-          onClick={handleSaveArea}
+          className={fixButtonStyle}
+          disabled={!locationState.origin || !locationState.destination}
+          onClick={handleSaveLocation}
         >
           최적 경로 알아보기
         </Button>

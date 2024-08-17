@@ -44,8 +44,8 @@ export async function getTransitData(userId: number): Promise<{ userId: number, 
     .from("user")
     .select(`
       id,
-      startArea,
-      endArea,
+      origin,
+      destination,
       transits:transit(*)
     `)
     .eq('id', userId)
@@ -60,8 +60,8 @@ export async function getTransitData(userId: number): Promise<{ userId: number, 
 
   const result = {
     userId: data[0].id,
-    startArea: data[0].startArea,
-    endArea: data[0].endArea,
+    startArea: data[0].origin,
+    endArea: data[0].destination,
     transits: data[0].transits
   }
 
@@ -76,8 +76,8 @@ export async function createUserWithTransitData(transitRoute: any, user: UserRow
     .from("user")
     .insert({
       created_at: new Date().toISOString(),
-      startArea: user.startArea,
-      endArea: user.endArea,
+      origin: user.origin,
+      destination: user.destination,
     })
     .select("id")
     .single();  // 단일 행을 반환
