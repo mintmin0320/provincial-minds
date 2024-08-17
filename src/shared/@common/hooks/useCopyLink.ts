@@ -2,10 +2,11 @@ import toast from "react-hot-toast"
 
 import ROUTE_PATH from "@/shared/@common/constants/path"
 import { copyURL } from "@/shared/@common/utils/copyURL"
-import { getCookie } from 'cookies-next'
+import { useCookies } from 'next-client-cookies'
 
 const useCopyLink = () => {
-  const userId = getCookie("userId")
+  const cookies = useCookies()
+  const userId = cookies.get("userId")
 
   const handleCopyButtonClick = () => {
     copyURL({

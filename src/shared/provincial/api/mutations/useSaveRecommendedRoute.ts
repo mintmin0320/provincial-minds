@@ -1,9 +1,9 @@
 import { useMutation } from '@tanstack/react-query'
-import { setCookie } from 'cookies-next'
 import toast from 'react-hot-toast'
 
 import { createUserWithTransitData } from '@/actions/user-actions'
 import { ILocationValidatedProps } from '@/shared/@common/types/location'
+import { useCookies } from 'next-client-cookies'
 import { getTransitRoute } from '../transitRouteService'
 
 async function saveUserAndTransitData(locationState: ILocationValidatedProps): Promise<number> {
@@ -18,10 +18,12 @@ async function saveUserAndTransitData(locationState: ILocationValidatedProps): P
 }
 
 export default function useSaveRecommendedRoute() {
+  const cookies = useCookies()
+
   return useMutation<number, Error, ILocationValidatedProps>({
     mutationFn: saveUserAndTransitData,
     onSuccess: (userId) => {
-      setCookie("userId", String(userId))
+      cookies.set("userId", String(userId))
     },
     onError: (error) => {
       toast.error(error.message)
