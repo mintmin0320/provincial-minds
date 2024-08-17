@@ -8,10 +8,7 @@ import { getTransitRoute } from '../transitRouteService'
 
 async function saveUserAndTransitData(locationState: ILocationValidatedProps): Promise<number> {
   const transitRoute = await getTransitRoute(locationState)
-
-  const user = locationState
-
-  const userId = await createUserWithTransitData(transitRoute, user)
+  const userId = await createUserWithTransitData(transitRoute, locationState)
 
   if (!userId) {
     throw new Error("A-7. 유저 정보를 가져오지 못했습니다.")
