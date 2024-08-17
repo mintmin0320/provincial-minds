@@ -3,9 +3,9 @@
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
-import SearchAreaFieldGroup from "@/shared/@common/ui/AreaSearchFieldGroup"
 import Button from "@/shared/@common/ui/Button"
 import Loading from "@/shared/@common/ui/Loading"
+import SearchAreaFieldGroup from "@/shared/@common/ui/LocationInputGroup"
 import TransitRouteCard from "./TransitRouteCard"
 
 import ROUTE_PATH from "@/shared/@common/constants/path"

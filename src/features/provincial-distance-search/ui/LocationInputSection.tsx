@@ -3,9 +3,9 @@
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
-import AreaSearchFieldGroup from "@/shared/@common/ui/AreaSearchFieldGroup"
 import Button from "@/shared/@common/ui/Button"
 import Loading from "@/shared/@common/ui/Loading"
+import LocationInputGroup from "@/shared/@common/ui/LocationInputGroup"
 
 import ROUTE_PATH from "@/shared/@common/constants/path"
 import { fixButtonStyle } from "@/shared/@common/styles/fixButton"
@@ -15,7 +15,7 @@ import {
 } from "@/shared/@common/types/area.types"
 import useSaveRecommendedRoute from "@/shared/provincial/api/mutations/useSaveRecommendedRoute"
 
-const AreaSearchFieldSection = () => {
+const LocationInputSection = () => {
   const router = useRouter()
 
   const {
@@ -49,7 +49,7 @@ const AreaSearchFieldSection = () => {
   } else {
     return (
       <section>
-        <AreaSearchFieldGroup
+        <LocationInputGroup
           areaState={locationState}
           setAreaState={setLocationState}
           type="change"
@@ -66,4 +66,4 @@ const AreaSearchFieldSection = () => {
     )
   }
 }
-export default AreaSearchFieldSection
+export default LocationInputSection

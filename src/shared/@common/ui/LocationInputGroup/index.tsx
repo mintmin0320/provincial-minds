@@ -11,7 +11,7 @@ interface IAreaSearchFieldGroupProps {
   type: "view" | "change"
 }
 
-const AreaSearchFieldGroup = ({
+const LocationInputGroup = ({
   areaState,
   setAreaState,
   type,
@@ -47,4 +47,4 @@ const AreaSearchFieldGroup = ({
   )
 }
 
-export default AreaSearchFieldGroup
+export default LocationInputGroup
