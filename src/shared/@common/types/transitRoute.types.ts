@@ -3,26 +3,26 @@ export type TransportationTheme = "blue" | "mint" | "yellow"
 
 
 export interface ITransitProps {
-  id: number;
-  bestRoute: boolean;
-  pathType: number;
-  totalTime: number;
-  transitCount: number;
-  payment: number | null;
+  id: number
+  bestRoute: boolean
+  pathType: number
+  totalTime: number
+  transitCount: number
+  payment: number | null
 }
 
 export interface ITransitRouteResponseProps {
-  transits: ITransitProps[];
-  startArea: string;
-  endArea: string;
-  userId: number;
+  transits: ITransitProps[]
+  startArea: string
+  endArea: string
+  userId: number
 }
 
 export type ExtendedTransitRouteProps = Pick<ITransitProps, 'totalTime' | 'payment'> & {
-  destination: string;
-  transportationList: TransportationType[];
+  destination: string
+  transportationList: TransportationType[]
 }
 
 export type ExtendedTransitRouteCardProps = ITransitProps & {
-  isSelected: boolean;
+  isSelected: boolean
 }
