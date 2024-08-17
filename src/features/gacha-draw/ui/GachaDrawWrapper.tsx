@@ -1,43 +1,43 @@
 "use client"
 
+import { setCookie } from "cookies-next"
 import { ReactNode, useEffect, useRef } from "react"
 
-import { useModals } from "@/shared/@common/hooks/useModals"
+import GachaModal from "@/shared/@common/ui/GachaModal"
 
-import useGetSearchParam from "@/shared/@common/hooks/useGetSearchParams"
+import { useModals } from "@/shared/@common/hooks/useModals"
+import { CapsuleTheme } from "@/shared/@common/types/capsuleTheme.types"
 import { useGetUserData } from "@/shared/urban/api/queries/useGetUserData"
-import { useCookies } from "next-client-cookies"
-import GachaModal from "../../../shared/@common/ui/GachaModal"
 
 interface IGachaDrawWrapperProps {
+  userId?: string
+  theme?: CapsuleTheme
   children: ReactNode
 }
 
-const GachaDrawWrapper = ({ children }: IGachaDrawWrapperProps) => {
+const GachaDrawWrapper = ({
+  userId,
+  theme,
+  children,
+}: IGachaDrawWrapperProps) => {
   const hasOpened = useRef(false)
-  const cookies = useCookies()
-
   const { open } = useModals()
 
-  const themeParams = useGetSearchParam("theme") ?? ""
-  const userId = useGetSearchParam("userId") ?? ""
-
-  if (userId) cookies.set("userId", userId)
+  if (userId) setCookie("userId", userId)
 
   const { userData, isLoading } = useGetUserData()
 
-  /** useRef를 사용하여 첫 번째 렌더링을 건너뛰기 */
   useEffect(() => {
-    if (!hasOpened.current && !isLoading) {
+    if (!hasOpened.current && !isLoading && userData) {
       open(GachaModal, {
-        theme: themeParams,
-        isSendMessage: themeParams ? false : true,
-        customMessage: userData?.userMessage ?? "",
-        gachaMessage: userData?.gachaMessage ?? "",
+        theme,
+        isSendMessage: theme ? false : true,
+        customMessage: userData.userMessage ?? "",
+        gachaMessage: userData.gachaMessage ?? "",
       })
       hasOpened.current = true
     }
-  }, [isLoading, userData, themeParams, open])
+  }, [isLoading, userData, theme, open])
 
   return <>{children}</>
 }

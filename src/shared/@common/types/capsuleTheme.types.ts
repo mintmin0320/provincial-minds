@@ -1,0 +1,1 @@
+export type CapsuleTheme = "orange" | "mint" | "yellow"

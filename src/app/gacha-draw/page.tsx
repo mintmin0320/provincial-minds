@@ -5,10 +5,22 @@ import GachaDrawWrapper from "@/features/gacha-draw/ui/GachaDrawWrapper"
 import GachaRouterButton from "@/shared/@common/ui/GachaRouterButton"
 import GachaVisual from "@/shared/@common/ui/GachaVisual"
 
-const GachaDrawPage = async () => {
+import { CapsuleTheme } from "@/shared/@common/types/capsuleTheme.types"
+
+interface SearchParamsType {
+  searchParams: {
+    userId: string
+    theme: CapsuleTheme
+  }
+}
+
+const GachaDrawPage = async ({ searchParams }: SearchParamsType) => {
+  const userId = searchParams.userId
+  const theme = searchParams.theme
+
   return (
     <Suspense>
-      <GachaDrawWrapper>
+      <GachaDrawWrapper userId={userId} theme={theme}>
         <main className="h-full bg-white pt-[28px]">
           <TimeCostAnalogy />
           <GachaVisual isCreateGacha={false} />
