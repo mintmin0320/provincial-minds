@@ -11,9 +11,10 @@ export const useGetTransitList = () => {
   const { data: transitList, isLoading, isError } = useQuery<ITransitRouteResponseProps, Error>({
     queryKey: ["transitList", userId],
     queryFn: () =>  getTransitData(Number(userId)),
-    enabled: !!userId, // userId가 있을 때만 쿼리 실행
+    enabled: !!userId,
     staleTime: 1000 * 60,
-    gcTime: 1000 * 70
+    gcTime: 1000 * 70,
+    throwOnError: true
   })
 
   return { transitList, isLoading, isError }
