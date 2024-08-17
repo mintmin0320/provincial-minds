@@ -14,11 +14,12 @@ export async function getTransitRoute({origin, destination}: ILocationValidatedP
   const { latitude: originLatitude, longitude: originLongitude } = originCoordinates
   const { latitude: destinationLatitude, longitude: destinationLongitude } = destinationCoordinates
 
+  
   const transitRoute = await fetchPublicTransitRoute(
-    originLatitude,
     originLongitude,
-    destinationLatitude,
-    destinationLongitude
+    originLatitude,
+    destinationLongitude,
+    destinationLatitude
   )
 
   return transitRoute
