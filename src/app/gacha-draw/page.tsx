@@ -1,5 +1,3 @@
-import { Suspense } from "react"
-
 import TimeCostAnalogy from "@/features/gacha-create/ui/TimeCostAnalogy"
 import GachaDrawWrapper from "@/features/gacha-draw/ui/GachaDrawWrapper"
 import GachaRouterButton from "@/shared/@common/ui/GachaRouterButton"
@@ -19,17 +17,15 @@ const GachaDrawPage = async ({ searchParams }: ISearchParamsProps) => {
   const theme = searchParams.theme
 
   return (
-    <Suspense>
-      <GachaDrawWrapper userId={userId} theme={theme}>
-        <main className="h-full bg-white pt-[28px]">
-          <TimeCostAnalogy />
-          <GachaVisual isCreateGacha={false} />
-          <div className="px-[16px]">
-            <GachaRouterButton isCreateGacha={false} />
-          </div>
-        </main>
-      </GachaDrawWrapper>
-    </Suspense>
+    <GachaDrawWrapper userId={userId} theme={theme}>
+      <main className="h-full bg-white pt-[28px]">
+        <TimeCostAnalogy />
+        <GachaVisual isCreateGacha={false} />
+        <div className="px-[16px]">
+          <GachaRouterButton isCreateGacha={false} />
+        </div>
+      </main>
+    </GachaDrawWrapper>
   )
 }
 
