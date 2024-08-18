@@ -13,16 +13,16 @@ const CalculateButton = () => {
 
   const selectedIndex = useTransitStore((state) => state.selectedIndex)
 
-  const handleCalculatorClick = () => {
-    router.push(`${ROUTE_PATH.TRANSIT_ROTE_RESULT}?transitId=${selectedIndex}`)
-  }
-
   return (
     <Button
       theme="blue"
       className={fixButtonStyle}
       disabled={selectedIndex === null}
-      onClick={handleCalculatorClick}
+      onClick={() =>
+        router.push(
+          `${ROUTE_PATH.TRANSIT_ROTE_RESULT}?transitId=${selectedIndex}`,
+        )
+      }
     >
       여정 계산하기
     </Button>
