@@ -13,8 +13,8 @@ export interface ITransitProps {
 
 export interface ITransitRouteResponseProps {
   transits: ITransitProps[]
-  startArea: string
-  endArea: string
+  origin: string
+  destination: string
   userId: number
 }
 

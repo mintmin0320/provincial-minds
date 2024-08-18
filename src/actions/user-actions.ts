@@ -37,7 +37,7 @@ export async function getUserData(userId: number): Promise<UserRow> {
 }
 
 /** 교통 수단 조회 */
-export async function getTransitData(userId: number): Promise<{ userId: number, startArea: string, endArea: string, transits: ITransitProps[] }> {
+export async function getTransitData(userId: number): Promise<{ userId: number, origin: string, destination: string, transits: ITransitProps[] }> {
   const supabase = await createServerSupabaseClient()
 
   const { data, error } = await supabase
@@ -60,8 +60,8 @@ export async function getTransitData(userId: number): Promise<{ userId: number, 
 
   const result = {
     userId: data[0].id,
-    startArea: data[0].origin,
-    endArea: data[0].destination,
+    origin: data[0].origin,
+    destination: data[0].destination,
     transits: data[0].transits
   }
 
