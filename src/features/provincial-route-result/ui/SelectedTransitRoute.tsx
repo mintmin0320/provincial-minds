@@ -3,13 +3,14 @@
 import Loading from "@/shared/@common/ui/Loading"
 import TransitRouteItem from "./TransitRouteItem"
 
-import useGetSearchParam from "@/shared/@common/hooks/useGetSearchParams"
 import { getTransportationList } from "@/shared/@common/utils/getTransportationList"
 import { useGetTransitList } from "@/shared/provincial/api/queries/useGetTransitList"
 
-const SelectedTransitRoute = () => {
-  const transitId = useGetSearchParam("transitId") || null
+interface ISelectedTransitRouteProps {
+  transitId: string
+}
 
+const SelectedTransitRoute = ({ transitId }: ISelectedTransitRouteProps) => {
   const { transitList, isLoading, isError } = useGetTransitList()
 
   // 선택된 transit 데이터
