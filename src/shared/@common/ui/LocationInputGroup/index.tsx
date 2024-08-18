@@ -2,7 +2,7 @@
 
 import { cn } from "@/shared/@common/utils/twMerge"
 
-import { ILocationProps } from "../../types/location"
+import { ILocationProps } from "../../types/location.types"
 import LocationSearchField from "../LocationSearchField"
 
 interface IAreaSearchFieldGroupProps {

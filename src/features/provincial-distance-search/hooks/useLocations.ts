@@ -2,7 +2,7 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 import ROUTE_PATH from '@/shared/@common/constants/path'
-import { ILocationProps, ILocationValidatedProps } from '@/shared/@common/types/location'
+import { ILocationProps, ILocationValidatedProps } from '@/shared/@common/types/location.types'
 import useSaveRecommendedRoute from '@/shared/provincial/api/mutations/useSaveRecommendedRoute'
 
 const useLocations = () => {

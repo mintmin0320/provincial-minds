@@ -2,7 +2,7 @@ import { useMutation } from '@tanstack/react-query'
 import toast from 'react-hot-toast'
 
 import { createUserWithTransitData } from '@/actions/user-actions'
-import { ILocationValidatedProps } from '@/shared/@common/types/location'
+import { ILocationValidatedProps } from '@/shared/@common/types/location.types'
 import { useCookies } from 'next-client-cookies'
 import { getTransitRoute } from '../transitRouteService'
 
