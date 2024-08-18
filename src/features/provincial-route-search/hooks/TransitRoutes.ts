@@ -1,18 +1,17 @@
 import { useGetTransitList } from '@/shared/provincial/api/queries/useGetTransitList'
 
 const TransitRoutes = () => {
-  const { transitList, isLoading, isError } = useGetTransitList()
+  const { transitList, isLoading } = useGetTransitList()
 
   const locationState = {
-    origin: transitList?.startArea ?? "",
-    destination: transitList?.endArea ?? "",
+    origin: transitList?.origin ?? "",
+    destination: transitList?.destination ?? "",
   }
 
   return {
     transitList,
     locationState,
-    isLoading,
-    isError
+    isLoading
   }
 }
 export default TransitRoutes
