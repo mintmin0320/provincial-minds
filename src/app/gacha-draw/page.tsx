@@ -7,14 +7,14 @@ import GachaVisual from "@/shared/@common/ui/GachaVisual"
 
 import { CapsuleTheme } from "@/shared/@common/types/capsuleTheme.types"
 
-interface SearchParamsType {
+interface ISearchParamsProps {
   searchParams: {
     userId: string
     theme: CapsuleTheme
   }
 }
 
-const GachaDrawPage = async ({ searchParams }: SearchParamsType) => {
+const GachaDrawPage = async ({ searchParams }: ISearchParamsProps) => {
   const userId = searchParams.userId
   const theme = searchParams.theme
 
