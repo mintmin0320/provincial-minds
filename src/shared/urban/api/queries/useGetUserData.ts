@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { getUserData } from '@/actions/user-actions';
+import { getUserData } from '@/actions/user';
 import { IUserProps } from '@/shared/@common/types/user.types';
 import { useCookies } from 'next-client-cookies';
 

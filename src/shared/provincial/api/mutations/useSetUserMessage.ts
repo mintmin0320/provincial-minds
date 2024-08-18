@@ -1,7 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 
-import { updateUserMessage } from '@/actions/user-actions';
+import { updateUserMessage } from '@/actions/user';
 import { useCookies } from 'next-client-cookies';
 
 

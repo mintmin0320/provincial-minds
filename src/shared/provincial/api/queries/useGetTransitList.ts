@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { getTransitData } from '@/actions/user-actions'
+import { getTransitData } from '@/actions/transit'
 import { ITransitRouteResponseProps } from '@/shared/@common/types/transitRoute.types'
 import { useCookies } from 'next-client-cookies'
 
