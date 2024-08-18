@@ -8,6 +8,7 @@ import ROUTE_PATH from "@/shared/@common/constants/path"
 import useSetGachaMessage from "@/shared/provincial/api/mutations/useSetGachaMessage"
 import { useGetUserData } from "@/shared/urban/api/queries/useGetUserData"
 import { useGachaStore } from "../../hooks/useGachaStore"
+import { fixButtonStyle } from "../../styles/fixButton"
 
 interface IGachaRouterButtonProps {
   isCreateGacha: boolean
@@ -51,7 +52,7 @@ const GachaRouterButton = ({ isCreateGacha }: IGachaRouterButtonProps) => {
   return (
     <Button
       type="button"
-      className="fixed bottom-0 left-1/2 mb-[10px] max-w-[calc(100%-32px)] -translate-x-1/2 transform"
+      className={fixButtonStyle}
       theme={isCreateGacha ? "blue" : "gradient"}
       disabled={isCreateGacha ? !gachaMessage : false}
       onClick={handleCreateGacha}
