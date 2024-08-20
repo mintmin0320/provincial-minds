@@ -6,11 +6,7 @@ import { useGetUserData } from "@/shared/urban/api/queries/useGetUserData"
 
 import Capsule from "../Capsule"
 
-interface IGachaVisualProps {
-  isCreateGacha: boolean
-}
-
-const GachaVisual = ({ isCreateGacha }: IGachaVisualProps) => {
+const GachaVisual = ({ isCreateGacha }: { isCreateGacha: boolean }) => {
   const { userData } = useGetUserData()
 
   return (
