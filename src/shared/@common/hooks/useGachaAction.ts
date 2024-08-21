@@ -2,6 +2,7 @@ import { useRouter } from 'next/navigation'
 
 import useSetGachaMessage from '@/shared/provincial/api/mutations/useSetGachaMessage'
 import { useGetUserData } from '@/shared/urban/api/queries/useGetUserData'
+import { useState } from 'react'
 import ROUTE_PATH from '../constants/path'
 import { useGachaStore } from './useGachaStore'
 
@@ -11,7 +12,9 @@ const themes = ["orange", "mint", "yellow"] as const
 export const useGachaAction = () => {
   const router = useRouter()
 
-  const { mutateAsync: saveGachaMessage } = useSetGachaMessage()
+  const [isCreating, setIsCreating] = useState<boolean>(false)
+
+  const { mutateAsync: saveGachaMessage, isPending } = useSetGachaMessage()
   const { userData } = useGetUserData()
 
   const gachaMessage = useGachaStore((state) => state.gachaMessage)
@@ -19,6 +22,8 @@ export const useGachaAction = () => {
 
   const createGacha = async () => {
     if (!gachaMessage) return
+
+    setIsCreating(true)
 
     const result = await saveGachaMessage({ gachaMessage })
 
@@ -45,5 +50,5 @@ export const useGachaAction = () => {
     }
   }
 
-  return { executeAction, gachaMessage }
+  return { executeAction, gachaMessage, isCreating }
 }
