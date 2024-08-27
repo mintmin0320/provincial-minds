@@ -1,18 +1,13 @@
 "use client"
 
-import { useRouter } from "next/navigation"
-
-import ROUTE_PATH from "@/shared/@common/constants/path"
 import { fixButtonStyle } from "@/shared/@common/styles/fixButton"
-import useSetUserMessage from "@/shared/provincial/api/mutations/useSetUserMessage"
-import { useMessageStore } from "../hooks/useMessageStore"
+import { useMessages } from "../hooks/useMessages"
 
 import Button from "@/shared/@common/ui/Button"
+import Loading from "@/shared/@common/ui/Loading"
 import MessageList from "./MessageList"
 
 const MessageChoiceSection = () => {
-  const router = useRouter()
-
   const {
     messages,
     selectedIndex,
@@ -26,46 +21,41 @@ const MessageChoiceSection = () => {
     handleSelect,
     handleSaveMessage,
     handleKeyDown,
-  } = useMessageStore()
+    handleClick,
+    isSaving,
+    isError,
+    isPending,
+  } = useMessages()
 
-  const { mutateAsync: saveUserMessage } = useSetUserMessage()
-
-  const handleClick = async () => {
-    if (finalMessage) {
-      const result = await saveUserMessage({
-        userMessage: finalMessage ?? "",
-      })
-
-      if (result) router.push(ROUTE_PATH.GACHA_SHARE)
-    }
+  if (!isError && (isPending || isSaving)) {
+    return <Loading />
+  } else {
+    return (
+      <>
+        <MessageList
+          messages={messages}
+          selectedIndex={selectedIndex}
+          isInputCustom={isInputCustom}
+          savedMessage={savedMessage}
+          customMessage={customMessage}
+          handleSelect={handleSelect}
+          setSelectedIndex={setSelectedIndex}
+          setIsInputCustom={setIsInputCustom}
+          setCustomMessage={setCustomMessage}
+          handleSaveMessage={handleSaveMessage}
+          handleKeyDown={handleKeyDown}
+        />
+        <Button
+          className={fixButtonStyle}
+          theme="blue"
+          disabled={!finalMessage}
+          onClick={handleClick}
+        >
+          메시지 선택
+        </Button>
+      </>
+    )
   }
-
-  return (
-    <>
-      <MessageList
-        messages={messages}
-        selectedIndex={selectedIndex}
-        isInputCustom={isInputCustom}
-        savedMessage={savedMessage}
-        customMessage={customMessage}
-        handleSelect={handleSelect}
-        setSelectedIndex={setSelectedIndex}
-        setIsInputCustom={setIsInputCustom}
-        setCustomMessage={setCustomMessage}
-        handleSaveMessage={handleSaveMessage}
-        handleKeyDown={handleKeyDown}
-      />
-      <Button
-        type="submit"
-        className={fixButtonStyle}
-        theme="blue"
-        disabled={!finalMessage}
-        onClick={handleClick}
-      >
-        메시지 선택
-      </Button>
-    </>
-  )
 }
 
 export default MessageChoiceSection
