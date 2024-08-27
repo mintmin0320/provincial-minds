@@ -21,7 +21,6 @@ const useLocations = () => {
 
   const [isSaving, setIsSaving] = useState<boolean>(false)
 
-  const canSave = locationState.origin && locationState.destination
 
   const handleSaveLocation = async () => {
     if (!canSave) {
@@ -37,14 +36,16 @@ const useLocations = () => {
       router.push(ROUTE_PATH.TRANSIT_ROTE)
     }
   }
+
+  const canSave = locationState.origin && locationState.destination
+  const isProcessing = !isError && (isPending || isSaving)
   
   return {
     locationState,
     setLocationState,
     isSaving,
     saveLocation: handleSaveLocation,
-    isPending,
-    isError,
+    isProcessing,
     canSave
   }
   

@@ -13,31 +13,29 @@ const LocationInputSection = () => {
     setLocationState,
     isSaving,
     saveLocation,
-    isPending,
-    isError,
+    isProcessing,
     canSave,
   } = useLocations()
 
-  if (!isError && (isPending || isSaving)) {
-    return <Loading />
-  } else {
-    return (
-      <section>
-        <LocationInputGroup
-          locationState={locationState}
-          setLocationState={setLocationState}
-          type="change"
-        />
-        <Button
-          theme="blue"
-          className={fixButtonStyle}
-          disabled={!canSave}
-          onClick={saveLocation}
-        >
-          최적 경로 알아보기
-        </Button>
-      </section>
-    )
-  }
+  return isProcessing ? (
+    <Loading />
+  ) : (
+    <section>
+      <LocationInputGroup
+        locationState={locationState}
+        setLocationState={setLocationState}
+        type="change"
+      />
+      <Button
+        theme="blue"
+        className={fixButtonStyle}
+        disabled={!canSave}
+        onClick={saveLocation}
+      >
+        최적 경로 알아보기
+      </Button>
+    </section>
+  )
 }
+
 export default LocationInputSection
