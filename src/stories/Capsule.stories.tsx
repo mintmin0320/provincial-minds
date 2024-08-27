@@ -34,9 +34,13 @@ const meta = {
       control: "text",
       description: "캡슐 위치",
     },
-    iconsSize: {
+    iconWidth: {
       control: "number",
-      description: "캡슐 아이콘 크기",
+      description: "캡슐 아이콘 너비",
+    },
+    iconHeight: {
+      control: "number",
+      description: "캡슐 아이콘 높이",
     },
     isCreateGacha: {
       control: "boolean",
@@ -57,7 +61,8 @@ export const YellowCapsule: Story = {
   args: {
     color: "yellow",
     positionStyle: "absolute left-[22%] top-[6.5%] mo:left-[-3%] mo:top-[6%]",
-    iconsSize: 255,
+    iconWidth: 270,
+    iconHeight: 282,
     isCreateGacha: false,
     capsuleText: "",
   },
@@ -67,7 +72,8 @@ export const OrangeCapsule: Story = {
   args: {
     color: "orange",
     positionStyle: "absolute left-[48.5%] top-[14%] mo:left-[44%] mo:top-[15%]",
-    iconsSize: 214,
+    iconWidth: 211,
+    iconHeight: 254,
     isCreateGacha: false,
     capsuleText: "",
   },
@@ -78,7 +84,8 @@ export const CreateMintCapsule: Story = {
     color: "mint",
     positionStyle:
       "absolute left-[28%] top-[33.5%] mo:left-[4%] mo:top-[33.3%]",
-    iconsSize: 288,
+    iconWidth: 265,
+    iconHeight: 265,
     isCreateGacha: true,
     capsuleText: "",
   },
@@ -89,7 +96,8 @@ export const DrawMintCapsule: Story = {
     color: "mint",
     positionStyle:
       "absolute left-[28%] top-[33.5%] mo:left-[4%] mo:top-[33.3%]",
-    iconsSize: 288,
+    iconWidth: 265,
+    iconHeight: 265,
     isCreateGacha: false,
     capsuleText: "탕후루 사줘",
   },
