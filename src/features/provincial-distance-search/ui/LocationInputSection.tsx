@@ -11,7 +11,6 @@ const LocationInputSection = () => {
   const {
     locationState,
     setLocationState,
-    isSaving,
     saveLocation,
     isProcessing,
     canSave,
