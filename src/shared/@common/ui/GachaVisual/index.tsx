@@ -22,20 +22,20 @@ const GachaVisual = ({
         priority
       />
       <Capsule
-        iconsWidth={270}
-        iconsHeight={282}
+        iconWidth={270}
+        iconHeight={282}
         color="yellow"
         positionStyle="absolute left-[21.5%] top-[6%] mo:left-[-5.5%] mo:top-[6%]"
       />
       <Capsule
-        iconsWidth={211}
-        iconsHeight={254}
+        iconWidth={211}
+        iconHeight={254}
         color="orange"
         positionStyle="absolute left-[46.5%] top-[11.5%] mo:left-[44%] mo:top-[12%]"
       />
       <Capsule
-        iconsWidth={265}
-        iconsHeight={265}
+        iconWidth={265}
+        iconHeight={265}
         color="mint"
         positionStyle="absolute left-[31%] top-[34.5%] mo:left-[12%] mo:top-[34.5%]"
         isCreateGacha={isCreateGacha}

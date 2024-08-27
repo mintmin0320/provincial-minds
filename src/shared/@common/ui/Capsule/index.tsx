@@ -7,8 +7,8 @@ import { truncateText } from "@/shared/@common/utils/truncateText"
 interface ICapsuleProps {
   color: "yellow" | "mint" | "orange"
   positionStyle: string
-  iconsWidth: number
-  iconsHeight: number
+  iconWidth: number
+  iconHeight: number
   isCreateGacha?: boolean
   capsuleText?: string
 }
@@ -16,8 +16,8 @@ interface ICapsuleProps {
 const Capsule = ({
   color,
   positionStyle,
-  iconsWidth,
-  iconsHeight,
+  iconWidth,
+  iconHeight,
   isCreateGacha = false,
   capsuleText = "",
 }: ICapsuleProps) => {
@@ -30,8 +30,8 @@ const Capsule = ({
       )}
       <Image
         src={`/icons/capsule_${color}.svg`}
-        width={iconsWidth}
-        height={iconsHeight}
+        width={iconWidth}
+        height={iconHeight}
         alt={`capsule-${color}`}
         priority
       />
