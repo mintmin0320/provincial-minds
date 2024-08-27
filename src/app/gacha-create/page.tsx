@@ -8,9 +8,7 @@ const CreateGachaPage = () => {
       <TimeCostAnalogy />
       <GachaVisual isCreateGacha />
       {/** 감사 가챠 등록 버튼 */}
-      <div className="px-[16px]">
-        <GachaRouterButton isCreateGacha />
-      </div>
+      <GachaRouterButton isCreateGacha />
     </main>
   )
 }

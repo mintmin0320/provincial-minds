@@ -1,8 +1,9 @@
 "use client"
 
+import Image from "next/image"
+
 import Button from "@/shared/@common/ui/Button"
 
-import Image from "next/image"
 import { useGachaAction } from "../../hooks/useGachaAction"
 import { fixButtonStyle } from "../../styles/fixButton"
 
