@@ -1,10 +1,11 @@
 import Image from "next/image"
 
 import GachaShareButton from "@/features/gacha-landing-share/ui/GachaShareButton"
+import Layout from "@/shared/@common/ui/Layout"
 
 const GachaSharePage = () => {
   return (
-    <main className="flex h-dvh flex-col items-center gap-[8px] bg-white pt-[152px]">
+    <Layout className="flex h-dvh flex-col items-center gap-[8px] pt-[152px]">
       <Image
         src="/icons/mini-gacha-landing.svg"
         width={208}
@@ -17,7 +18,7 @@ const GachaSharePage = () => {
         <br /> 모두 끝났어요!
       </p>
       <GachaShareButton />
-    </main>
+    </Layout>
   )
 }
 

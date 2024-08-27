@@ -1,11 +1,13 @@
+import { cookies } from "next/headers"
+
 import TimeCostAnalogy from "@/features/gacha-create/ui/TimeCostAnalogy"
 import GachaDrawWrapper from "@/features/gacha-draw/ui/GachaDrawWrapper"
 import GachaRouterButton from "@/shared/@common/ui/GachaRouterButton"
 import GachaVisual from "@/shared/@common/ui/GachaVisual"
+import Layout from "@/shared/@common/ui/Layout"
 
 import { getUserData } from "@/actions/user"
 import { CapsuleTheme } from "@/shared/@common/types/capsuleTheme.types"
-import { cookies } from "next/headers"
 
 interface ISearchParamsProps {
   searchParams: {
@@ -21,7 +23,7 @@ const GachaDrawPage = async ({ searchParams }: ISearchParamsProps) => {
   const userData = await getUserData(Number(userId))
 
   return (
-    <main className="h-full bg-white pt-[28px]">
+    <Layout className="h-full pt-[28px]">
       <GachaDrawWrapper userId={userId} theme={theme}>
         <TimeCostAnalogy />
         <GachaVisual isCreateGacha={false} userData={userData} />
@@ -29,7 +31,7 @@ const GachaDrawPage = async ({ searchParams }: ISearchParamsProps) => {
           <GachaRouterButton isCreateGacha={false} />
         </div>
       </GachaDrawWrapper>
-    </main>
+    </Layout>
   )
 }
 
