@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image"
 
 import CreateGachaButton from "@/shared/@common/ui/CreateGachaButton"
@@ -9,7 +7,8 @@ import { truncateText } from "@/shared/@common/utils/truncateText"
 interface ICapsuleProps {
   color: "yellow" | "mint" | "orange"
   positionStyle: string
-  iconsSize: number
+  iconsWidth: number
+  iconsHeight: number
   isCreateGacha?: boolean
   capsuleText?: string
 }
@@ -17,7 +16,8 @@ interface ICapsuleProps {
 const Capsule = ({
   color,
   positionStyle,
-  iconsSize,
+  iconsWidth,
+  iconsHeight,
   isCreateGacha = false,
   capsuleText = "",
 }: ICapsuleProps) => {
@@ -30,8 +30,8 @@ const Capsule = ({
       )}
       <Image
         src={`/icons/capsule_${color}.svg`}
-        width={iconsSize}
-        height={iconsSize}
+        width={iconsWidth}
+        height={iconsHeight}
         alt={`capsule-${color}`}
         priority
       />

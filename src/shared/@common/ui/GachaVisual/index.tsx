@@ -1,65 +1,51 @@
-"use client"
-
 import Image from "next/image"
 
-import { useGetUserData } from "@/shared/urban/api/queries/useGetUserData"
-
-import { useModals } from "../../hooks/useModals"
-import { cn } from "../../utils/twMerge"
-
+import { IUserProps } from "../../types/user.types"
 import Capsule from "../Capsule"
-import GachaModal from "../GachaModal"
+import OpenCustomMessageButton from "../OpenCustomMessageButton"
 
-const GachaVisual = ({ isCreateGacha }: { isCreateGacha: boolean }) => {
-  const { userData } = useGetUserData()
-  const { open } = useModals()
-
+const GachaVisual = ({
+  isCreateGacha,
+  userData,
+}: {
+  isCreateGacha: boolean
+  userData?: IUserProps
+}) => {
   return (
     <section className="relative mt-[12px] h-[650px] w-full">
       <Image
         src="/icons/gacha.svg"
-        fill
+        width={375}
+        height={620}
         alt="뽑기 틀"
-        className="absolute left-0 right-0 top-0"
+        className="absolute left-0 right-0 top-0 mx-auto"
         priority
       />
       <Capsule
-        iconsSize={255}
+        iconsWidth={270}
+        iconsHeight={282}
         color="yellow"
-        positionStyle="absolute left-[22%] top-[6.5%] mo:left-[-3%] mo:top-[6%]"
+        positionStyle="absolute left-[21.5%] top-[6%] mo:left-[-5.5%] mo:top-[6%]"
       />
       <Capsule
-        iconsSize={214}
+        iconsWidth={211}
+        iconsHeight={254}
         color="orange"
-        positionStyle="absolute left-[48.5%] top-[14%] mo:left-[44%] mo:top-[15%]"
+        positionStyle="absolute left-[46.5%] top-[11.5%] mo:left-[44%] mo:top-[12%]"
       />
       <Capsule
-        iconsSize={288}
+        iconsWidth={265}
+        iconsHeight={265}
         color="mint"
-        positionStyle="absolute left-[28%] top-[33.5%] mo:left-[4%] mo:top-[33.3%]"
+        positionStyle="absolute left-[31%] top-[34.5%] mo:left-[12%] mo:top-[34.5%]"
         isCreateGacha={isCreateGacha}
         capsuleText={userData?.gachaMessage ?? ""}
       />
       {!isCreateGacha && (
-        <button
-          className={cn(
-            "absolute right-[24%] top-[2%] flex h-[40px] w-[40px] items-center justify-center rounded-full bg-[#F8D169]",
-            "mo:right-[8%] mo:top-[2%]",
-          )}
-          onClick={() =>
-            open(GachaModal, {
-              isSendMessage: true,
-              customMessage: userData?.userMessage ?? "",
-            })
-          }
-        >
-          <Image
-            src="/icons/message.svg"
-            alt="message-open-button"
-            width={28}
-            height={28}
-          />
-        </button>
+        <OpenCustomMessageButton
+          isSendMessage
+          customMessage={userData?.userMessage ?? ""}
+        />
       )}
     </section>
   )

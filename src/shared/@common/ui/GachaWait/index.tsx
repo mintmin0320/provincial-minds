@@ -14,7 +14,7 @@ const GachaWait = ({ text }: IGachaWaitProps) => {
         <Image
           src="/icons/mini-gacha.svg"
           width={290}
-          height={487}
+          height={464}
           alt="mini-gacha"
           className="z-10"
           priority

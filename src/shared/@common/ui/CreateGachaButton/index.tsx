@@ -29,8 +29,8 @@ const CreateGachaButton = () => {
       ) : (
         <Image
           src="/icons/capsule-label.svg"
-          width={130}
-          height={46}
+          width={118}
+          height={53}
           alt="capsule-mint-label"
           priority
         />
