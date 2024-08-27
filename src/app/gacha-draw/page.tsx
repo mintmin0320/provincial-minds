@@ -5,6 +5,7 @@ import GachaVisual from "@/shared/@common/ui/GachaVisual"
 
 import { getUserData } from "@/actions/user"
 import { CapsuleTheme } from "@/shared/@common/types/capsuleTheme.types"
+import { cookies } from "next/headers"
 
 interface ISearchParamsProps {
   searchParams: {
@@ -14,7 +15,7 @@ interface ISearchParamsProps {
 }
 
 const GachaDrawPage = async ({ searchParams }: ISearchParamsProps) => {
-  const userId = searchParams.userId
+  const userId = searchParams.userId ?? cookies().get("userId")?.value
   const theme = searchParams.theme
 
   const userData = await getUserData(Number(userId))
