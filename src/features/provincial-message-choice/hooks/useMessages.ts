@@ -4,7 +4,7 @@ import { useState } from "react"
 import ROUTE_PATH from '@/shared/@common/constants/path'
 import useSetUserMessage from '@/shared/provincial/api/mutations/useSetUserMessage'
 
-const messages = [
+const predefinedMessages = [
   "‘영화 티켓 반띵’으로 좀 더 행복하게 서울 갈지도?",
   "서울가는데, 디저트는 사주면 안 잡아 먹짘ㅋㅋ",
   "먼 길 올라가는데, 교통비 n빵 어떰?",
@@ -19,67 +19,56 @@ export const useMessages = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const [isInputCustom, setIsInputCustom] = useState<boolean>(false)
   const [customMessage, setCustomMessage] = useState<string>("")
-  const [savedMessage, setSavedMessage] = useState<string | null>(null)
   const [finalMessage, setFinalMessage] = useState<string | null>(null)
-
   const [isSaving, setIsSaving] = useState<boolean>(false)
 
-  const handleSelect = (index: number | null, message?: string) => {
-    if (index !== null && index >= messages.length) {
-      setIsInputCustom(true)
-      setCustomMessage(message || "")
-    } else {
-      setSelectedIndex(index)
-      setFinalMessage(message || "")
-      setIsInputCustom(false)
-    }
+
+  const handleSelect = (index: number | null, message: string = "") => {
+    setIsInputCustom(index === null || index >= predefinedMessages.length)
+    setSelectedIndex(index)
+    setFinalMessage(message)
   }
 
-  const handleSaveMessage = () => {
-    if (customMessage.trim() !== "") {
-      setSavedMessage(customMessage)
-      setFinalMessage(customMessage)
-      setIsInputCustom(false)
-      setSelectedIndex(messages.length)
+  const handleCustomMessageChange = (message: string) => {
+    setCustomMessage(message)
+    setFinalMessage(message)
+  }
+
+  const handleSaveCustomMessage = () => {
+    if (customMessage.trim()) {
+      handleSelect(predefinedMessages.length, customMessage)
     }
   }
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      handleSaveMessage()
+      handleSaveCustomMessage()
     }
   }
 
   const handleClick = async () => {
     if (finalMessage) {
       setIsSaving(true)
-      
-      const result = await saveUserMessage({
-        userMessage: finalMessage ?? "",
-      })
+
+      const result = await saveUserMessage({ userMessage: finalMessage })
 
       if (result) router.push(ROUTE_PATH.GACHA_SHARE)
     }
   }
 
+  const isProcessing = !isError && (isPending || isSaving)
+
   return {
-    messages,
+    messages: predefinedMessages,
     selectedIndex,
     isInputCustom,
     customMessage,
-    savedMessage,
     finalMessage,
-    setSelectedIndex,
-    setIsInputCustom,
-    setCustomMessage,
-    setSavedMessage,
-    setFinalMessage,
     handleSelect,
-    handleSaveMessage,
+    handleCustomMessageChange,
+    handleSaveCustomMessage,
     handleKeyDown,
     handleClick,
-    isSaving,
-    isError,
-    isPending
+    isProcessing,
   }
 }

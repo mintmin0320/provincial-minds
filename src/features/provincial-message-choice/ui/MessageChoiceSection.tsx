@@ -13,49 +13,39 @@ const MessageChoiceSection = () => {
     selectedIndex,
     isInputCustom,
     customMessage,
-    savedMessage,
     finalMessage,
-    setSelectedIndex,
-    setIsInputCustom,
-    setCustomMessage,
     handleSelect,
-    handleSaveMessage,
+    handleCustomMessageChange,
+    handleSaveCustomMessage,
     handleKeyDown,
     handleClick,
-    isSaving,
-    isError,
-    isPending,
+    isProcessing,
   } = useMessages()
 
-  if (!isError && (isPending || isSaving)) {
-    return <Loading />
-  } else {
-    return (
-      <>
-        <MessageList
-          messages={messages}
-          selectedIndex={selectedIndex}
-          isInputCustom={isInputCustom}
-          savedMessage={savedMessage}
-          customMessage={customMessage}
-          handleSelect={handleSelect}
-          setSelectedIndex={setSelectedIndex}
-          setIsInputCustom={setIsInputCustom}
-          setCustomMessage={setCustomMessage}
-          handleSaveMessage={handleSaveMessage}
-          handleKeyDown={handleKeyDown}
-        />
-        <Button
-          className={fixButtonStyle}
-          theme="blue"
-          disabled={!finalMessage}
-          onClick={handleClick}
-        >
-          메시지 선택
-        </Button>
-      </>
-    )
-  }
+  return isProcessing ? (
+    <Loading />
+  ) : (
+    <>
+      <MessageList
+        messages={messages}
+        selectedIndex={selectedIndex}
+        isInputCustom={isInputCustom}
+        customMessage={customMessage}
+        handleSelect={handleSelect}
+        handleCustomMessageChange={handleCustomMessageChange}
+        handleSaveCustomMessage={handleSaveCustomMessage}
+        handleKeyDown={handleKeyDown}
+      />
+      <Button
+        className={fixButtonStyle}
+        theme="blue"
+        disabled={!finalMessage}
+        onClick={handleClick}
+      >
+        메시지 선택
+      </Button>
+    </>
+  )
 }
 
 export default MessageChoiceSection
