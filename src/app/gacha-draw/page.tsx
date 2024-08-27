@@ -21,15 +21,15 @@ const GachaDrawPage = async ({ searchParams }: ISearchParamsProps) => {
   const userData = await getUserData(Number(userId))
 
   return (
-    <GachaDrawWrapper userId={userId} theme={theme}>
-      <main className="h-full bg-white pt-[28px]">
+    <main className="h-full bg-white pt-[28px]">
+      <GachaDrawWrapper userId={userId} theme={theme}>
         <TimeCostAnalogy />
         <GachaVisual isCreateGacha={false} userData={userData} />
         <div className="px-[16px]">
           <GachaRouterButton isCreateGacha={false} />
         </div>
-      </main>
-    </GachaDrawWrapper>
+      </GachaDrawWrapper>
+    </main>
   )
 }
 
