@@ -1,7 +1,7 @@
-import TimeCostAnalogy from "@/features/gacha-create/ui/TimeCostAnalogy"
 import GachaRouterButton from "@/shared/@common/ui/GachaRouterButton"
 import GachaVisual from "@/shared/@common/ui/GachaVisual"
 import Layout from "@/shared/@common/ui/Layout"
+import TimeCostAnalogy from "@/shared/@common/ui/TimeCostAnalogy"
 
 const CreateGachaPage = () => {
   return (

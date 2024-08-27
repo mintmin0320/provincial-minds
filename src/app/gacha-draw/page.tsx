@@ -1,10 +1,10 @@
 import { cookies } from "next/headers"
 
-import TimeCostAnalogy from "@/features/gacha-create/ui/TimeCostAnalogy"
 import GachaDrawWrapper from "@/features/gacha-draw/ui/GachaDrawWrapper"
 import GachaRouterButton from "@/shared/@common/ui/GachaRouterButton"
 import GachaVisual from "@/shared/@common/ui/GachaVisual"
 import Layout from "@/shared/@common/ui/Layout"
+import TimeCostAnalogy from "@/shared/@common/ui/TimeCostAnalogy"
 
 import { getUserData } from "@/actions/user"
 import { CapsuleTheme } from "@/shared/@common/types/capsuleTheme.types"

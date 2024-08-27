@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-import FlowTitle from "@/shared/@common/ui/FlowTitle"
+import FlowTitle from "../FlowTitle"
 
 const TimeCostAnalogy = () => {
   const [timeAnalogyText, setTimeAnalogy] = useState<boolean>(false)
