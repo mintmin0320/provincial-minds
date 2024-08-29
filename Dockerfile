@@ -43,8 +43,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/.yarn ./.yarn/
 
 USER nextjs
 
-EXPOSE 3000
+EXPOSE 7000
 
-ENV PORT 3000
+ENV PORT 7000
 
 CMD ["node", "-r", "./.pnp.cjs", "server.js"]
