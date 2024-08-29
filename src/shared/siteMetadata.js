@@ -11,4 +11,4 @@ const siteMetadata = {
   locale: "ko", // Main.tsx 날짜 한국어로 설정
 }
 
-module.exports = siteMetadata
+export default siteMetadata
