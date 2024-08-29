@@ -1,0 +1,14 @@
+node_modules
+.next
+Dockerfile
+.dockerignore
+.yarn/*
+.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.git
+.gitignore
+.env
