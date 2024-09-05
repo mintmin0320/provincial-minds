@@ -4,10 +4,10 @@ import toast from 'react-hot-toast'
 import { createUserWithTransitData } from '@/actions/transit'
 import { ILocationValidatedProps } from '@/shared/@common/types/location.types'
 import { useCookies } from 'next-client-cookies'
-import { getTransitRoute } from '../transitRouteService'
+import { fetchTransitRoute } from '../fetchTransitRoute'
 
 async function saveUserAndTransitData(locationState: ILocationValidatedProps): Promise<number> {
-  const transitRoute = await getTransitRoute(locationState)
+  const transitRoute = await fetchTransitRoute(locationState)
   const userId = await createUserWithTransitData(transitRoute, locationState)
 
   if (!userId) {
