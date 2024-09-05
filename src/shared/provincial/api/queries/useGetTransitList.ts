@@ -12,8 +12,8 @@ export const useGetTransitList = () => {
     queryKey: ["transitList", userId],
     queryFn: () =>  getTransitData(Number(userId)),
     enabled: !!userId,
-    staleTime: 1000 * 60,
-    gcTime: 1000 * 70,
+    staleTime: 1000 * 600,
+    gcTime: 1000 * 700,
     throwOnError: true
   })
 
