@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       textColor: {
-        blue01: "#6687FC",
+        blue01: "#3d66f8",
         mint01: "#54D8C7",
         yellow01: "#FEEFC7",
         orange01: "#FC9366",
