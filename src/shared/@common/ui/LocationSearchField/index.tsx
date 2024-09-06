@@ -42,7 +42,7 @@ const LocationSearchField = ({
   return (
     <div className="flex flex-col gap-[12px]">
       <label
-        htmlFor="departure"
+        htmlFor={type}
         className="font-bold leading-[22.4px] tracking-[0.08px]"
       >
         {children}
@@ -56,7 +56,7 @@ const LocationSearchField = ({
         onClick={type === "change" ? openModal : undefined}
       >
         <input
-          id="departure"
+          id={type}
           placeholder="출발지 입력하기"
           value={location ?? ""}
           className={cn(
