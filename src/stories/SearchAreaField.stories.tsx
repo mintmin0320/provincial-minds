@@ -22,7 +22,7 @@ const meta = {
       options: ["view", "change"],
       description: "지역 선택 타입 (view or change)",
     },
-    address: {
+    routeAddresses: {
       control: "text",
       description: "지역 선택 필드",
       defaultValue: null,
@@ -48,7 +48,7 @@ type Story = StoryObj<typeof meta>
 export const ChangeAreaField: Story = {
   args: {
     type: "change",
-    address: null,
+    routeAddresses: null,
     children: "지방러는 여기서 출발해요",
   },
 }
@@ -56,7 +56,7 @@ export const ChangeAreaField: Story = {
 export const InputChangeAreaField: Story = {
   args: {
     type: "change",
-    address: "부산광역시 금정구 부산대학로 63번길 2",
+    routeAddresses: "부산광역시 금정구 부산대학로 63번길 2",
     children: "지방러는 여기서 출발해요",
   },
 }
@@ -64,7 +64,7 @@ export const InputChangeAreaField: Story = {
 export const InputViewAreaField: Story = {
   args: {
     type: "view",
-    address: "부산광역시 금정구 부산대학로 63번길 2",
+    routeAddresses: "부산광역시 금정구 부산대학로 63번길 2",
     children: "지방러는 여기서 출발해요",
   },
 }
