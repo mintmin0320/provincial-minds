@@ -7,7 +7,7 @@ import LocationInputGroup from "@/shared/@common/ui/LocationInputGroup"
 import { fixButtonStyle } from "@/shared/@common/styles/fixButton"
 import useLocations from "../hooks/useLocations"
 
-const LocationInputSection = () => {
+const AddressInputSection = () => {
   const {
     locationState,
     setLocationState,
@@ -37,4 +37,4 @@ const LocationInputSection = () => {
   )
 }
 
-export default LocationInputSection
+export default AddressInputSection
