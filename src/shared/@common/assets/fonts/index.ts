@@ -25,7 +25,7 @@ export const LocalMindsTitleFont = localFont({
   variable: "--font-localMinds-title",
   src: [
     {
-      path: "./rundr-bold.woff2",
+      path: "./rundr-Bold.woff2",
       weight: "900",
       style: "normal",
     },
