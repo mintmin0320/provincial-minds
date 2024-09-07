@@ -7,7 +7,7 @@ import Modal from "@/shared/@common/ui/Modal"
 import PortalWrapper from "@/shared/@common/ui/Potal"
 
 interface IDaumPostCodeProps {
-  onAreaChange: (area: { address: string }) => void
+  onAreaChange: (addressData: { addressData: string }) => void
 }
 
 const DaumPostCodeModal = ({ onAreaChange }: IDaumPostCodeProps) => {

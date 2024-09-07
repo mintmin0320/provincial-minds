@@ -6,13 +6,13 @@ import { ILocationProps } from "../../types/location.types"
 import LocationSearchField from "../LocationSearchField"
 
 interface IAreaSearchFieldGroupProps {
-  locationState: ILocationProps
+  address: ILocationProps
   setLocationState?: React.Dispatch<React.SetStateAction<ILocationProps>>
   type: "view" | "change"
 }
 
 const LocationInputGroup = ({
-  locationState,
+  address,
   setLocationState,
   type,
 }: IAreaSearchFieldGroupProps) => {
@@ -31,14 +31,14 @@ const LocationInputGroup = ({
       })}
     >
       <LocationSearchField
-        location={locationState.origin}
+        address={address.origin}
         onLocationSearch={handleLocationSearch("origin")}
         type={type}
       >
         <span className="text-blue01">지방러</span>는 여기서 출발해요
       </LocationSearchField>
       <LocationSearchField
-        location={locationState.destination}
+        address={address.destination}
         onLocationSearch={handleLocationSearch("destination")}
         type={type}
       >

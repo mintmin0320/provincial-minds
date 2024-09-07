@@ -8,32 +8,32 @@ import { useModals } from "@/shared/@common/hooks/useModals"
 import { cn } from "@/shared/@common/utils/twMerge"
 
 interface ISearchFieldProps {
-  location: string | null
-  onLocationSearch?: (location: string) => void
+  address: string | null
+  onLocationSearch?: (addressData: string) => void
   type: "view" | "change"
   children: ReactNode
 }
 
 const LocationSearchField = ({
-  location,
+  address,
   onLocationSearch,
   children,
   type,
 }: ISearchFieldProps) => {
   const { open, close } = useModals()
 
-  const handleAreaChange = ({ address }: { address: string }) => {
+  const handleAddressInput = ({ addressData }: { addressData: string }) => {
     if (onLocationSearch) {
-      onLocationSearch(address)
+      onLocationSearch(addressData)
       close()
     }
   }
 
   const openModal = () => {
-    open(DaumPostCodeModal, { onAreaChange: handleAreaChange })
+    open(DaumPostCodeModal, { onAreaChange: handleAddressInput })
   }
 
-  const isInputArea = !location
+  const isInputAddress = !address
     ? "bg-[#F4F4F4] disabled:bg-[#F4F4F4]"
     : "bg-[#F5F7FF] disabled:bg-[#F5F7FF]"
 
@@ -49,7 +49,7 @@ const LocationSearchField = ({
       </label>
       <div
         className={cn(
-          isInputArea,
+          isInputAddress,
           isChange,
           "flex w-full gap-[16px] rounded-lg p-[16px] text-left",
         )}
@@ -58,9 +58,9 @@ const LocationSearchField = ({
         <input
           id={type}
           placeholder="출발지 입력하기"
-          value={location ?? ""}
+          value={address ?? ""}
           className={cn(
-            isInputArea,
+            isInputAddress,
             isChange,
             "w-full font-normal text-black outline-none",
           )}
