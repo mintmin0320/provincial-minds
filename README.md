@@ -105,9 +105,11 @@
 
 ## 교통 수단 API 요청 흐름도
 
-![image](https://github.com/user-attachments/assets/5c04f81c-3642-4651-a4f9-c5cc7255c580)
+![image](https://github.com/user-attachments/assets/f8f5d3c9-76a6-4c2d-aba4-7f8e5c3bda11)
 
 
+<br/>
+<br/>
 
 
 
