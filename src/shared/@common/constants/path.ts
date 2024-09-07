@@ -6,7 +6,7 @@
 const ROUTE_PATH = {
   ROOT: "/",
   ADDRESS_SEARCH: "/address-search",
-  TRANSIT_ROTE: "/transit-route-search",
+  TRANSIT_ROTE: "/transit-route-choice",
   TRANSIT_ROTE_RESULT: "/transit-route-result",
   GACHA_CREATE: "/gacha-create",
   GACHA_CREATE_WAIT: "/gacha-create-wait",
