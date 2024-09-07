@@ -21,7 +21,7 @@ const AddressInputSection = () => {
   ) : (
     <section>
       <LocationInputGroup
-        address={locationState}
+        routeAddresses={locationState}
         setLocationState={setLocationState}
         type="change"
       />

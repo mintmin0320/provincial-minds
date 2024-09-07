@@ -6,14 +6,14 @@ import { fetchTransitList } from "@/shared/provincial/api/fetchTransitList"
 const TransitRouteSection = async () => {
   const transitList = await fetchTransitList()
 
-  const address = {
+  const routeAddresses = {
     origin: transitList.origin,
     destination: transitList.destination,
   }
 
   return (
     <section>
-      <LocationInputGroup address={address} type="view" />
+      <LocationInputGroup routeAddresses={routeAddresses} type="view" />
       <TransitList transits={transitList.transits ?? []} />
     </section>
   )
