@@ -1,4 +1,4 @@
-import AddressInputSection from "@/features/provincial-address-search/ui/AddressInputSection"
+import AddressInputSection from "@/features/address-search/ui/AddressInputSection"
 import FlowTitle from "@/shared/@common/ui/FlowTitle"
 import Layout from "@/shared/@common/ui/Layout"
 

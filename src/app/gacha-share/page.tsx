@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import GachaShareButton from "@/features/gacha-landing-share/ui/GachaShareButton"
+import GachaShareButton from "@/features/gacha-share/ui/GachaShareButton"
 import Layout from "@/shared/@common/ui/Layout"
 
 const GachaSharePage = () => {

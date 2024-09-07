@@ -20,7 +20,7 @@ export default function ErrorFallback({
   const handleReStartClick = () => {
     cookies.remove("userId")
 
-    router.push(ROUTE_PATH.DISTANCE_SEARCH)
+    router.push(ROUTE_PATH.ADDRESS_SEARCH)
   }
 
   return (

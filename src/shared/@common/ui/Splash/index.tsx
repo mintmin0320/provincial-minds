@@ -11,7 +11,7 @@ const Splash = () => {
 
   useLayoutEffect(() => {
     const timer = setTimeout(() => {
-      router.push(`${ROUTE_PATH.DISTANCE_SEARCH}`)
+      router.push(`${ROUTE_PATH.ADDRESS_SEARCH}`)
     }, 3000)
 
     return () => clearTimeout(timer)

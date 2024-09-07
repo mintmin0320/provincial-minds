@@ -1,4 +1,4 @@
-import TransitRouteCard from "@/features/provincial-route-search/ui/TransitRouteCard"
+import TransitRouteCard from "@/features/transit-route-choice/ui/TransitRouteCard"
 import type { Meta, StoryObj } from "@storybook/react"
 
 const meta = {

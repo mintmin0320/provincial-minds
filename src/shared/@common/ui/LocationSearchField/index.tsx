@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { ReactNode } from "react"
 
-import DaumPostCodeModal from "@/features/provincial-address-search/ui/DaumPostCodeModal"
+import DaumPostCodeModal from "@/features/address-search/ui/DaumPostCodeModal"
 import { useModals } from "@/shared/@common/hooks/useModals"
 import { cn } from "@/shared/@common/utils/twMerge"
 

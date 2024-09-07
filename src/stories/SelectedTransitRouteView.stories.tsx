@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react"
 
-import TransitRouteItem from "@/features/provincial-route-result/ui/TransitRouteItem"
+import TransitRouteItem from "@/features/transit-route-result/ui/TransitRouteItem"
 
 const meta = {
   title: "provincial/TransitRouteItem",

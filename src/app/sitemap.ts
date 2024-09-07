@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'never',
     },
     {
-      url: siteMetadata.siteUrl + ROUTE_PATH.DISTANCE_SEARCH,
+      url: siteMetadata.siteUrl + ROUTE_PATH.ADDRESS_SEARCH,
       lastModified: new Date(),
       changeFrequency: 'never',  
     },

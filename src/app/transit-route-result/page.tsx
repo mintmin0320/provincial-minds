@@ -1,5 +1,5 @@
-import NavigationButton from "@/features/provincial-route-result/ui/NavigationButton"
-import SelectedTransitRoute from "@/features/provincial-route-result/ui/SelectedTransitRoute"
+import NavigationButton from "@/features/transit-route-result/ui/NavigationButton"
+import SelectedTransitRoute from "@/features/transit-route-result/ui/SelectedTransitRoute"
 import ErrorBoundaryWrapper from "@/shared/@common/ui/ErrorBoundaryWrapper"
 import FlowTitle from "@/shared/@common/ui/FlowTitle"
 import Layout from "@/shared/@common/ui/Layout"

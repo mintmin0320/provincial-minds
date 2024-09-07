@@ -1,4 +1,4 @@
-import MessageChoiceSection from "@/features/provincial-message-choice/ui/MessageChoiceSection"
+import MessageChoiceSection from "@/features/message-choice/ui/MessageChoiceSection"
 import FlowTitle from "@/shared/@common/ui/FlowTitle"
 import Layout from "@/shared/@common/ui/Layout"
 
