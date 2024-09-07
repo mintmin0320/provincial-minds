@@ -13,8 +13,8 @@ const Loading = () => {
     <div className="flex h-dvh flex-col items-center pt-[140px]">
       <Image
         src={`/icons/${randomImage}.svg`}
-        width={208}
-        height={208}
+        width={168}
+        height={168}
         alt="city-bus"
         className="animate-pulse-grow"
         priority
