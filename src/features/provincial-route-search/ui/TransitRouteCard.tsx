@@ -19,7 +19,7 @@ const TransitRouteCard = ({
   const safePayment = payment || 0
 
   return (
-    <li
+    <div
       className={cn("rounded-[10px] border px-[20px] py-[24px]", {
         "border-[#D0DaFE] bg-[#F5F7FF]": isSelected,
         "border-[#E8E8E8] bg-white": !isSelected,
@@ -61,7 +61,7 @@ const TransitRouteCard = ({
           {transitCount}회
         </div>
       </div>
-    </li>
+    </div>
   )
 }
 

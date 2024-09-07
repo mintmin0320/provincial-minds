@@ -23,9 +23,9 @@ const TransitList = ({ transits }: ITransitListProps) => {
   return (
     <ul className="mt-[37px] flex flex-col gap-[8px] pb-[96px]">
       {transits.map((item, index) => (
-        <div key={item.id} onClick={() => handleSelect(index)}>
+        <li key={item.id} onClick={() => handleSelect(index)}>
           <TransitRouteCard isSelected={selectedIndex === index} {...item} />
-        </div>
+        </li>
       ))}
     </ul>
   )
