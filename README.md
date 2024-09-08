@@ -103,7 +103,7 @@
 
 <br/>
 
-## 교통 수단 API 요청 흐름도
+## 대중교통 길찾기 API 요청 흐름도
 
 ![image](https://github.com/user-attachments/assets/f8f5d3c9-76a6-4c2d-aba4-7f8e5c3bda11)
 
