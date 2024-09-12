@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import toast from 'react-hot-toast'
 
-import { postGachaMessage } from '@/shared/provincial/api/mutations/useSetGachaMessage'
+import { createGachaMessage } from '@/shared/provincial/api/createGachaMessage'
 import { useGetUserData } from '@/shared/urban/api/queries/useGetUserData'
 import ROUTE_PATH from '../constants/path'
 import { useGachaStore } from './useGachaStore'
@@ -30,7 +30,7 @@ export const useGachaAction = () => {
     setIsCreating(true)
 
     try {
-      const result = await postGachaMessage(userId,gachaMessage)
+      const result = await createGachaMessage(userId,gachaMessage)
 
       if (result) router.push(ROUTE_PATH.GACHA_CREATE_WAIT)
     } catch (error) {

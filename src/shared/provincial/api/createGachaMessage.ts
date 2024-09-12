@@ -1,7 +1,7 @@
 
 import { updateGachaMessage } from '@/actions/user'
 
-export async function postGachaMessage(userId: number, gachaMessage: string): Promise<boolean> {
+export async function createGachaMessage(userId: number, gachaMessage: string): Promise<boolean> {
   const result = await updateGachaMessage({ id: userId, gachaMessage })
 
   if (!result) {
