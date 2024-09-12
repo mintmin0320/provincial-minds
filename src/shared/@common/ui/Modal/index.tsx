@@ -19,13 +19,16 @@ const Modal = ({
   return (
     <div
       className={cn(
-        "fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black bg-opacity-50",
-        backgroundClassNames,
+        "fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center",
+        backgroundClassNames ? backgroundClassNames : "bg-black bg-opacity-50",
       )}
       onClick={close}
     >
       <div
-        className={cn("w-full bg-white p-[16px]", innerClassNames)}
+        className={cn(
+          "relative w-full max-w-[500px] bg-white p-[16px]",
+          innerClassNames,
+        )}
         onClick={(e) => e.stopPropagation()}
       >
         {children}

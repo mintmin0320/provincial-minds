@@ -1,8 +1,10 @@
+import { useCookies } from 'next-client-cookies'
 import { useRouter } from 'next/navigation'
-
-import useSetGachaMessage from '@/shared/provincial/api/mutations/useSetGachaMessage'
-import { useGetUserData } from '@/shared/urban/api/queries/useGetUserData'
 import { useState } from 'react'
+import toast from 'react-hot-toast'
+
+import { createGachaMessage } from '@/shared/provincial/api/createGachaMessage'
+import { useGetUserData } from '@/shared/urban/api/queries/useGetUserData'
 import ROUTE_PATH from '../constants/path'
 import { useGachaStore } from './useGachaStore'
 
@@ -11,24 +13,30 @@ const themes = ["orange", "mint", "yellow"] as const
 
 export const useGachaAction = () => {
   const router = useRouter()
+  const cookies = useCookies()
+  const userId = Number(cookies.get("userId"))
 
   const [isCreating, setIsCreating] = useState<boolean>(false)
 
-  const { mutateAsync: saveGachaMessage, isPending } = useSetGachaMessage()
   const { userData } = useGetUserData()
 
   const gachaMessage = useGachaStore((state) => state.gachaMessage)
   const setGachaMessage = useGachaStore((state) => state.setGachaMessage)
 
+  /** 가챠 메시지 생성 */
   const createGacha = async () => {
     if (!gachaMessage) return
 
     setIsCreating(true)
 
-    const result = await saveGachaMessage({ gachaMessage })
+    try {
+      const result = await createGachaMessage(userId,gachaMessage)
 
-    if (result) {
-      router.push(ROUTE_PATH.GACHA_CREATE_WAIT)
+      if (result) router.push(ROUTE_PATH.GACHA_CREATE_WAIT)
+    } catch (error) {
+      if (error instanceof Error) {
+        toast.error(error.message)
+      }
     }
   }
 
