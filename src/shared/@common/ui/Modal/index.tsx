@@ -25,10 +25,7 @@ const Modal = ({
       onClick={close}
     >
       <div
-        className={cn(
-          "relative w-full max-w-[500px] bg-white p-[16px]",
-          innerClassNames,
-        )}
+        className={cn("relative w-full bg-white p-[16px]", innerClassNames)}
         onClick={(e) => e.stopPropagation()}
       >
         {children}
