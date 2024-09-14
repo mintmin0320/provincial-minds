@@ -31,7 +31,7 @@ const CreateGachaModal = () => {
     <PortalWrapper title="create-gacha">
       <Modal
         backgroundClassNames="bg-[#202020] bg-opacity-90"
-        innerClassNames="bg-transparent flex flex-col items-center"
+        innerClassNames="bg-transparent flex flex-col items-center max-w-[500px]"
       >
         <div className="w-[735px] text-end">
           <button onClick={close}>
