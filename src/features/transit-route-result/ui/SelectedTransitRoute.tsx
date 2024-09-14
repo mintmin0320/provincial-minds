@@ -58,13 +58,13 @@ const SelectedTransitRoute = ({ transitId }: ISelectedTransitRouteProps) => {
       <p>
         <span className="text-blue01">{destinationText}</span>에 도착하기까지{" "}
         <br />
-        편도
+        편도{" "}
         {hour !== 0 && (
           <>
             <span className="text-blue01">{hour}</span>
             시간
           </>
-        )}
+        )}{" "}
         <span className="text-blue01">{minute}</span>분
         <br />
         교통비 <span className="text-blue01">{payment?.toLocaleString()}</span>
