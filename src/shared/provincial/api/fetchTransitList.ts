@@ -1,6 +1,8 @@
 import { cookies } from 'next/headers'
 
-export async function fetchTransitList() {
+import { ITransitRouteResponseProps } from '@/shared/@common/types/transitRoute.types'
+
+export async function fetchTransitList(): Promise<ITransitRouteResponseProps> {
   const userId = cookies().get("userId")?.value
   
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/transit?userId=${userId}`)
