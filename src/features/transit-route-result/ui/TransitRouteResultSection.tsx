@@ -1,35 +1,28 @@
-"use client"
-
 import Image from "next/image"
 
-import Loading from "@/shared/@common/ui/Loading"
+import NavigationButton from "./NavigationButton"
 
 import { getTransportationStyle } from "@/shared/@common/utils/transportationThemes"
 import { cn } from "@/shared/@common/utils/twMerge"
-import transitRoutes from "../hooks/transitRoutes"
+import { fetchTransitList } from "@/shared/provincial/api/fetchTransitList"
+import useTransitRouteResults from "../hooks/useTransitRouteResults"
 import { getTransportIcon } from "../utils/getTransportIcon"
 
-interface ISelectedTransitRouteProps {
+const TransitRouteResultSection = async ({
+  transitId,
+}: {
   transitId: string
-}
+}) => {
+  const transitList = await fetchTransitList()
 
-const SelectedTransitRoute = ({ transitId }: ISelectedTransitRouteProps) => {
-  const {
-    hour,
-    minute,
-    payment,
-    destinationText,
-    transportationList,
-    isLoading,
-  } = transitRoutes(transitId)
-
-  if (isLoading) return <Loading />
+  const { hour, minute, destinationText, transportationList, payment } =
+    useTransitRouteResults(transitList, Number(transitId))
 
   return (
-    <>
+    <section className="mt-[58px] flex flex-col items-center gap-[42px] text-center text-xl font-bold leading-xl tracking-[-0.4px] text-[#202020]">
       <p>
         선택하신 교통수단은 <br />
-        {transportationList.map((item, index) => (
+        {transportationList?.map((item, index) => (
           <span key={item} className={cn(getTransportationStyle(item))}>
             {item}
             {index < transportationList.length - 1 && (
@@ -67,11 +60,12 @@ const SelectedTransitRoute = ({ transitId }: ISelectedTransitRouteProps) => {
         )}{" "}
         <span className="text-blue01">{minute}</span>분
         <br />
-        교통비 <span className="text-blue01">{payment?.toLocaleString()}</span>
+        교통비 <span className="text-blue01">{payment.toLocaleString()}</span>
         원이 소비돼요!
       </p>
-    </>
+      <NavigationButton payment={payment} hour={hour} minute={minute} />
+    </section>
   )
 }
 
-export default SelectedTransitRoute
+export default TransitRouteResultSection

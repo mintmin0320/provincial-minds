@@ -1,8 +1,10 @@
-import NavigationButton from "@/features/transit-route-result/ui/NavigationButton"
-import SelectedTransitRoute from "@/features/transit-route-result/ui/SelectedTransitRoute"
+import { Suspense } from "react"
+
+import TransitRouteResultSection from "@/features/transit-route-result/ui/TransitRouteResultSection"
 import ErrorBoundaryWrapper from "@/shared/@common/ui/ErrorBoundaryWrapper"
 import FlowTitle from "@/shared/@common/ui/FlowTitle"
 import Layout from "@/shared/@common/ui/Layout"
+import Loading from "@/shared/@common/ui/Loading"
 
 interface ISearchParamsProps {
   searchParams: {
@@ -16,12 +18,11 @@ const TransitRouteResult = ({ searchParams }: ISearchParamsProps) => {
   return (
     <Layout className="h-full px-[16px] pb-[42px] pt-[28px]">
       <FlowTitle>{`지방러님의\n여정을 계산해 보았어요!`}</FlowTitle>
-      <section className="mb-[42px] mt-[58px] flex flex-col items-center text-center text-xl font-bold leading-xl tracking-[-0.4px] text-[#202020]">
-        <ErrorBoundaryWrapper>
-          <SelectedTransitRoute transitId={transitId} />
-        </ErrorBoundaryWrapper>
-      </section>
-      <NavigationButton />
+      <ErrorBoundaryWrapper>
+        <Suspense fallback={<Loading />}>
+          <TransitRouteResultSection transitId={transitId} />
+        </Suspense>
+      </ErrorBoundaryWrapper>
     </Layout>
   )
 }
