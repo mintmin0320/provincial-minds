@@ -28,7 +28,7 @@ const GachaRouterButton = ({ isCreateGacha }: { isCreateGacha: boolean }) => {
           unoptimized
         />
       ) : isCreateGacha && !isCreating ? (
-        "감사 가챠 등록하기"
+        "가챠 등록하기"
       ) : (
         "RANDOM!"
       )}

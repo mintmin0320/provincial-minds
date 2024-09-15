@@ -38,7 +38,7 @@ const NavigationButton = ({
       )}
       onClick={handleCreateGacha}
     >
-      감사 가챠 만들기
+      가챠 만들기
     </Button>
   )
 }
