@@ -1,29 +1,16 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 import FlowTitle from "../FlowTitle"
 
+import useTimeCostAnalogyInfo from "../../hooks/useTimeCostAnalogyInfo"
 import { getAnalogyMessage } from "../../utils/getAnalogyMessage"
-import { getLocalStorageItem } from "../../utils/localStorage"
 
 const TimeCostAnalogy = () => {
-  const [isTimeAnalogyText, setIsTimeAnalogyText] = useState<boolean>(false)
+  const timeCostAnalogyInfo = useTimeCostAnalogyInfo()
 
-  const [timeCostAnalogyInfo, setTimeCostAnalogyInfo] = useState({
-    payment: 0,
-    hour: 0,
-    minute: 0,
-  })
-
-  useEffect(() => {
-    const storedInfo = getLocalStorageItem("timeCostAnalogyInfo", {
-      payment: 0,
-      hour: 0,
-      minute: 0,
-    })
-    setTimeCostAnalogyInfo(storedInfo)
-  }, [])
+  const [isTimeAnalogyText, setIsTimeAnalogyText] = useState(false)
 
   const { payment, hour, minute } = timeCostAnalogyInfo
 
