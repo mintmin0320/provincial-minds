@@ -12,7 +12,7 @@ const GachaWait = ({ text }: IGachaWaitProps) => {
       </h1>
       <div className="relative pt-[48px]">
         <Image
-          src="/icons/mini-gacha.svg"
+          src="/webps/mini-gacha.webp"
           width={290}
           height={464}
           alt="mini-gacha"
@@ -20,7 +20,7 @@ const GachaWait = ({ text }: IGachaWaitProps) => {
           priority
         />
         <Image
-          src="/gifts/red.gif"
+          src="/webps/red.webp"
           width={120}
           height={120}
           alt="red-gif-1"
@@ -29,7 +29,7 @@ const GachaWait = ({ text }: IGachaWaitProps) => {
           unoptimized
         />
         <Image
-          src="/gifts/green.gif"
+          src="/webps/green.webp"
           width={120}
           height={120}
           alt="red-gif-2"
@@ -38,7 +38,7 @@ const GachaWait = ({ text }: IGachaWaitProps) => {
           unoptimized
         />
         <Image
-          src="/gifts/yellow.gif"
+          src="/webps/yellow.webp"
           width={120}
           height={120}
           alt="red-gif-3"
