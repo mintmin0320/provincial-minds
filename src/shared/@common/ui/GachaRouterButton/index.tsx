@@ -19,7 +19,7 @@ const GachaRouterButton = ({ isCreateGacha }: { isCreateGacha: boolean }) => {
     >
       {isCreateGacha && isCreating ? (
         <Image
-          src="/gifts/spinner.gif"
+          src="/webps/spinner.webp"
           className="mx-auto"
           alt="loading-spinner"
           width={40}

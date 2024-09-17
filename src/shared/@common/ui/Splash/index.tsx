@@ -21,7 +21,7 @@ const Splash = () => {
     <div className="flex h-dvh justify-center bg-[#6687FC]">
       <div className="h-[200px] pt-[250px]">
         <Image
-          src="/gifts/splash.gif"
+          src="/webps/splash.webp"
           width={200}
           height={200}
           alt="splash"
