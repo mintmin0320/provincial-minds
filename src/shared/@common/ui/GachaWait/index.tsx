@@ -12,7 +12,7 @@ const GachaWait = ({ text }: IGachaWaitProps) => {
       </h1>
       <div className="relative pt-[48px]">
         <Image
-          src="/icons/mini-gacha.webp"
+          src="/icons/mini-gacha.svg"
           width={290}
           height={464}
           alt="mini-gacha"
