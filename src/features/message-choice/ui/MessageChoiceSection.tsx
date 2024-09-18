@@ -1,10 +1,10 @@
 "use client"
 
 import { fixButtonStyle } from "@/shared/@common/styles/fixButton"
-import { useMessages } from "../hooks/useMessages"
 
 import Button from "@/shared/@common/ui/Button"
 import Loading from "@/shared/@common/ui/Loading"
+import { useMessage } from "../hooks/useMessage"
 import MessageList from "./MessageList"
 
 const MessageChoiceSection = () => {
@@ -13,14 +13,13 @@ const MessageChoiceSection = () => {
     selectedIndex,
     isInputCustom,
     customMessage,
+    setCustomMessage,
     finalMessage,
     handleSelect,
-    handleCustomMessageChange,
-    handleSaveCustomMessage,
-    handleKeyDown,
+    handleCustomMessageButton,
     handleClick,
     isProcessing,
-  } = useMessages()
+  } = useMessage()
 
   return isProcessing ? (
     <Loading />
@@ -31,15 +30,14 @@ const MessageChoiceSection = () => {
         selectedIndex={selectedIndex}
         isInputCustom={isInputCustom}
         customMessage={customMessage}
+        setCustomMessage={setCustomMessage}
         handleSelect={handleSelect}
-        handleCustomMessageChange={handleCustomMessageChange}
-        handleSaveCustomMessage={handleSaveCustomMessage}
-        handleKeyDown={handleKeyDown}
+        handleCustomMessageButton={handleCustomMessageButton}
       />
       <Button
         className={fixButtonStyle}
         theme="blue"
-        disabled={!finalMessage}
+        disabled={!finalMessage.trim()}
         onClick={handleClick}
       >
         메시지 선택

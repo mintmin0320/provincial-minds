@@ -11,10 +11,9 @@ interface IMessageListProps {
   selectedIndex: number | null
   isInputCustom: boolean
   customMessage: string
-  handleSelect: (index: number | null, message?: string) => void
-  handleCustomMessageChange: (message: string) => void
-  handleSaveCustomMessage: () => void
-  handleKeyDown: (event: React.KeyboardEvent<HTMLInputElement>) => void
+  setCustomMessage: (message: string) => void
+  handleSelect: (index: number | null) => void
+  handleCustomMessageButton: () => void
 }
 
 const MessageList = ({
@@ -22,10 +21,9 @@ const MessageList = ({
   selectedIndex,
   isInputCustom,
   customMessage,
+  setCustomMessage,
   handleSelect,
-  handleCustomMessageChange,
-  handleSaveCustomMessage,
-  handleKeyDown,
+  handleCustomMessageButton,
 }: IMessageListProps) => {
   return (
     <ul className="mt-[28px] flex flex-col gap-[8px]">
@@ -34,38 +32,32 @@ const MessageList = ({
           key={index}
           message={message}
           isSelected={selectedIndex === index}
-          onClick={() => handleSelect(index, message)}
+          onClick={() => handleSelect(index)}
         />
       ))}
-      {!isInputCustom && (
-        <li className="rounded-[10px] border border-[#E8E8E8]">
-          <button
-            type="button"
-            onClick={() => handleSelect(null)}
-            className={cn("cursor-pointer gap-[8px]", customStyle, {
-              "border-[#D0DAFE] font-bold text-blue01": selectedIndex === null,
-              "border-[#E8E8E8] text-[#A8A8A8]": selectedIndex !== null,
-            })}
-          >
-            <Image
-              src={`/icons/plus_${
-                selectedIndex === null ? "6687FC" : "A8A8A8"
-              }.svg`}
-              width={20}
-              height={20}
-              alt="plus icon"
-              priority
-            />
-            메시지 직접 작성하기
-          </button>
-        </li>
-      )}
+      <li className="rounded-[10px] border border-[#E8E8E8]">
+        <button
+          type="button"
+          onClick={handleCustomMessageButton}
+          className={cn("cursor-pointer gap-[8px]", customStyle, {
+            "border-[#D0DAFE] font-bold text-blue01": isInputCustom,
+            "border-[#E8E8E8] text-[#A8A8A8]": !isInputCustom,
+          })}
+        >
+          <Image
+            src={`/icons/plus_${isInputCustom ? "6687FC" : "A8A8A8"}.svg`}
+            width={20}
+            height={20}
+            alt="plus icon"
+            priority
+          />
+          메시지 직접 작성하기
+        </button>
+      </li>
       {isInputCustom && (
         <CustomMessageInput
           customMessage={customMessage}
-          setCustomMessage={handleCustomMessageChange}
-          handleKeyDown={handleKeyDown}
-          handleSaveMessage={handleSaveCustomMessage}
+          setCustomMessage={setCustomMessage}
         />
       )}
     </ul>
