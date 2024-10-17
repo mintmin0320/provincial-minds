@@ -28,13 +28,14 @@ const useLocations = () => {
     }
 
     setIsSaving(true)
-    const userId = await saveRecommendedRoute(
-      locationState as ILocationValidatedProps,
-    )
+    await saveRecommendedRoute(
+      locationState as ILocationValidatedProps, {
+        onSuccess: () => {
+          router.push(ROUTE_PATH.TRANSIT_ROTE)
 
-    if (userId) {
-      router.push(ROUTE_PATH.TRANSIT_ROTE)
-    }
+        }
+      }
+    )
   }
 
   const canSave = locationState.origin && locationState.destination
