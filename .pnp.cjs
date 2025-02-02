@@ -6711,7 +6711,7 @@ const RAW_RUNTIME_STATE =
           ["autoprefixer", "virtual:8dc76ed8e90ff1b71f5ee8afb4f2bacd4862f439f6eb349dae642802532d9fad18775cdf93bb196f7af1f9319b4720c72acc5ea2f1f8b2044b64cf10aaffabe7#npm:10.4.20"],\
           ["@types/postcss", null],\
           ["browserslist", "npm:4.23.3"],\
-          ["caniuse-lite", "npm:1.0.30001650"],\
+          ["caniuse-lite", "npm:1.0.30001696"],\
           ["fraction.js", "npm:4.3.7"],\
           ["normalize-range", "npm:0.1.2"],\
           ["picocolors", "npm:1.0.1"],\
@@ -7102,7 +7102,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/browserslist-npm-4.23.3-4e727c7b5b-10c0.zip/node_modules/browserslist/",\
         "packageDependencies": [\
           ["browserslist", "npm:4.23.3"],\
-          ["caniuse-lite", "npm:1.0.30001650"],\
+          ["caniuse-lite", "npm:1.0.30001696"],\
           ["electron-to-chromium", "npm:1.5.5"],\
           ["node-releases", "npm:2.0.18"],\
           ["update-browserslist-db", "virtual:4e727c7b5b033f8d5ac7299f9860cb61f5802656f7b4fea2accd32d68dc1a767387a6d23f0724065d3c65e61cb31b9eec2438ae937ce36e7602b4586ede55af6#npm:1.1.0"]\
@@ -7241,10 +7241,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["caniuse-lite", [\
-      ["npm:1.0.30001650", {\
-        "packageLocation": "../../.yarn/berry/cache/caniuse-lite-npm-1.0.30001650-c867884d42-10c0.zip/node_modules/caniuse-lite/",\
+      ["npm:1.0.30001696", {\
+        "packageLocation": "../../.yarn/berry/cache/caniuse-lite-npm-1.0.30001696-067c2f955f-10c0.zip/node_modules/caniuse-lite/",\
         "packageDependencies": [\
-          ["caniuse-lite", "npm:1.0.30001650"]\
+          ["caniuse-lite", "npm:1.0.30001696"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -12180,7 +12180,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/sass", null],\
           ["busboy", "npm:1.6.0"],\
-          ["caniuse-lite", "npm:1.0.30001650"],\
+          ["caniuse-lite", "npm:1.0.30001696"],\
           ["graceful-fs", "npm:4.2.11"],\
           ["postcss", "npm:8.4.31"],\
           ["react", "npm:18.3.1"],\
