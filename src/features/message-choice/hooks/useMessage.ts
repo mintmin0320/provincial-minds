@@ -1,8 +1,8 @@
 import { useRouter } from 'next/navigation'
 import { useState } from "react"
 
+import useSetUserMessage from '@/shared/@common/apis/provincial/mutations/useSetUserMessage'
 import ROUTE_PATH from '@/shared/@common/constants/path'
-import useSetUserMessage from '@/shared/provincial/api/mutations/useSetUserMessage'
 import { predefinedMessages } from '../constants/messages'
 
 export const useMessage = () => {

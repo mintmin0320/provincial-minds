@@ -3,7 +3,7 @@ import Image from "next/image"
 import LocationInputGroup from "@/shared/@common/ui/LocationInputGroup"
 import TransitList from "./TransitList"
 
-import { fetchTransitList } from "@/shared/provincial/api/fetchTransitList"
+import { fetchTransitList } from "@/shared/@common/apis/provincial/fetchTransitList"
 
 const TransitRouteSection = async () => {
   const transitList = await fetchTransitList()

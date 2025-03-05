@@ -5,11 +5,11 @@ import { ReactNode, useEffect, useRef } from "react"
 
 import GachaModal from "@/shared/@common/ui/GachaModal"
 
+import { useGetUserData } from "@/shared/@common/apis/urban/queries/useGetUserData"
 import useGetSearchParam from "@/shared/@common/hooks/useGetSearchParams"
 import { useModals } from "@/shared/@common/hooks/useModals"
 import { CapsuleTheme } from "@/shared/@common/types/capsuleTheme.types"
 import { setLocalStorageItem } from "@/shared/@common/utils/localStorage"
-import { useGetUserData } from "@/shared/urban/api/queries/useGetUserData"
 
 interface IGachaDrawWrapperProps {
   userId?: string

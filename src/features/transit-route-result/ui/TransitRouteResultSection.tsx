@@ -2,9 +2,9 @@ import Image from "next/image"
 
 import NavigationButton from "./NavigationButton"
 
+import { fetchTransitList } from "@/shared/@common/apis/provincial/fetchTransitList"
 import { getTransportationStyle } from "@/shared/@common/utils/transportationThemes"
 import { cn } from "@/shared/@common/utils/twMerge"
-import { fetchTransitList } from "@/shared/provincial/api/fetchTransitList"
 import useTransitRouteResults from "../hooks/useTransitRouteResults"
 import { getTransportIcon } from "../utils/getTransportIcon"
 

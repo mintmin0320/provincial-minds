@@ -3,8 +3,8 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import toast from 'react-hot-toast'
 
-import { createGachaMessage } from '@/shared/provincial/api/createGachaMessage'
-import { useGetUserData } from '@/shared/urban/api/queries/useGetUserData'
+import { createGachaMessage } from '@/shared/@common/apis/provincial/createGachaMessage'
+import { useGetUserData } from '@/shared/@common/apis/urban/queries/useGetUserData'
 import ROUTE_PATH from '../constants/path'
 import { useGachaStore } from './useGachaStore'
 
